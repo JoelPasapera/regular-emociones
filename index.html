@@ -397,6 +397,46 @@ input[type="range"].semaforo::-moz-range-thumb {
 
 .grafica { width: 100%; height: auto; display: block; margin-top: var(--e2); }
 
+/* ---------- Compuerta de entrada y flujo diario ---------- */
+.compuerta {
+  position: fixed; inset: 0; z-index: 85;
+  background: var(--fondo);
+  display: flex; align-items: center; justify-content: center;
+  overflow-y: auto; padding: var(--e5);
+}
+.compuerta-cuerpo { width: 100%; max-width: 460px; }
+.compuerta-titulo {
+  font-family: var(--f-titulo); font-weight: 500; font-size: 1.8rem;
+  text-align: center; margin: 0 0 var(--e5);
+}
+.puerta {
+  display: block; width: 100%; text-align: left;
+  border-radius: var(--radio-g); padding: var(--e4) var(--e5);
+  margin-bottom: var(--e3); border: 1px solid var(--linea);
+  background: var(--superficie);
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.puerta:hover { transform: translateY(-2px); }
+.puerta strong { display: block; font-size: 1.15rem; margin: 2px 0; }
+.puerta-rango { font-family: var(--f-datos); font-size: 0.78rem; letter-spacing: 0.1em; }
+.puerta-sub { color: var(--tinta-suave); font-size: 0.88rem; }
+.puerta-rojo  { border-color: var(--rojo);  background: var(--rojo-fondo); }
+.puerta-rojo .puerta-rango { color: var(--rojo-int); }
+.puerta-ambar { border-color: var(--ambar); background: var(--ambar-fondo); }
+.puerta-ambar .puerta-rango { color: var(--ambar); }
+.puerta-verde { border-color: var(--calma); background: var(--calma-fondo); }
+.puerta-verde .puerta-rango { color: var(--calma-int); }
+
+.btn-heroe { font-size: 1.05rem; padding: 14px 26px; border-radius: 14px; }
+
+.flujo-dots { display: flex; gap: 8px; margin-bottom: var(--e4); }
+.flujo-dots .dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--superficie-2); border: 1px solid var(--linea);
+}
+.flujo-dots .dot.hecho { background: var(--calma); border-color: var(--calma); }
+.flujo-dots .dot.actual { border-color: var(--calma); box-shadow: 0 0 0 3px var(--calma-fondo); }
+
 </style>
 </head>
 <body>
@@ -1875,8 +1915,9 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
 
 </script>
   <script>
-/* Ventana · inicio
-   El "héroe" es el medidor-ventana: tu número de hoy, dentro o fuera de la ventana. */
+/* Ventana · inicio (rediseño calma-primero)
+   Regla: quien llega activado no lee. Una decisión principal, aire alrededor.
+   El detalle vive plegado o en sus propias rutas. */
 (function () {
   const G = (window.Guia = window.Guia || {});
   const { h, montar, claveDia, badgeNivel } = G.dom;
@@ -1890,10 +1931,7 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
         pct != null && h("div", { class: "medidor-punto", style: "left:" + pct + "%" })
       ),
       h("div", { class: "medidor-leyenda" },
-        h("span", null, "0 · calma"),
-        h("span", null, "tu ventana"),
-        h("span", null, "10 · secuestro")
-      )
+        h("span", null, "0 · calma"), h("span", null, "tu ventana"), h("span", null, "10 · secuestro"))
     );
   }
 
@@ -1904,140 +1942,88 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
     return deHoy.length ? deHoy[deHoy.length - 1] : null;
   }
 
-  function racha() {
-    const lista = G.storage.leer("checkins", []);
-    if (!lista.length) return 0;
-    const dias = new Set(lista.map((c) => c.dia));
-    let cuenta = 0;
-    const d = new Date();
-    if (!dias.has(claveDia(d))) d.setDate(d.getDate() - 1); // permite contar hasta ayer
-    while (dias.has(claveDia(d))) { cuenta++; d.setDate(d.getDate() - 1); }
-    return cuenta;
-  }
-
-  function estadoPrograma() {
-    const marcadas = G.storage.leer("prog_tareas", {});
-    let total = 0, hechas = 0, faseActual = null;
-    for (const fase of G.programa) {
-      let incompleta = false;
-      for (const t of fase.tareas) {
-        total++;
-        if (marcadas[t.id]) hechas++;
-        else incompleta = true;
-      }
-      if (incompleta && !faseActual) faseActual = fase;
-    }
-    return { total, hechas, pct: total ? Math.round((hechas / total) * 100) : 0, faseActual };
-  }
-
   function vista(vista) {
     const ci = ultimoCheckinHoy();
-    const r = racha();
-    const prog = estadoPrograma();
-    const autopsias = G.storage.leer("autopsias", []).length;
+    const flujoHecho = !!G.storage.leer("flujo_dias", {})[claveDia()];
+    const racha = G.flujo.rachaPractica();
 
-    const cabecera = [
+    const nodos = [
       h("p", { class: "eyebrow" }, "Ventana"),
-      h("h1", { class: "titulo" }, "El espacio entre el impulso y la acción se entrena."),
-      h("p", { class: "subtitulo" }, "Guía completa + herramientas de trabajo. Todo se guarda solo en este dispositivo.")
+      h("h1", { class: "titulo" }, "El espacio entre el impulso y la acción se entrena.")
     ];
 
-    const tarjetaHoy = h("div", { class: "tarjeta" },
+    if (!G.storage.esPersistente()) {
+      nodos.push(h("div", { class: "aviso" },
+        "Este entorno no guarda datos entre sesiones (vista previa o modo privado estricto). Para conservar tu progreso, descarga la app y ábrela desde tu equipo."));
+    }
+
+    nodos.push(h("div", { class: "tarjeta" },
       h("div", { class: "fila separado" },
-        h("h3", { class: "mt0 mb0" }, "Hoy"),
+        h("h3", { class: "mt0 mb0", style: "font-family:var(--f-titulo)" }, "Hoy"),
         ci ? badgeNivel(ci.nivel) : h("span", { class: "tenue" }, "sin registro aún")
       ),
       crearMedidor(ci ? ci.nivel : null),
-      ci
-        ? h("p", { class: "suave mb0" }, "Último check-in de hoy: " + ci.nivel + "/10" + (ci.emocion ? " · " + ci.emocion : "") + ". Racha: " + r + " día" + (r === 1 ? "" : "s") + ".")
-        : h("p", { class: "suave mb0" }, "¿En qué número estás ahora, del 0 al 10? Registrarlo toma un minuto — y es literalmente la semana 1 del programa."),
-      h("div", { class: "fila-botones" },
-        h("a", { class: "btn btn-primario", href: "#/checkin" }, ci ? "Nuevo check-in" : "Hacer mi check-in"),
+      h("div", { class: "centro", style: "margin-top:20px" },
+        flujoHecho
+          ? h("a", { class: "btn", href: "#/flujo" }, "Hecho hoy ✓ · otra ronda")
+          : h("a", { class: "btn btn-primario btn-heroe", href: "#/flujo" }, "▶ Entrenamiento de hoy · ~5 min"),
+        h("p", { class: "tenue", style: "margin:10px 0 0" },
+          racha ? "Racha de práctica: " + racha + " día" + (racha === 1 ? "" : "s") : "Check-in → reto → dojo → repaso. Una decisión, el resto sale solo.")
       )
-    );
+    ));
 
-    const acciones = h("div", { class: "tarjeta-fila", style: "margin-bottom:16px" },
-      h("button", { class: "tarjeta-accion", onclick: () => G.emergencia.abrir(), style: "text-align:left" },
-        h("span", { class: "icono" }, "🆘"),
-        h("strong", null, "SOS · Estoy activado"),
-        h("span", null, "Flujo guiado para el pico: respirar, esperar, decidir.")
-      ),
-      h("a", { class: "tarjeta-accion", href: "#/respiracion" },
-        h("span", { class: "icono" }, "◐"),
-        h("strong", null, "Respiración"),
-        h("span", null, "Suspiro fisiológico, 4–8 y cuadrada, guiadas.")
-      ),
-      h("a", { class: "tarjeta-accion", href: "#/autopsia" },
-        h("span", { class: "icono" }, "🔍"),
-        h("strong", null, "Autopsia"),
-        h("span", null, autopsias ? autopsias + " episodio" + (autopsias === 1 ? "" : "s") + " procesados." : "Procesa el último episodio en frío.")
-      ),
-      h("a", { class: "tarjeta-accion", href: "#/programa" },
-        h("span", { class: "icono" }, "▦"),
-        h("strong", null, "Programa 90 días"),
-        h("span", null, prog.faseActual ? "Fase actual: " + prog.faseActual.titulo + " · " + prog.pct + "%" : "Completado · " + prog.pct + "%")
+    nodos.push(h("div", { class: "fila", style: "justify-content:center;margin-bottom:16px" },
+      h("button", { class: "btn btn-sos btn-mini", onclick: () => G.emergencia.abrir() }, "SOS · estoy activado"),
+      h("a", { class: "btn btn-mini", href: "#/checkin" }, "Solo check-in"),
+      h("a", { class: "btn btn-fantasma btn-mini", href: "#/como-usar" }, "Cómo usar la app")
+    ));
+
+    nodos.push(h("details", { class: "tarjeta", style: "padding:16px 24px" },
+      h("summary", { style: "cursor:pointer;font-weight:600" }, "Explorar herramientas y guía"),
+      h("div", { class: "tarjeta-fila", style: "margin-top:16px" },
+        tarjetaAccion("#/dojo", "⛩️", "Dojo", "Escenarios con feedback: falla gratis aquí."),
+        tarjetaAccion("#/repaso", "🗂️", "Repaso", "Tarjetas espaciadas: memoria bajo presión."),
+        tarjetaAccion("#/autopsia", "🔍", "Autopsia", "Procesa el último episodio en frío."),
+        tarjetaAccion("#/respiracion", "◐", "Respiración", "Tres técnicas guiadas."),
+        tarjetaAccion("#/frases", "💬", "Frases", "40 salidas filtrables y copiables."),
+        tarjetaAccion("#/estadisticas", "📈", "Estadísticas", "Tus cuatro curvas + informe."),
+        tarjetaAccion("#/maestria", "🏅", "Maestría", "Rango, disciplinas y reto del día."),
+        tarjetaAccion("#/programa", "▦", "Programa 90 días", "Un foco por quincena."),
+        tarjetaAccion("#/cuaderno", "📓", "Mi cuaderno", "Tu mapa personal."),
+        tarjetaAccion("#/libro/libro-1", "📖", "La guía", "Diez libros + anexos, desde el inicio.")
       )
-    );
+    ));
 
-    const comoEmpezar = h("div", { class: "tarjeta prosa" },
-      h("h3", { class: "mt0" }, "Cómo usar esta app"),
-      h("div", { html: G.md.render(
+    montar(vista, ...nodos);
+  }
+
+  function tarjetaAccion(href, icono, titulo, sub) {
+    return h("a", { class: "tarjeta-accion", href },
+      h("span", { class: "icono" }, icono), h("strong", null, titulo), h("span", null, sub));
+  }
+
+  /* -------- Cómo usar (movido fuera del inicio) -------- */
+  function comoUsar(vista) {
+    montar(vista,
+      h("p", { class: "eyebrow" }, "Empieza aquí"),
+      h("h1", { class: "titulo" }, "Cómo usar Ventana"),
+      h("div", { class: "prosa", html: G.md.render(
+        "**Al abrir, la app pregunta dónde estás (0–10).** No es un trámite: autoevaluarte ES la habilidad central, y cada apertura es una repetición. Según tu respuesta: **rojo** te lleva al SOS, **amarillo** a tres respiraciones de enfriamiento, **verde** al entrenamiento del día.\n\n" +
+        "**El entrenamiento diario (~5 min)** encadena lo importante en un solo botón: check-in → reto del día → dos escenarios de dojo → cinco tarjetas de repaso. Cada paso se puede saltar; lo que cuenta es aparecer.\n\n" +
+        "**La ruta completa**, si quieres el mapa:\n" +
         "1. Lee los **Libros 1 y 2** para entender el mecanismo.\n" +
         "2. Construye tu mapa con el **Libro 3** y guárdalo en **Mi cuaderno**.\n" +
-        "3. Arranca el **Programa de 90 días**: un solo foco por quincena, con casillas.\n" +
-        "4. **Check-in** diario de un minuto; **Autopsia** después de cada episodio.\n" +
-        "5. En el pico, no pienses: botón **SOS**, arriba a la derecha, siempre visible."
+        "3. Sigue el **Programa de 90 días**: un solo foco por quincena.\n" +
+        "4. Deja que el **flujo diario** haga el mantenimiento; **Autopsia** después de cada episodio.\n" +
+        "5. En el pico, no pienses: **SOS**, arriba a la derecha (o tecla S).\n\n" +
+        "La compuerta de entrada se ajusta en **Copia y datos** (cada vez que abres / una vez al día / nunca)."
       ) })
     );
-
-    const nodos = [...cabecera];
-    if (!G.storage.esPersistente()) {
-      nodos.push(h("div", { class: "aviso" },
-        "Este entorno no permite guardar datos entre sesiones (pasa en vistas previas o modo privado estricto). La app funciona igual, pero para conservar tu progreso descárgala y ábrela desde tu equipo."
-      ));
-    }
-    const rd = G.maestria.retoDelDia();
-    const rango = G.maestria.rangoGlobal(G.maestria.calcular());
-
-    const entrenamiento = h("div", { class: "tarjeta-fila", style: "margin-bottom:16px" },
-      h("a", { class: "tarjeta-accion", href: "#/dojo" },
-        h("span", { class: "icono" }, "⛩️"),
-        h("strong", null, "Dojo"),
-        h("span", null, "20 escenarios reales: falla gratis aquí, no afuera.")
-      ),
-      h("a", { class: "tarjeta-accion", href: "#/repaso" },
-        h("span", { class: "icono" }, "🗂️"),
-        h("strong", null, "Repaso"),
-        h("span", null, "48 tarjetas espaciadas: memoria bajo presión.")
-      ),
-      h("a", { class: "tarjeta-accion", href: "#/estadisticas" },
-        h("span", { class: "icono" }, "📈"),
-        h("strong", null, "Estadísticas"),
-        h("span", null, "Tus cuatro curvas, visibles. Informe para terapeuta.")
-      ),
-      h("a", { class: "tarjeta-accion", href: "#/maestria" },
-        h("span", { class: "icono" }, "🏅"),
-        h("strong", null, "Maestría"),
-        h("span", null, "Rango: " + rango.rango.nombre + " · " + rango.total + " pts. Se gana, no se lee.")
-      )
-    );
-
-    const tarjetaReto = h("div", { class: "tarjeta", style: "border-color:var(--ambar)" },
-      h("div", { class: "fila separado" },
-        h("h3", { class: "mt0 mb0", style: "font-family:var(--f-titulo)" }, "Reto del día"),
-        rd.hecho ? h("span", { class: "badge badge-verde" }, "hecho ✓") : h("span", { class: "badge badge-ambar" }, "pendiente")
-      ),
-      h("p", { class: "suave", style: "margin:8px 0 0" }, rd.reto.t),
-      !rd.hecho && h("div", { class: "fila-botones" },
-        h("button", { class: "btn btn-mini", onclick: () => { G.maestria.marcarReto(); G.dom.toast("Reto cumplido: +2"); G.router.navegar("#/inicio"); } }, "Marcar como hecho"))
-    );
-
-    nodos.push(tarjetaHoy, tarjetaReto, acciones, entrenamiento, comoEmpezar);
-    montar(vista, ...nodos);
   }
 
   G.vistas = G.vistas || {};
   G.vistas.inicio = vista;
+  G.vistas.comoUsar = comoUsar;
 })();
 
 </script>
@@ -2390,6 +2376,7 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
 
   function vista(vista) {
     let nivel = 3;
+    if (G.prefill && G.prefill.checkin) { nivel = G.prefill.checkin.nivel; G.prefill = null; }
 
     const lectura = h("div", { class: "lectura-numero " + claseNivel(nivel) }, String(nivel));
     const deslizador = h("input", {
@@ -2903,6 +2890,18 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
         )
       ),
       h("div", { class: "tarjeta" },
+        h("h3", { class: "mt0", style: "font-family:var(--f-titulo)" }, "Compuerta de entrada"),
+        h("p", { class: "suave" }, "La pregunta \u201c¿dónde estás?\u201d al abrir la app. Recomendado: cada vez — autoevaluarte es la habilidad que entrena."),
+        (() => {
+          const sel = h("select", { onchange: (e) => { G.storage.guardar("pref_compuerta", e.target.value); toast("Preferencia guardada"); } },
+            h("option", { value: "siempre" }, "Cada vez que abro la app (recomendado)"),
+            h("option", { value: "diaria" }, "Solo la primera vez del día"),
+            h("option", { value: "nunca" }, "Nunca"));
+          sel.value = G.storage.leer("pref_compuerta", "siempre");
+          return sel;
+        })()
+      ),
+      h("div", { class: "tarjeta" },
         h("h3", { class: "mt0", style: "font-family:var(--f-titulo)" }, "Empezar de cero"),
         h("p", { class: "suave" }, "Borra todos los registros de este dispositivo. No hay vuelta atrás (salvo que tengas una copia)."),
         h("div", { class: "fila-botones" },
@@ -2949,6 +2948,14 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
       .sort((a, b) => (veces[a.id] || 0) - (veces[b.id] || 0))
       .slice(0, n);
   }
+
+  function registrar(escenario, opcion) {
+    const historial = G.storage.leer("dojo", []);
+    historial.push({ ts: new Date().toISOString(), escenario: escenario.id, tipo: opcion.tipo, disciplina: escenario.disciplina });
+    G.storage.guardar("dojo", historial);
+  }
+
+  G.dojoUtil = { barajar, elegirSesion, registrar };
 
   function vista(vista) {
     let sesion = [], indice = 0, puntos = 0;
@@ -2998,10 +3005,7 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
     }
 
     function responder(e, elegida, zona, boton) {
-      // registra
-      const historial = G.storage.leer("dojo", []);
-      historial.push({ ts: new Date().toISOString(), escenario: e.id, tipo: elegida.tipo, disciplina: e.disciplina });
-      G.storage.guardar("dojo", historial);
+      registrar(e, elegida);
       puntos += elegida.tipo === "regulada" ? 2 : elegida.tipo === "parcial" ? 1 : 0;
 
       // pinta feedback en todas las opciones
@@ -3130,6 +3134,7 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
     inicio();
   }
 
+  G.repasoMotor = { pendientes, calificar };
   G.vistas = G.vistas || {};
   G.vistas.repaso = vista;
 })();
@@ -3507,6 +3512,281 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
 })();
 
 </script>
+  <script>
+/* Ventana · flujo de entrenamiento diario
+   Un solo botón que encadena la práctica del día: Check-in → Reto → Dojo (×2)
+   → Repaso (×5) → Cierre con puntos ganados y racha. Cada paso es saltable.
+   ~5 minutos. Diseñado para que la decisión sea UNA: empezar. */
+(function () {
+  const G = (window.Guia = window.Guia || {});
+  const { h, montar, toast, claveDia, claseNivel } = G.dom;
+
+  function rachaPractica() {
+    const dias = G.storage.leer("flujo_dias", {});
+    let cuenta = 0;
+    const d = new Date();
+    if (!dias[claveDia(d)]) d.setDate(d.getDate() - 1);
+    while (dias[claveDia(d)]) { cuenta++; d.setDate(d.getDate() - 1); }
+    return cuenta;
+  }
+
+  function vista(vista) {
+    const pasos = ["checkin", "reto", "dojo", "dojo", "repaso", "cierre"];
+    let indice = 0;
+    const puntosAntes = total(G.maestria.calcular());
+    let escenariosSesion = null;
+
+    function total(p) { return Object.values(p).reduce((a, b) => a + b, 0); }
+
+    function puntosDots() {
+      return h("div", { class: "flujo-dots", "aria-label": "Progreso del flujo" },
+        pasos.slice(0, -1).map((_, i) =>
+          h("span", { class: "dot" + (i < indice ? " hecho" : i === indice ? " actual" : "") }))
+      );
+    }
+
+    function cabecera(eyebrow, titulo) {
+      return [puntosDots(), h("p", { class: "eyebrow" }, eyebrow), h("h1", { class: "titulo", style: "font-size:1.5rem" }, titulo)];
+    }
+
+    function botonSaltar() {
+      return h("button", { class: "btn btn-fantasma", onclick: avanzar }, "Saltar");
+    }
+
+    function avanzar() {
+      indice++;
+      pintar();
+    }
+
+    function pintar() {
+      const paso = pasos[indice];
+      if (paso === "checkin") pasoCheckin();
+      else if (paso === "reto") pasoReto();
+      else if (paso === "dojo") pasoDojo();
+      else if (paso === "repaso") pasoRepaso();
+      else pasoCierre();
+    }
+
+    /* ---- 1 · Check-in compacto ---- */
+    function pasoCheckin() {
+      let nivel = (G.prefill && G.prefill.checkin && G.prefill.checkin.nivel) || 3;
+      if (G.prefill) G.prefill = null;
+
+      const lectura = h("div", { class: "lectura-numero " + claseNivel(nivel) }, String(nivel));
+      const deslizador = h("input", {
+        type: "range", class: "semaforo", min: "0", max: "10", value: String(nivel),
+        "aria-label": "Nivel de 0 a 10",
+        oninput: (e) => { nivel = Number(e.target.value); lectura.textContent = String(nivel); lectura.className = "lectura-numero " + claseNivel(nivel); }
+      });
+      const emocion = h("input", { type: "text", placeholder: "si hubo emoción fuerte: su nombre preciso (opcional)" });
+      const detecte = h("select", null,
+        h("option", { value: "na" }, "No hubo amarillo"),
+        h("option", { value: "si" }, "Amarillo detectado a tiempo"),
+        h("option", { value: "tarde" }, "Detectado tarde"),
+        h("option", { value: "no" }, "No lo detecté"));
+
+      montar(vista, ...cabecera("Paso 1 · Check-in", "¿En qué número estás?"),
+        h("div", { class: "tarjeta" },
+          h("div", { class: "fila" }, lectura, h("div", { style: "flex:1" }, deslizador)),
+          h("label", { class: "etiqueta" }, "Emoción (si la hubo)"), emocion,
+          h("label", { class: "etiqueta" }, "¿Y el amarillo de hoy?"), detecte,
+          h("div", { class: "fila-botones" },
+            h("button", { class: "btn btn-primario", onclick: () => {
+              const lista = G.storage.leer("checkins", []);
+              lista.push({ id: Date.now(), ts: new Date().toISOString(), dia: claveDia(), nivel,
+                emocion: emocion.value.trim(), detecte: detecte.value, episodio: false, herramienta: "", terreno: "", nota: "flujo diario" });
+              G.storage.guardar("checkins", lista);
+              avanzar();
+            } }, "Guardar y seguir"),
+            botonSaltar())));
+    }
+
+    /* ---- 2 · Reto del día ---- */
+    function pasoReto() {
+      const rd = G.maestria.retoDelDia();
+      montar(vista, ...cabecera("Paso 2 · Reto del día", "Tu misión de hoy"),
+        h("div", { class: "tarjeta", style: "border-color:var(--ambar)" },
+          h("p", { style: "font-size:1.05rem" }, rd.reto.t),
+          h("div", { class: "fila-botones" },
+            rd.hecho
+              ? h("button", { class: "btn", onclick: avanzar }, "Ya lo hice hoy ✓")
+              : h("button", { class: "btn btn-primario", onclick: () => { G.maestria.marcarReto(); toast("+2 a su disciplina"); avanzar(); } }, "Hecho → seguir"),
+            h("button", { class: "btn btn-fantasma", onclick: avanzar }, "Lo hago más tarde"))));
+    }
+
+    /* ---- 3–4 · Dojo (un escenario por paso) ---- */
+    function pasoDojo() {
+      if (!escenariosSesion) escenariosSesion = G.dojoUtil.elegirSesion(2);
+      const numero = pasos.slice(0, indice + 1).filter((p) => p === "dojo").length;
+      const e = escenariosSesion[numero - 1];
+      const zona = h("div");
+      G.dojoUtil.barajar(e.opciones).forEach((op) => {
+        zona.append(h("button", { class: "opcion-dojo", onclick: (ev) => {
+          G.dojoUtil.registrar(e, op);
+          zona.querySelectorAll(".opcion-dojo").forEach((b) => (b.disabled = true));
+          ev.currentTarget.classList.add("elegida-" + op.tipo);
+          zona.append(h("div", { class: "tarjeta", style: "margin-top:12px;border-color:var(--" + (op.tipo === "regulada" ? "calma" : op.tipo === "parcial" ? "ambar" : "rojo") + ")" },
+            h("p", { class: "eyebrow" }, op.tipo === "regulada" ? "Regulada · +2" : op.tipo === "parcial" ? "Parcial · +1" : "Impulso · +0"),
+            h("p", null, op.fb),
+            op.tipo !== "regulada" && h("p", { class: "suave" }, h("strong", null, "La jugada del domador: "), e.opciones.find((o) => o.tipo === "regulada").t),
+            h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario", onclick: avanzar }, "Seguir →"))));
+        } }, op.t));
+      });
+      montar(vista, ...cabecera("Paso " + (2 + numero) + " · Dojo", e.situacion), h("p", { class: "suave" }, "¿Qué haces?"), zona, h("div", { class: "fila-botones" }, botonSaltar()));
+    }
+
+    /* ---- 5 · Repaso (hasta 5 tarjetas) ---- */
+    function pasoRepaso() {
+      let cola = G.repasoMotor.pendientes();
+      if (!cola.length) cola = [...G.tarjetas].sort(() => Math.random() - 0.5);
+      cola = cola.slice(0, 5);
+      let i = 0;
+
+      function tarjeta() {
+        if (i >= cola.length) { avanzar(); return; }
+        const t = cola[i];
+        const dorso = h("div", { class: "tarjeta oculto", style: "border-color:var(--calma)" },
+          h("p", null, t.dorso),
+          h("div", { class: "fila-botones" },
+            h("button", { class: "btn btn-peligro btn-mini", onclick: () => { G.repasoMotor.calificar(t.id, "otra"); i++; tarjeta(); } }, "Otra vez"),
+            h("button", { class: "btn btn-mini", onclick: () => { G.repasoMotor.calificar(t.id, "bien"); i++; tarjeta(); } }, "Bien"),
+            h("button", { class: "btn btn-primario btn-mini", onclick: () => { G.repasoMotor.calificar(t.id, "facil"); i++; tarjeta(); } }, "Fácil")));
+        const ver = h("button", { class: "btn btn-primario", onclick: () => { dorso.classList.remove("oculto"); ver.classList.add("oculto"); } }, "Mostrar respuesta");
+        montar(vista, ...cabecera("Paso 5 · Repaso " + (i + 1) + "/" + cola.length, t.frente),
+          h("div", { class: "fila-botones" }, ver, botonSaltar()), dorso);
+      }
+      tarjeta();
+    }
+
+    /* ---- Cierre ---- */
+    function pasoCierre() {
+      const dias = G.storage.leer("flujo_dias", {});
+      dias[claveDia()] = true;
+      G.storage.guardar("flujo_dias", dias);
+      const ganados = total(G.maestria.calcular()) - puntosAntes;
+      const racha = rachaPractica();
+      const rango = G.maestria.rangoGlobal(G.maestria.calcular());
+
+      montar(vista, puntosDots(),
+        h("p", { class: "eyebrow" }, "Entrenamiento de hoy · completo"),
+        h("h1", { class: "titulo" }, "+" + ganados + " puntos"),
+        h("div", { class: "tarjeta", style: "border-color:var(--calma)" },
+          h("p", { class: "suave mb0" },
+            "Racha de práctica: " + racha + " día" + (racha === 1 ? "" : "s") +
+            " · Rango: " + rango.rango.nombre + " (" + rango.total + " pts)" +
+            (rango.siguiente ? " · siguiente a los " + rango.siguiente.min : ""))),
+        h("p", { class: "suave" }, "Esto era todo por hoy. El resto del cambio pasa afuera: una señal notada, una frase dicha, una vuelta cumplida."),
+        h("div", { class: "fila-botones" },
+          h("a", { class: "btn btn-primario", href: "#/inicio" }, "Listo por hoy"),
+          h("a", { class: "btn", href: "#/maestria" }, "Ver maestría")));
+    }
+
+    pintar();
+  }
+
+  G.flujo = { rachaPractica };
+  G.vistas = G.vistas || {};
+  G.vistas.flujo = vista;
+})();
+
+</script>
+  <script>
+/* Ventana · compuerta de entrada
+   Triaje al abrir la app. No es un menú: es UNA pregunta —la pregunta central
+   del método— con tres salidas grandes. Cada apertura es una repetición de la
+   habilidad de autoevaluarse. Configurable en Copia y datos. */
+(function () {
+  const G = (window.Guia = window.Guia || {});
+  const { h, montar, claveDia } = G.dom;
+
+  let mostradaEnEstaCarga = false;
+  let nodo = null;
+
+  function preferencia() { return G.storage.leer("pref_compuerta", "siempre"); }
+
+  function cerrar() {
+    if (nodo) { nodo.remove(); nodo = null; }
+    document.body.style.overflow = "";
+    G.storage.guardar("compuerta_dia", claveDia());
+  }
+
+  function marco(...contenido) {
+    return h("div", { class: "compuerta", role: "dialog", "aria-modal": "true", "aria-label": "¿Dónde estás ahora?" },
+      h("div", { class: "compuerta-cuerpo" }, ...contenido)
+    );
+  }
+
+  function pantallaPrincipal() {
+    const btnRojo = h("button", { class: "puerta puerta-rojo", onclick: () => { cerrar(); G.emergencia.abrir(); } },
+      h("span", { class: "puerta-rango" }, "7–10"),
+      h("strong", null, "Estoy activado"),
+      h("span", { class: "puerta-sub" }, "Urgencia, pecho apretado, ganas de responder YA")
+    );
+    const btnAmbar = h("button", { class: "puerta puerta-ambar", onclick: pantallaAmbar },
+      h("span", { class: "puerta-rango" }, "4–6"),
+      h("strong", null, "Algo se mueve"),
+      h("span", { class: "puerta-sub" }, "Señales presentes, todavía pienso claro")
+    );
+    const btnVerde = h("button", { class: "puerta puerta-verde", onclick: () => { cerrar(); G.router.navegar("#/flujo"); } },
+      h("span", { class: "puerta-rango" }, "0–3"),
+      h("strong", null, "Tranquilo · vengo a entrenar"),
+      h("span", { class: "puerta-sub" }, "Entrenamiento de hoy: ~5 minutos")
+    );
+
+    montar(nodo, marco(
+      h("p", { class: "eyebrow centro" }, "Ventana"),
+      h("h2", { class: "compuerta-titulo" }, "¿Dónde estás ahora?"),
+      btnRojo, btnAmbar, btnVerde,
+      h("div", { class: "centro", style: "margin-top:20px" },
+        h("button", { class: "btn btn-fantasma btn-mini", onclick: () => { cerrar(); } }, "Solo explorar"))
+    ));
+    setTimeout(() => btnRojo.focus(), 50);
+  }
+
+  /* Ámbar: enfriamiento breve en el sitio, y de ahí a verde o a rojo. */
+  function pantallaAmbar() {
+    const escenario = G.respiracion.crearEscenario({ tecnica: "suspiro", autoIniciar: true });
+    // versión corta: detener tras ~3 ciclos lo decide el usuario con los botones
+    montar(nodo, marco(
+      h("p", { class: "eyebrow centro" }, "Amarillo · aquí se gana"),
+      h("h2", { class: "compuerta-titulo" }, "Tres respiraciones antes de nada"),
+      escenario.el,
+      h("p", { class: "ancla-rotativa centro" }, "Esto es el pico subiendo. Todavía eliges tú."),
+      h("div", { class: "fila-botones", style: "justify-content:center" },
+        h("button", { class: "btn btn-primario", onclick: () => {
+          escenario.detener();
+          G.prefill = { checkin: { nivel: 5 } };
+          cerrar(); G.router.navegar("#/checkin");
+        } }, "Ya bajó → registrarlo"),
+        h("button", { class: "btn btn-sos", onclick: () => { escenario.detener(); cerrar(); G.emergencia.abrir(); } }, "Sigo subiendo → SOS")
+      )
+    ));
+  }
+
+  function autoMostrar() {
+    if (mostradaEnEstaCarga) return;
+    const pref = preferencia();
+    if (pref === "nunca") return;
+    if (pref === "diaria" && G.storage.leer("compuerta_dia") === claveDia()) return;
+    mostrar();
+  }
+
+  function mostrar() {
+    mostradaEnEstaCarga = true;
+    if (nodo) nodo.remove();
+    nodo = h("div");
+    document.getElementById("zonaOverlay").append(nodo);
+    document.body.style.overflow = "hidden";
+    pantallaPrincipal();
+    document.addEventListener("keydown", function esc(e) {
+      if (e.key === "Escape" && nodo) { cerrar(); document.removeEventListener("keydown", esc); }
+    });
+  }
+
+  G.compuerta = { autoMostrar, mostrar };
+})();
+
+</script>
   <!-- Arranque -->
   <script>
 /* Ventana · arranque: navegación, rutas y eventos globales */
@@ -3532,7 +3812,10 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
 
   function construirNav() {
     const lateral = document.getElementById("lateral");
-    const nodos = [h("h2", null, "Empieza"), enlace("#/inicio", "Inicio", null)];
+    const nodos = [h("h2", null, "Empieza"),
+      enlace("#/inicio", "Inicio", null),
+      enlace("#/flujo", "Entrenamiento de hoy", "~5 min encadenados"),
+      enlace("#/como-usar", "Cómo usar la app", null)];
 
     nodos.push(h("h2", null, "Herramientas"));
     for (const [href, nombre, mini] of HERRAMIENTAS) nodos.push(enlace(href, nombre, mini));
@@ -3564,6 +3847,8 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
   G.router.registrar("#/repaso", G.vistas.repaso);
   G.router.registrar("#/estadisticas", G.vistas.estadisticas);
   G.router.registrar("#/maestria", G.vistas.maestria);
+  G.router.registrar("#/flujo", G.vistas.flujo);
+  G.router.registrar("#/como-usar", G.vistas.comoUsar);
   for (const libro of G.libros) {
     G.router.registrar("#/libro/" + libro.id, G.vistas.renderLibro(libro.id));
   }
@@ -3597,6 +3882,7 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
 
   construirNav();
   G.router.iniciar("#/inicio");
+  G.compuerta.autoMostrar();
 })();
 
 </script>
