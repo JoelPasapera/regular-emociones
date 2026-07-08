@@ -2519,6 +2519,1000 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
       consecuencia: "Las reconciliaciones no fallan por falta de amor: fallan por reparaciones a medias que dejan la herida negociando el futuro."
     },
     razonamiento: "La versión regulada piensa: \u201cEsta conversación se gana ANTES: terreno cuidado, ensayo mental, mis frases listas. Adentro: yo dañé, yo abro. Su herida entera primero, mi contexto después o nunca. Mi vergüenza no es su trabajo. Cuando pregunte \u2018¿y si vuelve a pasar?\u2019, no juro imposibles: ofrezco el protocolo y un criterio para medirme. Y si menciona despedirse, no demuelo: escucho — una parte no es el todo.\u201d"
+  },
+
+  /* ============ PAREJA · discusiones · Nivel 2 · (el ejemplo A/B/C/D) ============ */
+  {
+    id: "s-hazlo-2", cat: "pareja", sub: "discusiones", nivel: 2,
+    titulo: "\u201cHaz lo que quieras\u201d", disciplina: "mente", emocion: "acorralado / impotencia",
+    duracion: "~4 min", inicioT: 6, inicioC: 4,
+    contexto: "Discuten sobre el viaje del feriado: tú quieres ir con tus amigos dos días, ella quería esos días para ustedes. El tono fue subiendo y de pronto suelta, cruzada de brazos: \u201c¿Sabes qué? Haz lo que quieras.\u201d — y mira hacia otro lado.",
+    turnos: [
+      {
+        npc: {
+          base: "Ella, seca, mirando el teléfono: \u201cHaz lo que quieras. En serio.\u201d",
+          tenso: "Ella agarra su chaqueta: \u201cHaz lo que quieras, ya me da igual.\u201d",
+          calido: "Ella suspira: \u201cHaz lo que quieras... perdón, eso sonó peor de lo que quería.\u201d"
+        },
+        opciones: [
+          { t: "\u201cPerfecto, eso haré. Y no me reclames después.\u201d", tipo: "impulso", hab: "defusion", dT: 3, dC: -3,
+            efecto: "Toma la frase como confirmación de todo lo que temía. La puerta del cuarto suena más fuerte de lo normal.",
+            fb: "Tomarse el \u2018haz lo que quieras\u2019 literal: es una bandera de dolor, no un permiso. Respondiste al texto e ignoraste el mensaje." },
+          { t: "Guardar silencio y ponerte a mirar tu teléfono también. Que sienta el hielo.", tipo: "impulso", hab: "honestidad", dT: 2, dC: -3,
+            efecto: "Veinte minutos de silencio a dos metros de distancia. Nadie gana; los dos pierden la noche.",
+            fb: "Silencio castigador vs. silencio castigador: la guerra fría de pareja. Espejo perfecto de su retirada — y doble candado en la misma puerta." },
+          { t: "\u201cEsto se nos está yendo de tono a los dos. Pausa de 20 minutos y lo retomamos, ¿sí? Vuelvo a las 9.\u201d", tipo: "regulada", hab: "pausa", dT: -2, dC: 1,
+            efecto: "Bufa, pero asiente. A las 9, los dos vuelven con otro pulso. La discusión sigue — sin metralla.",
+            fb: "Pausa bilateral con hora: no huyes del tema, proteges la conversación. El \u2018vuelvo a las 9\u2019 es lo que la separa del abandono." },
+          { t: "\u201cNo quiero hacer \u2018lo que quiera\u2019. Ese tono me dice que esto te dolió más de lo que dijiste. ¿Qué es lo que de verdad te molesta del viaje?\u201d", tipo: "regulada", hab: "validar", dT: -2, dC: 3,
+            efecto: "Se le aflojan los hombros. \u201cQue últimamente siempre eliges todo menos a mí\u201d, dice bajito. Ahí está el tema real.",
+            fb: "Validar y preguntar debajo: leíste la bandera, no el texto. El \u2018haz lo que quieras\u2019 casi siempre custodia un \u2018no me elegiste\u2019." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201cEs que no es el viaje. Es que este mes cada plan libre lo usaste para otra cosa.\u201d",
+          tenso: "Ella: \u201cOlvídalo, ¿ves? Por esto no digo las cosas.\u201d",
+          calido: "Ella: \u201cGracias por preguntar en vez de pelear... Es que te extraño, tonto.\u201d"
+        },
+        opciones: [
+          { t: "\u201cEso es falso. El sábado 4 estuvimos juntos, el 12 también, tengo memoria ¿eh?\u201d", tipo: "impulso", hab: "escucha", dT: 3, dC: -2,
+            efecto: "\u201cNo te estoy pidiendo un acta\u201d, responde, y se apaga. Ganaste el dato, perdiste el punto.",
+            fb: "Litigar contra una emoción: ella dijo \u2018me siento poco elegida\u2019 y tú trajiste calendario. Los sentimientos no se refutan; se escuchan." },
+          { t: "\u201cO sea que ahora tengo que pedirte permiso para ver a mis amigos.\u201d", tipo: "parcial", hab: "defusion", dT: 2, dC: -1,
+            efecto: "\u201cYo nunca dije eso\u201d — y tiene razón: lo dijo tu película. La discusión cambió de tema hacia tu distorsión.",
+            fb: "Catastrofizar el límite: convertiste \u2018te extraño\u2019 en \u2018me controla\u2019. Todo-o-nada clásico del que se siente acorralado." },
+          { t: "\u201cTe escucho, y algo de razón hay: este mes estuve en mil cosas. El viaje me importa Y tú me importas más. ¿Armamos algo: yo voy los dos días, y el finde siguiente es nuestro completo, ya reservado?\u201d", tipo: "regulada", hab: "formula", dT: -2, dC: 3,
+            efecto: "\u201c...¿Reservado reservado?\u201d, dice, con media sonrisa asomando. La negociación reemplazó al pulso.",
+            fb: "Reconocer lo cierto + sostener lo tuyo + propuesta concreta: se puede validar sin capitular. Eso es negociar, no rendirse ni ganar." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201cBueno... puede ser. Pero me molesta habértelo tenido que decir así.\u201d",
+          tenso: "Ella: \u201cHaz tu viaje. Yo veré qué hago con mi feriado.\u201d",
+          calido: "Ella: \u201cTrato. Y perdón por el \u2018haz lo que quieras\u2019... sé que es trampa.\u201d"
+        },
+        opciones: [
+          { t: "\u201cSí, la próxima dilo directo en vez de soltarme minas.\u201d", tipo: "parcial", hab: "limite", dT: 2, dC: -1,
+            efecto: "El reproche final le agria el cierre a un acuerdo que ya estaba ganado. Se va a dormir con la última frase, no con el plan.",
+            fb: "Petición correcta, envuelta en púas: \u2018soltarme minas\u2019 convierte tu límite en ataque. La forma se comió el fondo — en el último metro." },
+          { t: "\u201cTe entiendo. Y pido lo mismo de vuelta: cuando algo te duela, dímelo directo — el \u2018haz lo que quieras\u2019 me deja adivinando y adivino siempre lo peor.\u201d", tipo: "regulada", hab: "limite", dT: -1, dC: 2,
+            efecto: "\u201cJusto\u201d, admite. Acuerdo doble: finde reservado y minas fuera del vocabulario. La discusión terminó sumando.",
+            fb: "Límite recíproco en verde y sin sarcasmo: pediste el canal directo mostrando tu costo (\u2018adivino lo peor\u2019). Así se instala una regla de pareja." },
+          { t: "\u201cYa, ya pasó. Mejor no le demos más vueltas.\u201d", tipo: "impulso", hab: "honestidad", dT: 1, dC: -1,
+            efecto: "El tema se cierra sin cerrarse. El \u2018haz lo que quieras\u2019 queda disponible en el arsenal para la próxima.",
+            fb: "Cerrar en falso por cansancio: sin nombrar el patrón, el patrón vuelve. Faltaban veinte segundos de conversación y los regalaste." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "El \u2018haz lo que quieras\u2019 resultó ser un \u2018te extraño\u2019 disfrazado — y lo desactivaste leyendo la bandera en vez del texto. Viaje, finde reservado y una regla nueva: minas fuera.",
+      medio: "El viaje quedó medio acordado y el patrón medio nombrado. Empate: nadie sangró, nada cambió.",
+      mal: "Una frase-trampa de cuatro palabras se llevó la noche entera. El \u2018haz lo que quieras\u2019 nunca significa eso — y tomárselo literal siempre sale caro."
+    },
+    analisis: {
+      emocion: "Acorralado + impotencia (la frase-trampa no deja jugada buena aparente), y debajo de la de ella: no elegida.",
+      necesidad: "La tuya: salida digna del acorralamiento. La de ella: sentirse prioridad — dos necesidades legítimas chocando por mal canal.",
+      interpretacion: "\u201cHaz lo que quieras = me está manipulando / me da permiso\u201d (era: \u2018me duele y no sé pedirlo\u2019).",
+      sesgo: "Literalidad hostil + todo-o-nada (\u2018o mis amigos o ella\u2019, cuando cabían ambos).",
+      ventana: "Amarillo alto mutuo: dos personas a 6 es territorio de pausa bilateral, no de resolver.",
+      alternativa: "Leer la bandera (validar + preguntar debajo) o pausa con hora; luego reconocer lo cierto + propuesta + límite recíproco.",
+      consecuencia: "Responder literal al \u2018haz lo que quieras\u2019 entrena a la pareja a usar frases-trampa más grandes; leer debajo las va jubilando."
+    },
+    razonamiento: "La versión regulada piensa: \u201c\u2018Haz lo que quieras\u2019: bandera roja de dolor, no permiso. Mi impulso quiere tomarla literal para \u2018ganar\u2019 — trampa. ¿Qué custodia esa frase? Probablemente un \u2018no me eliges\u2019. Dos jugadas buenas: si estoy en 6+, pausa con hora; si puedo, validar y preguntar debajo. Después: reconocer lo cierto sin regalar el viaje, proponer algo concreto, y al final instalar la regla: directo, sin minas — para los dos.\u201d"
+  },
+
+  /* ============ PAREJA · cancelaciones · Nivel 1 ============ */
+  {
+    id: "s-cancelacion-1", cat: "pareja", sub: "cancelaciones", nivel: 1,
+    titulo: "Plan cancelado a última hora", disciplina: "palabra", emocion: "decepción / dejado de lado",
+    duracion: "~3 min", inicioT: 4, inicioC: 5,
+    contexto: "Viernes 18:40. Reserva a las 20:00, camisa lista, semana entera esperándolo. Suena el teléfono: \u201cAmor, no me mates... salió una cena de trabajo que no puedo esquivar. ¿Lo movemos?\u201d Es la segunda vez este mes.",
+    turnos: [
+      {
+        npc: {
+          base: "Ella, al teléfono: \u201c¿Estás ahí? Di algo...\u201d",
+          tenso: "Ella: \u201cYa sé que es la segunda vez, no me lo tienes que decir con ese silencio.\u201d",
+          calido: "Ella: \u201cDe verdad lo siento. Sé cuánto esperabas esta noche.\u201d"
+        },
+        opciones: [
+          { t: "\u201cClaro, claro. El trabajo. Siempre hay algo más importante.\u201d", tipo: "impulso", hab: "defusion", dT: 3, dC: -2,
+            efecto: "\u201cEso no es justo\u201d, responde con la voz apretada. La llamada termina peor que la cancelación.",
+            fb: "\u2018Siempre\u2019 + sarcasmo: convertiste dos datos en una ley universal y una acusación. La decepción era legítima; la sentencia, no." },
+          { t: "\u201cOk. No pasa nada.\u201d (con el tono más plano del mundo)", tipo: "parcial", hab: "honestidad", dT: 1, dC: -1,
+            efecto: "Ella cuelga con la duda; tú te quedas con la camisa puesta y el nudo sin dueño. Nada explotó; nada se dijo.",
+            fb: "El \u2018no pasa nada\u2019 falso: cobra en frialdad lo que niega en palabras. Es la semilla de la explosión diferida del mes que viene." },
+          { t: "\u201cUf... te soy honesto: me baja el ánimo, llevaba días con ganas de esto. Entiendo el trabajo. ¿Cuándo lo reponemos — y esta vez blindado?\u201d", tipo: "regulada", hab: "formula", dT: -1, dC: 2,
+            efecto: "\u201cDomingo. Blindado, lo juro\u201d, dice, aliviada de que puedas estar decepcionado sin castigarla.",
+            fb: "Decepción nombrada + comprensión + petición con fecha: las tres piezas en veinte segundos. Sentir y pedir no se excluyen." }
+        ]
+      },
+      {
+        npc: {
+          base: "Sábado. Ella: \u201c¿Sigues molesto por lo de ayer? Te noto raro.\u201d",
+          tenso: "Sábado. Ella, cansada: \u201c¿Vas a estar así todo el finde por una cena?\u201d",
+          calido: "Sábado. Ella llega con tu postre favorito: \u201cadelanto del domingo blindado.\u201d"
+        },
+        opciones: [
+          { t: "\u201cRaro no. Realista: ya sé qué lugar ocupo en tu lista.\u201d", tipo: "impulso", hab: "defusion", dT: 3, dC: -3,
+            efecto: "La conversación entra en el pantano de \u2018demuéstrame que me quieres\u2019 — de donde nadie sale con dignidad.",
+            fb: "Conclusión de identidad por dos cancelaciones: leer la mente + filtro negativo. Pediste un examen de amor imposible de aprobar." },
+          { t: "\u201cMolesto no. Y sí hay algo que quiero pedirte en frío: si un plan nuestro corre riesgo, avísame apenas lo huelas — el aviso a las 18:40 con la camisa puesta es lo que más me pega.\u201d", tipo: "regulada", hab: "limite", dT: -1, dC: 2,
+            efecto: "\u201cEso es justísimo\u201d, dice. La regla queda instalada: no es \u2018no canceles nunca\u2019, es \u2018avísame temprano\u2019.",
+            fb: "Petición quirúrgica: separaste lo incontrolable (el trabajo) de lo pedible (el timing del aviso). Los límites finos son así de específicos." },
+          { t: "\u201cNada, nada.\u201d — y responderle corto el resto del día.", tipo: "parcial", hab: "honestidad", dT: 1, dC: -2,
+            efecto: "El sábado transcurre en modo ahorro de energía. El domingo blindado llega con un pasajero invisible: tu factura sin emitir.",
+            fb: "Cobrar con goteo lo que no facturaste con palabras: el castigo homeopático. Agota más que una conversación de dos minutos." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "La cancelación costó una noche y compró una regla buena: aviso temprano, planes blindados y una pareja que aprendió que puedes decepcionarte sin convertirte en juez.",
+      medio: "El domingo llegará y probablemente esté bien. Lo no dicho quedó flotando, liviano por ahora.",
+      mal: "La cena se perdió el viernes; el fin de semana lo perdiste tú solo, cobrando en frío una factura que nunca emitiste."
+    },
+    analisis: {
+      emocion: "Decepción + dejado de lado (\u2018plato de segunda mesa\u2019).",
+      necesidad: "Prioridad demostrable — que se traduce en algo pedible: aviso temprano y reposición con fecha.",
+      interpretacion: "\u201cCancela = valgo menos que su trabajo\u201d.",
+      sesgo: "Sobregeneralizar (dos casos → \u2018siempre\u2019) + leer la mente sobre tu \u2018lugar en la lista\u2019.",
+      ventana: "Amarillo bajo pero pegajoso: el riesgo no era explotar sino gotear frialdad 48 horas.",
+      alternativa: "Nombrar la decepción sin sentencia + reponer con fecha + límite sobre el timing del aviso.",
+      consecuencia: "El \u2018no pasa nada\u2019 crónico enseña a tu pareja que cancelarte es gratis — y a ti, a cobrar con intereses en el peor momento."
+    },
+    razonamiento: "La versión regulada piensa: \u201cBajón real: decepción, y un \u2018dejado de lado\u2019 conocido. Dato: dos cancelaciones con causa; película: \u2018soy su plan B\u2019. Puedo sentir el bajón Y pedir: reposición con fecha ahora, y en frío, el límite fino — no sobre cancelar (no lo controla) sino sobre avisar temprano (sí lo controla). Y cero goteo de frialdad: lo que tenga precio, se factura con palabras.\u201d"
+  },
+
+  /* ============ PAREJA · críticas · Nivel 2 ============ */
+  {
+    id: "s-critica-pareja-2", cat: "pareja", sub: "críticas", nivel: 2,
+    titulo: "\u201cNunca ayudas en casa\u201d", disciplina: "mente", emocion: "atacado / injusticia",
+    duracion: "~4 min", inicioT: 5, inicioC: 5,
+    contexto: "Domingo por la tarde, tú en el sofá después de una semana brutal. Ella entra con la ropa recién doblada y suelta: \u201cEs increíble. NUNCA ayudas en esta casa. Vivo atendiéndote.\u201d El \u2018nunca\u2019 te enciende — porque el martes hiciste tres cosas y tienes la lista mental.",
+    turnos: [
+      {
+        npc: {
+          base: "Ella, con la canasta en la cadera: \u201c¿Y? ¿No vas a decir nada?\u201d",
+          tenso: "Ella suelta la canasta con golpe: \u201cclaro, sigue en tu teléfono, como siempre.\u201d",
+          calido: "Ella suspira, más cansada que furiosa: \u201cperdón el tono... pero es que estoy agotada.\u201d"
+        },
+        opciones: [
+          { t: "\u201c¿NUNCA? El martes cociné, lavé y saqué la basura. ¿Quieres que te muestre fotos?\u201d", tipo: "impulso", hab: "escucha", dT: 3, dC: -2,
+            efecto: "\u201cTres cosas en un mes, guau, ¿te doy un premio?\u201d — el pleito ahora es de contabilidad forense, y en ese juzgado pierden los dos.",
+            fb: "Litigar el \u2018nunca\u2019 palabra por palabra: técnicamente tienes razón y estratégicamente perdiste. Ella no reportaba un inventario: reportaba agotamiento." },
+          { t: "\u201cYa empezamos...\u201d — levantarte e irte a otro cuarto.", tipo: "impulso", hab: "pausa", dT: 3, dC: -3,
+            efecto: "El portazo suave dice más que un grito. Ella se queda hablando con la canasta; el tema engorda en el pasillo.",
+            fb: "Retirada sin marco: irse sin \u2018vuelvo\u2019 no es pausa, es abandono del ring. La pausa protege la conversación; la fuga la sentencia." },
+          { t: "Respirar y bajar el teléfono: \u201cEse \u2018nunca\u2019 me pica, pero antes de defenderme: te oigo agotada. ¿Qué es lo que más te está pesando?\u201d", tipo: "regulada", hab: "escucha", dT: -2, dC: 3,
+            efecto: "Se sienta. \u201cEs que yo cargo con la logística invisible: pensar QUÉ falta, no solo hacerlo\u201d. Acabas de descubrir el tema real en un minuto.",
+            fb: "Nombrar tu pica + validar primero: la secuencia experta. El \u2018nunca\u2019 casi nunca es censo — es un pedido de auxilio con mala ortografía." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201cNo es solo hacer cosas. Es que si yo no las pienso, no existen. Esa carga me tiene harta.\u201d",
+          tenso: "Ella: \u201c¿Ves? Ni siquiera entiendes de qué hablo.\u201d",
+          calido: "Ella: \u201cGracias por preguntar en vez de sacar la lista... sé que tú también vienes muerto.\u201d"
+        },
+        opciones: [
+          { t: "\u201cPues delega. Yo no soy adivino: dime qué hacer y lo hago.\u201d", tipo: "parcial", hab: "escucha", dT: 2, dC: -1,
+            efecto: "\u201cEso ES la carga: tener que ser tu jefa de operaciones\u201d, responde. Ofreciste ser empleado cuando ella pedía un socio.",
+            fb: "El \u2018dime y lo hago\u2019 suena colaborador y confirma el problema: le dejas a ella el trabajo de pensar. La carga mental no se delega pidiendo tareas: se comparte tomando dueño." },
+          { t: "\u201cEntiendo la carga invisible, y no la veía así. Propuesta: me quedo de dueño total de dos frentes — compra semanal y baños — de pensar-a-hacer, sin que me lo recuerdes. Si fallo, me lo cobras con este mismo ejemplo.\u201d", tipo: "regulada", hab: "formula", dT: -2, dC: 3,
+            efecto: "Te mira sorprendida: \u201c¿de pensar a hacer? Trato.\u201d La discusión de años acaba de volverse un sistema de dos frentes.",
+            fb: "De la queja al diseño: dueño de frentes completos + criterio de cobro. Responder a la carga mental con arquitectura, no con promesas — nivel domador." },
+          { t: "\u201cBueno, y yo cargo con otras cosas que tú no ves, ¿eh? El auto, las cuentas...\u201d", tipo: "impulso", hab: "validar", dT: 2, dC: -2,
+            efecto: "\u201cNo estamos compitiendo\u201d — pero ya están. El marcador de cargas se abre y no tiene final feliz.",
+            fb: "El contra-inventario: verdad probable en turno equivocado. Tu carga existe y se conversa — DESPUÉS de que la de ella sea escuchada. El orden es el mensaje." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201cOk... ¿y lo del tono de hoy? Porque yo tampoco te hablé bien.\u201d",
+          tenso: "Ella: \u201cVeremos si esta vez dura más de una semana.\u201d",
+          calido: "Ella se acurruca al lado: \u201ctrato hecho, socio.\u201d"
+        },
+        opciones: [
+          { t: "\u201cSí: el \u2018nunca\u2019 y el tono de fiscal me cierran. Cuando algo te desborde, dímelo como hoy al final — directo y sin censo. Yo prometo no responder con lista de defensas.\u201d", tipo: "regulada", hab: "limite", dT: -1, dC: 2,
+            efecto: "\u201cJusto. Y tú avísame antes de llegar a domingo-zombie\u201d, devuelve. Dos reglas nuevas, cero heridos.",
+            fb: "Cierre con límite recíproco: cada uno nombró su gatillo y su compromiso. Las discusiones que terminan en reglas son inversión; las que terminan en tregua, deuda." },
+          { t: "\u201cNo importa, ya está.\u201d", tipo: "parcial", hab: "limite", dT: 0, dC: 0,
+            efecto: "El acuerdo de frentes queda; el tema del tono queda libre para reincidir. Media victoria.",
+            fb: "Perdonar el tono sin nombrarlo garantiza su regreso: lo que no cuesta ni dos frases, se repite." },
+          { t: "\u201cSí, sobre el tono: a ver si es la última vez que me hablas así.\u201d", tipo: "impulso", hab: "limite", dT: 2, dC: -2,
+            efecto: "La amenaza vaga agria el final: de socios volvieron a fiscal y acusado en una frase.",
+            fb: "Ultimátum difuso (\u2018a ver si es la última\u2019): ni límite ni petición — solo desafío. El cierre de una discusión es su parte más recordada; la incendiaste." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "El \u2018nunca ayudas\u2019 escondía la carga mental invisible — y salió a la luz sin juicio. Dos frentes con dueño, dos reglas de tono, y la sensación nueva de haber discutido EN EL MISMO EQUIPO.",
+      medio: "Algo se entendió, algo se acordó, algo quedó flotando. Mejor que la guerra; menos que la paz.",
+      mal: "Empezó siendo ropa doblada y terminó siendo un juicio con dos fiscales y ningún juez. El \u2018nunca\u2019 de ella era injusto; tu contabilidad lo volvió eterno."
+    },
+    analisis: {
+      emocion: "Atacado + injusticia (el \u2018nunca\u2019 activa el archivo de pruebas), y en ella: saturación por carga invisible.",
+      necesidad: "La tuya: reconocimiento de lo que sí haces. La de ella: compartir la carga de PENSAR, no solo de hacer.",
+      interpretacion: "\u201cMe critica = no valora nada de lo mío\u201d (era: \u2018estoy desbordada y exploté con censo\u2019).",
+      sesgo: "Literalidad hostil sobre el \u2018nunca\u2019 + contra-inventario (competencia de víctimas).",
+      ventana: "Amarillo con cansancio de fondo en ambos: el terreno (domingo, semana brutal) jugaba en contra desde antes.",
+      alternativa: "Nombrar la pica + validar primero → propuesta de dueño de frentes → límites recíprocos de tono.",
+      consecuencia: "Litigar los \u2018nunca\u2019 entrena discusiones de archivo; escuchar debajo y responder con sistema las vuelve cada vez más cortas."
+    },
+    razonamiento: "La versión regulada piensa: \u201cEl \u2018nunca\u2019 me enciende el archivo de pruebas — trampa conocida: ganar el dato, perder la tarde. ¿Qué hay debajo de su censo? Agotamiento, probablemente la carga invisible. Valido primero, mi pica la nombro sin desplegarla. Y no ofrezco ser empleado (\u2018dime qué hago\u2019): ofrezco ser dueño de frentes completos. Al cierre, la regla de tono — recíproca, porque yo también goteo.\u201d"
+  },
+
+  /* ============ PAREJA · convivencia · Nivel 3 ============ */
+  {
+    id: "s-convivencia-3", cat: "pareja", sub: "convivencia", nivel: 3,
+    titulo: "La escalada de los platos", disciplina: "palabra", emocion: "saturado / acorralado",
+    duracion: "~4 min", inicioT: 6, inicioC: 4,
+    contexto: "Martes, 22:15, los dos fundidos. Empezó por los platos sin lavar y en cuatro minutos ya desfilaron el desorden, tu madre, sus horarios y \u2018lo de diciembre\u2019. Las voces suben. Sientes el pecho a 7 y la próxima frase cargada en la recámara.",
+    turnos: [
+      {
+        npc: {
+          base: "Ella, alzando la voz: \u201c¡Y no me cambies de tema, que contigo todo termina en excusas!\u201d",
+          tenso: "Ella, gritando ya: \u201c¡¿Sabes qué?! ¡Estoy HARTA de esta casa!\u201d",
+          calido: "Ella baja medio tono: \u201cperdón por gritar... pero es que ya no sé cómo decírtelo.\u201d"
+        },
+        opciones: [
+          { t: "Subir la voz por encima de la suya: \u201c¡¿EXCUSAS?! ¡A ver, hablemos de TUS horarios entonces!\u201d", tipo: "impulso", hab: "pausa", dT: 4, dC: -3,
+            efecto: "Los dos gritan a la vez y nadie oye nada. El vecino golpea la pared. Mañana ninguno recordará el argumento — solo el volumen.",
+            fb: "Escalada simétrica con cambio de frente: dos personas fuera de la ventana no discuten — compiten en decibelios. Cada tema nuevo es más leña." },
+          { t: "\u201c¿Sabes qué? Me voy a dormir. Contigo no se puede.\u201d", tipo: "impulso", hab: "pausa", dT: 3, dC: -3,
+            efecto: "Portazo del cuarto. Ella se queda hablando sola en la cocina. La noche termina; la guerra, no.",
+            fb: "Fuga con sentencia (\u2018contigo no se puede\u2019): abandonas el ring etiquetándola de imposible. Ni pausa ni límite: castigo con puerta." },
+          { t: "Bajar TÚ la voz a propósito: \u201cAsí, gritando, nos hacemos daño y no resolvemos nada. Pausa: veinte minutos, y volvemos SOLO al tema de los platos. A las 22:40 en la mesa.\u201d", tipo: "regulada", hab: "pausa", dT: -3, dC: 1,
+            efecto: "Tu volumen bajo la descoloca dos segundos — y funciona: \u201c...está bien. 22:40.\u201d El incendio pierde su oxígeno.",
+            fb: "Pausa bilateral + acotar el tema + hora exacta: la triple jugada anti-escalada. Bajar tu volumen primero es acción opuesta pura — y contagiosa." }
+        ]
+      },
+      {
+        npc: {
+          base: "22:40, la mesa. Ella, más calmada: \u201cOk. Los platos. Pero entiende que para mí no son \u2018solo platos\u2019.\u201d",
+          tenso: "22:40. Ella llega con los brazos cruzados: \u201cA ver, tu famosa conversación.\u201d",
+          calido: "22:40. Ella trae dos tés: \u201ctregua. Hablemos como gente.\u201d"
+        },
+        opciones: [
+          { t: "\u201cSon platos. Literalmente platos. No hagamos drama de todo.\u201d", tipo: "impulso", hab: "validar", dT: 3, dC: -2,
+            efecto: "\u201cAhí está: para ti nada de lo mío es importante\u201d — y la escalada renace de sus cenizas, ahora con evidencia fresca.",
+            fb: "Minimizar el símbolo: para ella los platos codifican \u2018me toca todo a mí\u2019. Decir \u2018no es para tanto\u2019 es discutir contra el diccionario ajeno." },
+          { t: "\u201cTe creo que no son solo platos. ¿Qué significan para ti cuando los ves ahí?\u201d — y escuchar de verdad.", tipo: "regulada", hab: "escucha", dT: -2, dC: 3,
+            efecto: "\u201cQue estoy sola en esto\u201d, dice, y la conversación por fin habla el idioma real. Los platos eran alfabeto, no mensaje.",
+            fb: "Preguntar por el significado: la herramienta reina de convivencia. Cada objeto de la casa es un símbolo; discutir el símbolo sin su significado es boxear niebla." },
+          { t: "\u201cVale, propongo turnos: días pares yo, impares tú, y listo.\u201d", tipo: "parcial", hab: "formula", dT: 0, dC: 0,
+            efecto: "\u201c...bueno\u201d, acepta sin brillo. El sistema quizá funcione; el \u2018no son solo platos\u2019 quedó sin traducir.",
+            fb: "Solución antes de comprensión: el clásico arreglar-rápido. El plan es decente, pero saltarte el significado deja la mecha puesta para otro objeto." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201cGracias por parar la pelea antes... aunque me costó admitirlo. ¿Cómo evitamos llegar ahí de nuevo?\u201d",
+          tenso: "Ella: \u201cEn fin. ¿Los platos qué?\u201d",
+          calido: "Ella: \u201cOye... 22:15 y discutiendo de platos. Qué par, ¿no?\u201d — se ríe cansada."
+        },
+        opciones: [
+          { t: "\u201cFácil: no empezando peleas a las diez de la noche.\u201d", tipo: "parcial", hab: "marco", dT: 1, dC: -1,
+            efecto: "\u201c¿O sea que fue culpa mía el horario?\u201d — la regla era buena; el dedo acusador la arruinó.",
+            fb: "Regla correcta en formato reproche: \u2018no empezando TÚ\u2019. Las reglas de pareja se redactan en primera persona plural o mueren en la aduana." },
+          { t: "\u201cDos cosas: regla de las 22:00 — nada pesado después de esa hora, se agenda para el día siguiente. Y nuestra señal: si uno dice \u2018platos\u2019 en medio de una escalada, es código de pausa automática. ¿Firmamos?\u201d", tipo: "regulada", hab: "marco", dT: -2, dC: 3,
+            efecto: "Se ríe: \u201c¿\u2018platos\u2019 como palabra de seguridad de peleas? Me encanta. Firmado.\u201d Acaban de diseñar su primer sistema anti-escalada.",
+            fb: "La conversación del contrato en versión doméstica: horario protegido + señal acordada. Las parejas que duran no pelean menos — frenan antes." },
+          { t: "\u201cNo sé... supongo que tener más paciencia.\u201d", tipo: "impulso", hab: "marco", dT: 0, dC: 0,
+            efecto: "Asienten los dos con esa vaguedad de las promesas sin plan. La próxima escalada ya tiene fecha: cualquiera.",
+            fb: "\u2018Más paciencia\u2019 es esperanza, no sistema. Lo que no tiene regla, señal ni horario, se repite intacto." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "Los platos revelaron su traducción (\u2018estoy sola en esto\u2019), la escalada murió por falta de oxígeno y salieron con sistema: regla de las 22:00 y palabra-código. La convivencia no se gana discutiendo mejor: se gana frenando antes.",
+      medio: "La pelea se enfrió y algo se acordó. El símbolo quedó a medio traducir — volverá con otro disfraz (la ropa, las llaves, el gato).",
+      mal: "Empezó en platos y terminó en inventario de agravios a todo volumen. Mañana habrá que reparar la noche — y los platos seguirán ahí."
+    },
+    analisis: {
+      emocion: "Saturado + acorralado (la escalada multi-tema no deja dónde pararse); en ella: soledad doméstica.",
+      necesidad: "Freno conjunto y un tema a la vez; debajo: reparto sentido como equipo.",
+      interpretacion: "\u201cSaca todo el archivo = quiere ganarme\u201d (era: desborde sin freno instalado).",
+      sesgo: "Cambio de frente defensivo (tus horarios ↔ mi madre) + minimización del símbolo (\u2018son solo platos\u2019).",
+      ventana: "Rojo mutuo a las 22:15 con cansancio: el peor terreno posible. La única jugada era la pausa — nada se resuelve ahí.",
+      alternativa: "Bajar el volumen propio + pausa con hora y tema acotado → preguntar el significado → regla horaria + señal código.",
+      consecuencia: "Las escaladas nocturnas repetidas erosionan más que los desacuerdos: la pareja aprende a temerse. El freno acordado es el músculo que las jubila."
+    },
+    razonamiento: "La versión regulada piensa: \u201cPecho a 7, 22:15, multi-tema: territorio de pausa, no de razones. Primero bajo MI volumen — acción opuesta. Pausa con hora y UN tema. En la mesa: los platos son símbolo; pregunto qué significan antes de proponer nada. Y el verdadero premio no es ganar esta: es instalar el freno para todas las siguientes — regla horaria y palabra código.\u201d"
+  },
+
+  /* ============ PAREJA · inseguridad · Nivel 3 ============ */
+  {
+    id: "s-telefono-3", cat: "pareja", sub: "inseguridad", nivel: 3,
+    titulo: "Revisó tu teléfono", disciplina: "palabra", emocion: "invadido / injusticia",
+    duracion: "~4 min", inicioT: 6, inicioC: 4,
+    contexto: "Sales de la ducha y la encuentras con TU teléfono en la mano, desbloqueado, leyendo. \u201c¿Quién es \u2018Andrea trabajo\u2019 y por qué le escribes a las once de la noche?\u201d Es la coordinadora del proyecto; los mensajes son inocentes. Pero el teléfono era tuyo, y algo se te calienta rápido. Aquí el que regula eres tú — mientras el límite cruzado es el tuyo.",
+    turnos: [
+      {
+        npc: {
+          base: "Ella, con el teléfono todavía en la mano: \u201c¿Y bien? Estoy esperando.\u201d",
+          tenso: "Ella, temblándole la voz: \u201csi no tienes nada que esconder, no te molestaría que mire.\u201d",
+          calido: "Ella, bajando el teléfono: \u201cperdón... sé que no debí. Pero necesito que me expliques.\u201d"
+        },
+        opciones: [
+          { t: "Arrancarle el teléfono de la mano: \u201c¡¿QUÉ haces revisando MIS cosas?!\u201d", tipo: "impulso", hab: "limite", dT: 4, dC: -3,
+            efecto: "El manotazo confirma su peor guion: \u2018reaccionó así porque esconde algo\u2019. Tu límite legítimo acaba de disfrazarse de culpa.",
+            fb: "Límite correcto, ejecución explosiva: la forma violenta le regaló la narrativa. En rojo, hasta la razón parece coartada." },
+          { t: "\u201cEs del trabajo. Revisa todo lo que quieras, total, ya qué.\u201d — y encerrarte en el cuarto.", tipo: "parcial", hab: "limite", dT: 2, dC: -2,
+            efecto: "Consigue el teléfono y pierde al dueño: te rendiste con resentimiento. El precedente queda: revisar es gratis.",
+            fb: "Capitulación con hielo: ni defendiste tu límite ni atendiste su miedo. El \u2018ya qué\u2019 es la bandera blanca del que cobrará después." },
+          { t: "Respirar hondo. \u201cTe voy a responder lo de Andrea completo, porque no hay nada. Y después vamos a hablar de que tomaras mi teléfono — porque eso sí es un problema. Las dos cosas, en ese orden.\u201d", tipo: "regulada", hab: "marco", dT: -2, dC: 2,
+            efecto: "El marco la sorprende: esperaba pelea o rendición, no agenda. \u201c...ok. Explícame lo de Andrea\u201d, dice, soltando el teléfono.",
+            fb: "Dos carpetas, un orden: primero desactivas su miedo (transparencia), después cobras tu límite (en verde). Regular con la razón de tu lado es el examen más difícil — y lo pasaste en la primera frase." }
+        ]
+      },
+      {
+        npc: {
+          base: "Le muestras el chat completo: coordinación de entregas, cero ambigüedad. Ella lee en silencio. \u201c...Ok. Es trabajo.\u201d Baja la mirada.",
+          tenso: "Lee el chat y busca más: \u201c¿y este emoji? ¿y por qué te dice \u2018genio\u2019?\u201d",
+          calido: "Lee dos líneas y suelta el teléfono: \u201cno necesito ver más. Perdóname. No sé qué me pasó.\u201d"
+        },
+        opciones: [
+          { t: "\u201c¿Viste? TODO este drama por nada. Deberías tener vergüenza.\u201d", tipo: "impulso", hab: "reparar", dT: 3, dC: -3,
+            efecto: "La humillación tapa su disculpa naciente. Ahora se defiende del sermón en vez de mirar su miedo.",
+            fb: "Cobrar con humillación: tenías el punto ganado y lo convertiste en castigo. La vergüenza ajena inducida no enseña — atrinchera." },
+          { t: "\u201cEs trabajo, sí. Ahora lo otro: ¿qué te llevó a revisar? Porque ese miedo tuyo me importa — Y mi teléfono no vuelve a tocarse sin preguntarme. Las dos cosas son verdad a la vez.\u201d", tipo: "regulada", hab: "limite", dT: -2, dC: 3,
+            efecto: "\u201cÚltimamente me siento insegura de todo... y lo pagué contigo\u201d, admite. El miedo salió a la luz Y el límite quedó en pie.",
+            fb: "Compasión con frontera: validas la emoción (su inseguridad) sin validar la conducta (revisar). Esa distinción es la columna vertebral de los límites adultos." },
+          { t: "\u201cYa está, olvidémoslo. No pasó nada.\u201d", tipo: "parcial", hab: "limite", dT: 0, dC: 0,
+            efecto: "La paz vuelve rápida y barata. El teléfono queda jurídicamente disponible para la próxima ola de inseguridad.",
+            fb: "Perdón exprés sin límite: compraste la calma de hoy al precio del precedente. Lo que no cuesta ni una conversación, se repite." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201c¿Y ahora qué hacemos con... esto? Con mi desconfianza, digo.\u201d",
+          tenso: "Ella, a la defensiva: \u201cbueno, ¿y qué esperabas? Ponte en mi lugar también.\u201d",
+          calido: "Ella te abraza: \u201cgracias por no gritarme. Yo habría gritado.\u201d"
+        },
+        opciones: [
+          { t: "\u201cHacemos esto: cuando la inseguridad te muerda, me la DICES — \u2018estoy insegura con X\u2019 — y yo respondo lo que necesites saber. Preguntas ilimitadas, registros cero. ¿Trato?\u201d", tipo: "regulada", hab: "marco", dT: -2, dC: 3,
+            efecto: "\u201cPreguntas ilimitadas, registros cero...\u201d, repite despacio. \u201cTrato.\u201d La desconfianza acaba de recibir un canal legal.",
+            fb: "El acuerdo que resuelve de raíz: transparencia máxima por canal directo, vigilancia cero. Le das a su miedo un camino digno — y a tu privacidad, un muro con puerta." },
+          { t: "\u201cEso lo tienes que trabajar tú. Yo no puedo hacer nada con tu inseguridad.\u201d", tipo: "parcial", hab: "validar", dT: 1, dC: -1,
+            efecto: "Es parcialmente cierto y suena a portazo. Se cierra: \u201cok, mi problema, entendido\u201d.",
+            fb: "Verdad sin puente: su trabajo interno existe, Y la pareja puede dar canal. \u2018Es tu tema\u2019 sin oferta es abandono con razón." },
+          { t: "\u201cCon que no vuelvas a tocar mi teléfono me basta.\u201d", tipo: "impulso", hab: "marco", dT: 1, dC: -1,
+            efecto: "El límite queda, el miedo queda huérfano. La inseguridad sin canal buscará otra rendija: tus horarios, tus salidas, tus silencios.",
+            fb: "Solo muro, sin puerta: defendiste el perímetro e ignoraste la causa. Los miedos sin canal no se rinden — cambian de método." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "El episodio más inflamable posible — tu límite cruzado, su miedo desnudo — terminó con transparencia pactada, teléfono blindado y un canal digno para la inseguridad. Regular teniendo razón: el cinturón negro.",
+      medio: "Lo de Andrea quedó claro; el resto quedó en tablas. O el límite o el miedo siguen sin dueño — y lo que no tiene dueño, reincide.",
+      mal: "Tenías la razón y la quemaste en la forma. Ahora hay dos heridas: su desconfianza y tu explosión — y la segunda le da coartada a la primera."
+    },
+    analisis: {
+      emocion: "Invadido + injusticia (límite cruzado con acusación encima); en ella: inseguridad/miedo a perder.",
+      necesidad: "La tuya: privacidad respetada. La de ella: certeza. El acuerdo bueno alimenta ambas: transparencia por canal, vigilancia cero.",
+      interpretacion: "\u201cMe revisa = no confía = me acusa\u201d (cierto en conducta; debajo había pánico, no fiscalía).",
+      sesgo: "Todo-o-nada bajo ataque (\u2018o exploto o me rindo\u2019 — existía el marco de dos carpetas).",
+      ventana: "Rojo de arranque con la razón de tu lado: la combinación que más explosiones \u2018justificadas\u2019 produce. La razón no exime de regular — lo exige.",
+      alternativa: "Marco de dos carpetas (primero su miedo, después tu límite) → compasión con frontera → acuerdo transparencia/canal.",
+      consecuencia: "Explotar con razón enseña que tus límites vienen con metralla (y se cruzan a escondidas); cobrarlos en verde enseña que son serios Y habitables."
+    },
+    razonamiento: "La versión regulada piensa: \u201cLímite cruzado, acusación encima: 7 y subiendo, y encima TENGO razón — el combo más peligroso. La razón se cobra en verde o se pierde en la forma. Dos carpetas, un orden: desactivo su miedo con transparencia total, y DESPUÉS mi límite, firme y sin humillar. Compasión con frontera: valido su inseguridad, no su método. Y cierro con arquitectura: preguntas ilimitadas, registros cero.\u201d"
+  },
+
+  /* ============ PAREJA · ruptura · Nivel 5 ============ */
+  {
+    id: "s-ruptura-5", cat: "pareja", sub: "ruptura", nivel: 5,
+    titulo: "Terminar en verde", disciplina: "reparacion", emocion: "duelo / miedo a perder",
+    duracion: "~10 min", inicioT: 6, inicioC: 3,
+    contexto: "Llevan meses intentándolo: terapia de pareja, acuerdos, tus noventa días de entrenamiento. Y aun así, los dos lo saben: se quieren y no funcionan. Hoy decidiste tener LA conversación — no en un pico, no como amenaza: como decisión tomada en verde, tras dos semanas pensándolo. Ella abre la puerta: \u201cQuerías hablar... me estás asustando.\u201d",
+    turnos: [
+      {
+        npc: {
+          base: "Ella se sienta despacio: \u201cDilo de una vez, por favor.\u201d",
+          tenso: "Ella, con lágrimas ya: \u201csi es lo que creo, no quiero escucharlo.\u201d",
+          calido: "Ella toma aire: \u201cok. Sea lo que sea, hablémoslo bien. Como aprendimos.\u201d"
+        },
+        opciones: [
+          { t: "\u201cCreo que... bueno, tú también lo has notado raro, ¿no? ¿Tú cómo lo ves? ¿Tú qué harías?\u201d", tipo: "parcial", hab: "honestidad", dT: 1, dC: -1,
+            efecto: "\u201c¿Me estás pidiendo que termine YO por ti?\u201d — lo vio. Delegar la estocada es la cobardía que más se recuerda.",
+            fb: "Externalizar la decisión: quieres que ella pronuncie tu sentencia para no cargarla. La claridad dolorosa es más amable que la niebla cómoda." },
+          { t: "\u201cHe decidido terminar. Lo pensé dos semanas, en calma, y es firme. Te quiero — y precisamente por eso no voy a alargar algo que a los dos nos está desgastando. Quería decírtelo de frente y con tiempo.\u201d", tipo: "regulada", hab: "honestidad", dT: 1, dC: 2,
+            efecto: "Llora. Pero asiente despacio: \u201c...gracias por decírmelo así y no con un mensaje, o en una pelea.\u201d El dolor llegó limpio, sin escombros encima.",
+            fb: "Claridad + cuidado + decisión en verde: la santísima trinidad de terminar bien. Duele igual — pero es dolor de herida limpia, no de herida infectada. (Sí: aquí la tensión sube AUNQUE hagas todo bien. Regular no es evitar el dolor: es no añadirle daño.)" },
+          { t: "\u201cEs que ya no puedo más contigo. Lo intenté TODO y tú nada cambia.\u201d", tipo: "impulso", hab: "reparar", dT: 4, dC: -3,
+            efecto: "El duelo arranca con juicio de culpas. Ella contraataca con su propia lista, y la despedida se vuelve batalla final.",
+            fb: "Terminar culpando: convierte el cierre en veredicto. Los finales con fiscal producen años de rencor; los finales con verdad, meses de duelo limpio." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201c¿Y ya está? ¿Meses de terapia, tus noventa días, todo... para esto? ¿No merezco al menos una última oportunidad?\u201d",
+          tenso: "Ella, entre lágrimas y rabia: \u201c¡Claro, ahora que aprendiste a regularte me dejas! ¡Qué conveniente!\u201d",
+          calido: "Ella, llorando bajito: \u201cuna parte de mí lo sabía... solo que no quería que llegara el día.\u201d"
+        },
+        opciones: [
+          { t: "\u201cTienes razón... quizá una última oportunidad más. Olvida lo que dije.\u201d", tipo: "impulso", hab: "honestidad", dT: -1, dC: 0,
+            efecto: "El alivio dura una hora. La decisión tomada en verde sigue siendo verdad esa noche, y la semana próxima — solo que ahora con una promesa rota encima.",
+            fb: "Retroceder ante el dolor ajeno: compasión mal dirigida. Revocar en caliente una decisión tomada en frío no es amor — es alargar la anestesia y duplicar la factura." },
+          { t: "\u201cMereces todo — y justamente por eso no te voy a dar una oportunidad en la que ya no creo. Sería usarte de sala de espera. Lo que intentamos fue real, TÚ fuiste real. No funcionó lo nuestro, no tú.\u201d", tipo: "regulada", hab: "validar", dT: -1, dC: 2,
+            efecto: "\u201c\u2018No tú\u2019...\u201d, repite, y algo en su espalda se afloja. La distinción entre \u2018fallaste\u2019 y \u2018fallamos\u2019 vale años de autoestima futura.",
+            fb: "Sostener la decisión validando a la persona: no fallaste TÚ, falló el nosotros. Firmeza sin crueldad — la frontera más fina de todas, caminada entera." },
+          { t: "\u201cNo me hagas esto más difícil, por favor.\u201d", tipo: "parcial", hab: "escucha", dT: 1, dC: -1,
+            efecto: "\u201c¿DIFÍCIL PARA TI?\u201d — pediste que la persona herida administre tu comodidad. El foco se invirtió en el peor momento.",
+            fb: "Centrar tu dificultad: quien decide terminar carga la logística emocional del momento. Tu dolor es real — y hoy no es el protagonista." }
+        ]
+      },
+      {
+        npc: {
+          base: "Un silencio largo. Ella: \u201c¿Y ahora qué? ¿Qué se supone que hagamos con... todo? Las cosas, los planes, tu familia que adoro...\u201d",
+          tenso: "Ella: \u201cVete. Ahora. No quiero logística, no quiero tu ordenada despedida.\u201d",
+          calido: "Ella seca las lágrimas: \u201cok... si vamos a hacer esto, hagámoslo bien. ¿Cómo?\u201d"
+        },
+        opciones: [
+          { t: "\u201cHoy nada — hoy solo era decirlo con verdad. Propongo hablar lo práctico el sábado, cuando el primer golpe haya bajado. Y si esta noche necesitas espacio o necesitas que me quede un rato, tú mandas.\u201d", tipo: "regulada", hab: "marco", dT: -2, dC: 2,
+            efecto: "\u201c...quédate un rato\u201d, dice. Y se quedan, en un silencio triste y extrañamente limpio. La logística puede esperar; la dignidad, no.",
+            fb: "Separar el duelo de la logística + devolverle control (\u2018tú mandas\u2019): la persona que recibe el golpe elige la forma de la primera noche. Marco impecable." },
+          { t: "Sacar el teléfono: \u201cmira, hice una lista: las cosas, el depósito, cómo decirle a...\u201d", tipo: "parcial", hab: "marco", dT: 2, dC: -2,
+            efecto: "\u201c¿Trajiste... una LISTA?\u201d — tu eficiencia se leyó como frialdad premeditada. El orden llegó una hora antes que la humanidad.",
+            fb: "Logística en la zona cero: organizar es tu forma de manejar la angustia, y hoy parece que llevabas la mudanza planeada. El duelo primero; el Excel, el sábado." },
+          { t: "\u201cNo sé... ya iremos viendo, supongo.\u201d — y levantarte para irte.", tipo: "impulso", hab: "marco", dT: 2, dC: -2,
+            efecto: "Te vas dejando el aire lleno de cabos sueltos. Ella se queda sola con todas las preguntas y ninguna fecha.",
+            fb: "Huida post-anuncio: soltaste la bomba y evacuaste. Quien decide terminar se queda a sostener el primer impacto — eso también es la decisión." }
+        ]
+      },
+      {
+        npc: {
+          base: "En la puerta, más tarde. Ella: \u201cUna última cosa... ¿me vas a odiar? ¿Vamos a terminar odiándonos como todos?\u201d",
+          tenso: "En la puerta: \u201cno me escribas en semanas. Lo digo en serio. Necesito no saber de ti.\u201d",
+          calido: "En la puerta, medio sonríe entre lágrimas: \u201cfuimos un buen intento, ¿verdad?\u201d"
+        },
+        opciones: [
+          { t: "\u201cNunca podría odiarte. Vamos a hablarnos todos los días, va a ser como siempre pero sin etiqueta, ya verás...\u201d", tipo: "impulso", hab: "honestidad", dT: 0, dC: 0,
+            efecto: "Le regalas una esperanza ambigua que los tendrá orbitándose meses, sin duelo y sin futuro. La puerta quedó entreabierta — que es la peor forma de cerrada.",
+            fb: "Promesa de \u2018amigos instantáneos\u2019: anestesia el momento e infecta el duelo. La cercanía inmediata post-ruptura casi siempre es negación con horario de visitas." },
+          { t: "\u201cNo hay odio ni lo habrá de mi parte. Y te propongo lo contrario de lo fácil: un tiempo real sin contacto, para que el duelo respire — el que TÚ definas. Después, si la vida da, nos reencontramos de otra forma. Lo que sí es para siempre: la gratitud.\u201d", tipo: "regulada", hab: "limite", dT: -1, dC: 2,
+            efecto: "Asiente despacio: \u201cel que yo defina... ok.\u201d La puerta se cierra completa y sin portazo — que es la única forma en que algún día puede volver a abrirse, distinta.",
+            fb: "El límite más contraintuitivo: distancia como acto de cuidado. Contacto cero temporal + su control del plazo + gratitud explícita = duelo limpio para ambos." },
+          { t: "\u201cNo sé qué va a pasar. No me pidas certezas ahora.\u201d", tipo: "parcial", hab: "honestidad", dT: 1, dC: -1,
+            efecto: "Honesto pero áspero: la dejas sin mapa en el momento de máxima niebla. La incertidumbre total también es una forma de descuido.",
+            fb: "Honestidad sin sostén: no tener todas las respuestas es humano; no ofrecer NINGÚN marco (contacto, plazos) deja a la otra persona cargando la niebla de los dos." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "Terminaron. Y en el peor día de la relación, nadie fue humillado, nadie mendigó, nadie mintió. El duelo que empieza limpio termina antes — y deja intacto lo único que sobrevive a las parejas: el respeto por lo que fue.",
+      medio: "La decisión quedó dicha; la forma quedó a medias. Habrá que reparar algún borde en los próximos días — hazlo pronto: los finales también admiten control de daños.",
+      mal: "Terminar era la decisión correcta y la ejecución la volvió una batalla. Ahora hay dos duelos: el de la relación y el de cómo terminó. El segundo era evitable."
+    },
+    analisis: {
+      emocion: "Duelo anticipado + miedo (a su dolor, al odio futuro, a estar equivocándote) + culpa del que decide.",
+      necesidad: "La tuya: coherencia con una decisión tomada en verde. La de ella: dignidad, claridad y control sobre SU parte del proceso.",
+      interpretacion: "\u201cSi retrocedo ante sus lágrimas soy compasivo\u201d (eras: anestesista de un dolor que volverá con intereses).",
+      sesgo: "Compasión mal dirigida (revocar en caliente lo decidido en frío) + evitación logística o huida como manejo de la propia angustia.",
+      ventana: "Nota clave: aquí la tensión sube AUNQUE lo hagas todo bien. El éxito no se mide en T baja sino en C preservada — regular no es evitar el dolor: es no añadirle daño.",
+      alternativa: "Claridad firme + \u2018falló el nosotros, no tú\u2019 + duelo antes que logística + control del plazo en manos de quien recibe + contacto cero como cuidado.",
+      consecuencia: "Las rupturas mal ejecutadas cuestan años de rencor y contaminan las relaciones siguientes de ambos; las limpias duelen meses y dejan la gratitud en pie."
+    },
+    razonamiento: "La versión regulada piensa: \u201cDecidido en verde, dos semanas: no se renegocia bajo lágrimas — eso sería crueldad en cuotas. Mi guion: claridad en la primera frase, sin culpas ni niebla. Su dolor va a pedirme retroceder o defenderme: ni lo uno ni lo otro — sostener y validar: \u2018no fallaste tú\u2019. Logística el sábado; hoy, presencia. Y en la puerta, el regalo difícil: distancia con su plazo, gratitud sin ambigüedad. El objetivo no es que duela menos hoy: es que no envenene los años que vienen.\u201d"
+  },
+
+  /* ============ FAMILIA · críticas · Nivel 1 ============ */
+  {
+    id: "s-critica-padre-1", cat: "familia", sub: "críticas", nivel: 1,
+    titulo: "\u201c¿Y eso es un trabajo serio?\u201d", disciplina: "palabra", emocion: "desestimado",
+    duracion: "~3 min", inicioT: 4, inicioC: 5,
+    contexto: "Visita a tus padres. Cuentas entusiasmado el proyecto en el que llevas meses y tu padre, sin levantar la vista del plato: \u201c¿Y eso es un trabajo serio? En mis tiempos uno buscaba algo estable.\u201d Tu madre te mira de reojo, midiendo el clima.",
+    turnos: [
+      {
+        npc: {
+          base: "Tu padre sigue comiendo: \u201clo digo por tu bien, ¿eh? Uno ya vio muchas modas pasar.\u201d",
+          tenso: "Tu padre deja los cubiertos: \u201c¿ahora uno no puede opinar en su propia mesa?\u201d",
+          calido: "Tu padre levanta la vista: \u201ca ver, explícame eso... que yo de internet entiendo poco.\u201d"
+        },
+        opciones: [
+          { t: "\u201cClaro, porque tu \u2018trabajo serio\u2019 te hizo taaan feliz, ¿no? Treinta años odiando los lunes.\u201d", tipo: "impulso", hab: "limite", dT: 4, dC: -3,
+            efecto: "Golpe bajo directo a su vida entera. Se hace un silencio de cuchillos; tu madre mira el mantel. El almuerzo murió.",
+            fb: "Frase espejo nuclear: respondiste a una duda torpe atacando su biografía completa. Escalada de crítica-a-proyecto a crítica-a-persona — y la empezaste tú." },
+          { t: "\u201cSí, papá.\u201d — y comer en silencio el resto del almuerzo, hirviendo por dentro.", tipo: "parcial", hab: "honestidad", dT: 1, dC: -1,
+            efecto: "El almuerzo transcurre. La frase se suma a la colección de veinte años. Tu proyecto vuelve a ser tema prohibido en esa mesa.",
+            fb: "Tragar y archivar: paz de mesa a cambio de distancia acumulada. Cada silencio de estos le enseña que opinar así es gratis — y a ti, a no contarle tu vida." },
+          { t: "Sin morder el anzuelo: \u201cEs serio, pa: llevo meses, tiene clientes y números. Sé que suena distinto a lo tuyo — si te intriga, un día te muestro cómo funciona. Con calma.\u201d", tipo: "regulada", hab: "defusion", dT: -1, dC: 2,
+            efecto: "Gruñe un \u201chmm\u201d — pero es un hmm curioso. Tu madre aprovecha: \u201cyo sí quiero que me muestres\u201d. El tema sobrevive en la mesa.",
+            fb: "Respuesta al contenido, no al tono: datos + puente (\u2018te muestro\u2019) sin pedir su bendición. La validación paterna es deseable, no imprescindible — y no se mendiga." }
+        ]
+      },
+      {
+        npc: {
+          base: "Más tarde, tu padre en el sillón: \u201coye... ¿y de eso se vive? Digo, ¿pagan?\u201d",
+          tenso: "Tu padre, en el sillón, zapping: \u201cen fin, tú sabrás lo que haces con tu vida.\u201d",
+          calido: "Tu padre, con el café: \u201ca ver, muéstrame eso del proyecto. Pero despacio, que soy de la era del fax.\u201d"
+        },
+        opciones: [
+          { t: "\u201cSe vive, papá. Y aunque no se viviera: necesito que confíes en mí más de lo que necesito que lo entiendas. Con eso me alcanza.\u201d", tipo: "regulada", hab: "formula", dT: -1, dC: 3,
+            efecto: "Te mira dos segundos de más. \u201c...confiar sí confío, muchacho. Entender es lo que me cuesta.\u201d Es lo más cerca de un abrazo que da tu padre.",
+            fb: "Pedir lo pedible: separaste comprensión (opcional) de confianza (lo que de verdad necesitas). A los padres de otra época se les pide el gesto que sí saben dar." },
+          { t: "\u201c¿Ves? Ya empezamos otra vez con el interrogatorio.\u201d", tipo: "impulso", hab: "escucha", dT: 2, dC: -2,
+            efecto: "Su pregunta era torpe pero era interés — y la fusilaste. Se encoge de hombros y sube el volumen de la tele.",
+            fb: "Hipervigilancia al gatillo: después de la crítica del almuerzo, leíste ataque donde había acercamiento. El filtro negativo también dispara a los aliados." },
+          { t: "\u201cSí paga.\u201d — y cambiar de tema rápido.", tipo: "parcial", hab: "honestidad", dT: 0, dC: 0,
+            efecto: "Respuesta mínima, puerta cerrada con suavidad. Ni herida ni puente.",
+            fb: "Monosílabo protector: legítimo, pero era LA ventana — tu padre preguntando es tu padre intentando. Las oportunidades familiares avisan bajito." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "La duda de tu padre resultó ser interés con mala traducción — y en vez de pelear el tono, le diste datos, un puente y la petición justa: confianza sin comprensión. Las mesas familiares se reeducan así: sin sangre y sin mendigar.",
+      medio: "El almuerzo se salvó y el tema quedó neutral. Ni herida nueva ni puente nuevo.",
+      mal: "Una frase torpe de sobremesa terminó en artillería biográfica. Tu proyecto no necesitaba defensores tan letales — necesitaba un embajador tranquilo."
+    },
+    analisis: {
+      emocion: "Desestimado (\u2018lo mío no cuenta como serio\u2019) — la fibra de siempre con tu padre.",
+      necesidad: "Respeto por tu camino; y descubriste la versión pedible: confianza, aunque no haya comprensión.",
+      interpretacion: "\u201cDuda de mi proyecto = me considera un fracaso\u201d (era: no entiende el mapa y lo dice fatal).",
+      sesgo: "Personalizar el estilo generacional + filtro negativo (la pregunta de interés leída como interrogatorio).",
+      ventana: "Amarillo bajo con historia larga: pilas de veinte años bajo la mesa.",
+      alternativa: "Responder al contenido con datos + puente, y pedir lo pedible (confianza) en vez de exigir lo imposible (entusiasmo).",
+      consecuencia: "Cada frase espejo en esa mesa compra diez almuerzos de silencio; cada respuesta serena reabre un canal que llevaba años en mantenimiento."
+    },
+    razonamiento: "La versión regulada piensa: \u201cPinchazo conocido: desestimado, edición padre. Su frase es torpeza generacional al 80% y preocupación al 20% — no sentencia. No muerdo el tono: respondo al contenido, tiendo un puente chico. Y lo que necesito de él no es que entienda mi trabajo: es que confíe en mí. Eso sí se lo puedo pedir — y eso sí me lo puede dar.\u201d"
+  },
+
+  /* ============ FAMILIA · control · Nivel 3 ============ */
+  {
+    id: "s-control-madre-3", cat: "familia", sub: "control", nivel: 3,
+    titulo: "La opinión no pedida (edición mudanza)", disciplina: "palabra", emocion: "invadido / controlado",
+    duracion: "~4 min", inicioT: 5, inicioC: 5,
+    contexto: "Anuncias en la sobremesa que te mudas con tu pareja el mes que viene. Tu madre suelta el tenedor: \u201c¿CÓMO que se mudan? ¿Ya lo decidiste sin consultarnos? Es apresurado, ella ni siquiera... y además ese barrio... Yo llamo mañana al dueño y le digo que no.\u201d Habla en serio: es capaz.",
+    turnos: [
+      {
+        npc: {
+          base: "Tu madre, acelerada: \u201ces que ustedes no piensan las cosas. ¿Ya vieron gastos? ¿Y si no funciona? Yo mañana mismo...\u201d",
+          tenso: "Tu madre, con la voz quebrada: \u201cclaro, ya para qué existo yo. Hagan lo que quieran, total, la madre es un mueble.\u201d",
+          calido: "Tu madre respira: \u201cme agarró de sorpresa... es que van rápido, hijo. ¿O soy yo?\u201d"
+        },
+        opciones: [
+          { t: "\u201c¡TENGO TREINTA AÑOS, MAMÁ! ¡No necesito tu permiso para NADA!\u201d", tipo: "impulso", hab: "limite", dT: 4, dC: -3,
+            efecto: "Se le llenan los ojos y saca el pañuelo: ahora eres el hijo que grita a su madre. El control ganó un disfraz de víctima y tú perdiste la mesa.",
+            fb: "Límite correcto a volumen incorrecto: el grito le regala el papel de herida y a ti el de agresor. Contra el control, la firmeza serena es letal; la explosión, combustible." },
+          { t: "\u201cBueno, má, todavía no está confirmado del todo... vamos a ver, tranquila.\u201d", tipo: "impulso", hab: "honestidad", dT: -1, dC: -2,
+            efecto: "Se calma al instante — porque entendió que aún puede influir. Mañana llegará con tres departamentos \u2018mejores\u2019 y un plan de demolición dulce.",
+            fb: "Mentira apaciguadora: compraste paz de sobremesa vendiendo la puerta de tu decisión. El control no descansa: reagrupa. Y le diste coordenadas." },
+          { t: "Voz baja y firme: \u201cMá, te lo cuento porque te quiero en mi vida, no para pedir permiso: está decidido. Y esto es importante: si llamas al dueño, me vas a obligar a poner una distancia que ninguno quiere. Prefiero mil veces tenerte cerca — celebrando.\u201d", tipo: "regulada", hab: "limite", dT: 1, dC: 1,
+            efecto: "Silencio incómodo. \u201c...¿ni siquiera me vas a dejar opinar?\u201d, dice más chiquita — pero el plan de llamar al dueño acaba de morir. (Nota: con controladores, la tensión sube al poner el límite. Es la subida correcta.)",
+            fb: "El límite completo: decisión no negociable + consecuencia concreta + puerta abierta al vínculo. Informar ≠ consultar — y lo dijiste sin un decibelio de más." }
+        ]
+      },
+      {
+        npc: {
+          base: "Tu madre: \u201cEs que una opina porque los quiere... ¿ahora ni opinar puedo?\u201d",
+          tenso: "Tu madre, al padre: \u201c¿tú escuchas cómo me habla? Díselo tú, a mí ya no me respeta.\u201d",
+          calido: "Tu madre suspira hondo: \u201cestá bien... es tu vida. Solo prométeme que si algo sale mal, avisas.\u201d"
+        },
+        opciones: [
+          { t: "\u201cOpinar sí, má — decidir no. Mira la diferencia: \u2018me parece rápido\u2019 es opinar y te lo recibo. \u2018Llamo al dueño\u2019 es decidir por mí, y eso no. ¿Trato? Opiniones todas; timón, mío.\u201d", tipo: "regulada", hab: "marco", dT: -2, dC: 3,
+            efecto: "\u201c...me parece rápido\u201d, dice, probando el carril nuevo. \u201cRecibido, má\u201d, respondes — y por primera vez en años, opinó sin invadir.",
+            fb: "La distinción que reeduca: opinar vs. decidir, con ejemplo de cada una. No le quitaste la voz — le quitaste el timón. Ese matiz es lo que vuelve el límite habitable." },
+          { t: "\u201cEs que tus opiniones nunca son opiniones, mamá, son órdenes con moño.\u201d", tipo: "parcial", hab: "limite", dT: 2, dC: -1,
+            efecto: "Frase certera — y con \u2018nunca\u2019 y sarcasmo. Se atrinchera: \u201cah, o sea que soy una dictadora\u201d. El punto era bueno; el envoltorio lo devaluó.",
+            fb: "Diagnóstico correcto en formato ataque: el \u2018nunca\u2019 + \u2018moño\u2019 convirtieron una distinción útil en etiqueta. La misma idea, sin púas, la habría alcanzado." },
+          { t: "Mirar a tu pareja con cara de \u2018te dije\u2019 y dejar que el silencio incómodo haga su trabajo.", tipo: "impulso", hab: "honestidad", dT: 2, dC: -2,
+            efecto: "Tu madre capta la mirada cómplice y se siente el enemigo común de la mesa. La alianza silenciosa la empuja al pañuelo, fase dos.",
+            fb: "Triangular con la pareja: el gesto la excluye y confirma su miedo real (\u2018lo pierdo\u2019). El límite se pone de frente, no en clave morse con terceros." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ya en la puerta, tu madre te agarra del brazo: \u201c¿Y me van a invitar a conocer el departamento, al menos?\u201d",
+          tenso: "En la puerta, digna: \u201cavisa cuando se muden. Si es que me entero.\u201d",
+          calido: "En la puerta te abraza: \u201ccuídense. Y... el barrio no está tan mal, ya lo miré en el mapa.\u201d"
+        },
+        opciones: [
+          { t: "\u201cClaro que sí: primera cena en la casa nueva, tú de invitada de honor. Ese es tu lugar, má — invitada de honor. No gerente de obra.\u201d — con una sonrisa.", tipo: "regulada", hab: "reparar", dT: -2, dC: 3,
+            efecto: "Se ríe sin querer: \u201cbobo\u201d. El límite quedó, el vínculo quedó, y hasta el chiste quedó. Salida perfecta.",
+            fb: "Cerrar con calidez y humor DESPUÉS del límite: le muestras el rol nuevo (honor, no gerencia) envuelto en cariño. El control se jubila mejor cuando el puesto de reemplazo es lindo." },
+          { t: "\u201cYa veremos, mamá.\u201d — seco, saliendo.", tipo: "impulso", hab: "reparar", dT: 1, dC: -2,
+            efecto: "Su mano suelta tu brazo despacio. Ganaste la batalla del límite y sembraste la guerra fría del mes.",
+            fb: "Castigo residual: el límite ya estaba puesto; la sequedad final fue cobro extra. Firmeza en el centro, calidez en los bordes — al revés, todo se agría." },
+          { t: "\u201cSí, sí, obvio, cuando quieras, la casa es tuya también...\u201d", tipo: "parcial", hab: "limite", dT: 0, dC: 0,
+            efecto: "\u201c¿Cuando quiera? Perfecto: el sábado llevo cortinas\u201d — y la puerta que cerraste con llave la abriste con el felpudo.",
+            fb: "Generosidad refleja que desdice el límite: \u2018la casa es tuya\u2019 es literalmente el permiso que acababas de retirar. Los cierres también cuentan — sobre todo los cierres." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "El anuncio sobrevivió, el límite quedó instalado (opinar sí, decidir no), la amenaza del dueño murió sin grito, y tu madre salió con un rol nuevo que hasta le gustó: invitada de honor. Así se emancipa un adulto sin quemar la casa paterna.",
+      medio: "La mudanza sigue en pie y tu madre en observación. El límite quedó dibujado a lápiz — repásalo con tinta en la próxima, porque lo probará.",
+      mal: "La noticia feliz terminó en pañuelos, gritos o promesas falsas. El control salió fortalecido: ahora tiene evidencia de que reaccionar fuerte funciona — o de que mentirle es tu método."
+    },
+    analisis: {
+      emocion: "Invadido/controlado (deciden por ti a los treinta), con culpa filial de fondo — el freno favorito del control.",
+      necesidad: "Autonomía reconocida SIN perder el vínculo: informar desde el amor, no consultar desde la obediencia.",
+      interpretacion: "\u201cSe mete = no me respeta\u201d (debajo del control materno casi siempre vive \u2018lo estoy perdiendo\u2019).",
+      sesgo: "Todo-o-nada emancipatorio (\u2018o exploto o obedezco\u2019 — existía la tercera: firmeza serena) + leer su control sin ver su miedo.",
+      ventana: "Amarillo con culpa: la mezcla que hace tartamudear a los límites. Ojo con la nota del turno 1: aquí la tensión SUBE al hacer lo correcto — es la subida sana.",
+      alternativa: "Informar ≠ consultar + consecuencia concreta sin volumen + distinción opinar/decidir + cierre cálido con rol nuevo.",
+      consecuencia: "Apaciguar con mentiras entrena madres detectives; explotar entrena madres mártires. La firmeza serena repetida entrena, con los años, madres invitadas de honor."
+    },
+    razonamiento: "La versión regulada piensa: \u201cAmenaza real (es capaz de llamar) + culpa activada: combo de control clásico. Regla uno: volumen bajo, el grito la victimiza. Regla dos: informar, no consultar — y la consecuencia dicha una vez, en serio. Regla tres: su control es miedo a perderme, así que el límite va envuelto en vínculo: \u2018te quiero cerca — celebrando\u2019. Y le doy carril nuevo: opiniones todas, timón mío. Al final, calidez: el rol de honor hace tragable la jubilación de gerente.\u201d"
+  },
+
+  /* ============ FAMILIA · hermanos · Nivel 2 ============ */
+  {
+    id: "s-hermano-2", cat: "familia", sub: "hermanos", nivel: 2,
+    titulo: "El hermano fantasma", disciplina: "palabra", emocion: "injusticia / carga",
+    duracion: "~3 min", inicioT: 5, inicioC: 4,
+    contexto: "Papá salió ayer de una cirugía menor. Tú llevaste, esperaste, recogiste medicinas, dormiste en el sillón del hospital. Tu hermano, que vive a veinte minutos, mandó dos audios y un \u201ccualquier cosa avisan\u201d. Hoy aparece en la casa con jugo de naranja y entra saludando como héroe: \u201c¡¿Cómo está el paciente?!\u201d Y papá, feliz: \u201c¡Miren quién vino!\u201d",
+    turnos: [
+      {
+        npc: {
+          base: "Tu hermano, sirviéndose café: \u201cuf, qué semana la mía, no sabes. Pero bueno, lo importante es que el viejo está bien, ¿no?\u201d",
+          tenso: "Tu hermano, a la defensiva: \u201c¿qué? ¿Por qué esa cara? Vine apenas pude.\u201d",
+          calido: "Tu hermano, más bajo: \u201coye... gracias por cubrir todo esto. En serio.\u201d"
+        },
+        opciones: [
+          { t: "\u201c¿\u2018Lo importante\u2019? Lo importante te lo perdiste, campeón. Dos audios mandaste. DOS.\u201d — delante de papá.", tipo: "impulso", hab: "marco", dT: 4, dC: -2,
+            efecto: "Papá, recién operado, levanta la mano: \u201cniños, por favor...\u201d. El reclamo justo eligió el peor escenario y el peor público.",
+            fb: "Factura correcta, ventanilla equivocada: cobrar delante del padre convaleciente convierte tu justicia en pelea de niños y a papá en rehén. El agravio era de a dos; el escándalo, para todos." },
+          { t: "\u201cSí, está bien.\u201d — y ponerte a lavar las tazas con ruido de más.", tipo: "parcial", hab: "honestidad", dT: 1, dC: -1,
+            efecto: "El mensaje en clave de vajilla no llega: tu hermano cuenta anécdotas, papá se ríe, y tú acumulas presión con esponja en mano.",
+            fb: "Protesta homeopática: el ruido pasivo-agresivo descarga poco y comunica nada. La injusticia real merece palabras reales — en el momento real." },
+          { t: "Sonreír para papá, y al salir al patio, a tu hermano: \u201cme alegra que vinieras. Y tenemos una pendiente tú y yo — hoy no, aquí no. ¿Café el jueves?\u201d", tipo: "regulada", hab: "marco", dT: -1, dC: 1,
+            efecto: "\u201c...ok. Jueves\u201d, dice, entendiendo por el tono que va en serio. Papá conserva su tarde feliz; tu factura conserva su valor.",
+            fb: "Aplazar sin archivar: protegiste al convaleciente Y agendaste el cobro. La diferencia entre tragar y aplazar es la fecha — y la pusiste." }
+        ]
+      },
+      {
+        npc: {
+          base: "Jueves, el café. Tu hermano: \u201ca ver, suéltalo. Sé que estás molesto por lo de papá.\u201d",
+          tenso: "Jueves. Tu hermano, cruzado de brazos: \u201csi me citaste para sermonearme, empezamos mal.\u201d",
+          calido: "Jueves. Tu hermano: \u201cantes de que digas nada: la cagué. Debí estar. No tengo excusa buena.\u201d"
+        },
+        opciones: [
+          { t: "\u201cMolesto no: agotado y solo. Papá operado y yo cargué todo — hospital, medicinas, sillón — mientras tú mandabas audios a veinte minutos. No te pido cuentas del pasado: te pido reparto del presente. Papá tiene controles cada semana: ¿cuáles tomas tú?\u201d", tipo: "regulada", hab: "formula", dT: -2, dC: 3,
+            efecto: "Saca el teléfono y abre el calendario: \u201cdame los martes\u201d. La queja se volvió cronograma en cuatro minutos.",
+            fb: "La fórmula con petición operativa: hechos sin adjetivos + emoción precisa (agotado y solo, no \u2018furioso\u2019) + reparto concreto hacia adelante. Las injusticias familiares se corrigen con calendario, no con culpa." },
+          { t: "\u201cEs que tú SIEMPRE has sido así, desde chicos: yo el responsable y tú el festejado. Como cuando en el 2014...\u201d", tipo: "impulso", hab: "formula", dT: 3, dC: -2,
+            efecto: "\u201c¿El 2014? ¿En serio vamos a hacer arqueología?\u201d — el expediente histórico lo puso a litigar el pasado en vez de repartir el presente.",
+            fb: "Abrir el archivo completo: veinte años de rol familiar en una mesa de café. Verdad probable, dosis letal: se cambia el reparto de HOY, no la infancia entera." },
+          { t: "\u201cNada, ya pasó. Solo... está viejo papá, ¿no? Da miedo.\u201d", tipo: "parcial", hab: "honestidad", dT: 0, dC: 1,
+            efecto: "Conversación linda de hermanos — sobre el tema equivocado. El reparto injusto queda intacto, con fecha abierta para repetirse en la próxima cirugía.",
+            fb: "Desvío emocional genuino pero evasivo: conectaste y no cobraste. La cercanía sin acuerdo deja la carga donde estaba: en tus hombros." }
+        ]
+      },
+      {
+        npc: {
+          base: "Tu hermano: \u201cLos martes son míos entonces. ¿Y... estamos bien tú y yo?\u201d",
+          tenso: "Tu hermano: \u201cok, martes. Pero que conste que también tengo mi vida, ¿eh?\u201d",
+          calido: "Tu hermano: \u201cmartes míos. Y perdón de verdad, hermano. Te dejé solo.\u201d"
+        },
+        opciones: [
+          { t: "\u201cEstamos bien. Y una cosa para la próxima crisis, porque habrá: no esperes a que yo pida — pregunta \u2018¿qué tomo yo?\u2019 apenas suene el teléfono. Esa pregunta vale más que diez jugos de naranja.\u201d", tipo: "regulada", hab: "limite", dT: -1, dC: 2,
+            efecto: "Se ríe: \u201cel jugo estaba bueno, no jodas\u201d — y lo anota mentalmente. Regla instalada, hermandad intacta.",
+            fb: "Cierre con protocolo futuro: no basta repartir esta vez — instalaste el reflejo (\u2018¿qué tomo yo?\u2019) para todas las siguientes. Y con humor, que en hermanos es el pegamento." },
+          { t: "\u201cVeremos si los martes duran más de un mes.\u201d", tipo: "impulso", hab: "reparar", dT: 2, dC: -2,
+            efecto: "\u201cGracias por el voto de confianza\u201d — el acuerdo recién nacido recibió su primer golpe de tu propia mano.",
+            fb: "Profecía punitiva: castigas por adelantado el fallo que aún no ocurre. Si quieres que el cambio muera, dile en la cuna que no vivirá." },
+          { t: "\u201cSí, todo bien.\u201d — y pedir la cuenta.", tipo: "parcial", hab: "reparar", dT: 0, dC: 0,
+            efecto: "Café cerrado, martes acordados, y ese último puente emocional que él tendió — \u2018¿estamos bien?\u2019 — quedó sin cruzar.",
+            fb: "Cierre administrativo de un momento fraterno: él abrió una puerta chiquita y la dejaste entornada. Los acuerdos reparan cargas; los cierres cálidos reparan hermanos." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "La carga injusta se volvió calendario, el reclamo se cobró sin público ni arqueología, y hasta quedó protocolo para la próxima crisis. Papá nunca supo del conflicto — así se cuida a dos generaciones a la vez.",
+      medio: "Algo se repartió, algo se dijo. Vigila que los martes existan de verdad — los acuerdos de café se evaporan sin seguimiento.",
+      mal: "La injusticia era de tu hermano y el escándalo terminó siendo tuyo — o el silencio, que es escándalo en cámara lenta. La carga sigue entera y ahora pesa doble: trabajo más rencor."
+    },
+    analisis: {
+      emocion: "Injusticia + agotamiento + la vieja fibra del rol (\u2018yo el responsable, él el festejado\u2019).",
+      necesidad: "Reparto real de la carga presente — no disculpas por el pasado ni medallas por el sacrificio.",
+      interpretacion: "\u201cNo vino = no le importa papá / me usa\u201d (más probable: evitación + costumbre de que tú resuelvas).",
+      sesgo: "Archivo histórico (el 2014) + lectura de mente sobre su desinterés + martirio silencioso como protesta.",
+      ventana: "Amarillo sostenido por agotamiento físico: el cansancio es amplificador — por eso el cobro se agenda, no se improvisa.",
+      alternativa: "Aplazar con fecha (proteger a papá) → fórmula + reparto operativo → protocolo futuro con humor.",
+      consecuencia: "Cobrar en el living del convaleciente rompe tres vínculos de un tiro; el silencio martirizado perpetúa el rol para siempre. El calendario compartido es lo único que reescribe roles de hermanos."
+    },
+    razonamiento: "La versión regulada piensa: \u201cRabia legítima + papá delante: la factura es real y la ventanilla es HOY NO, AQUÍ NO. Agendo el cobro — la fecha es lo que separa aplazar de tragar. El jueves: sin 2014, sin adjetivos. Emoción precisa: agotado y solo. Y la petición no es \u2018pide perdón\u2019 sino \u2018¿qué controles tomas tú?\u2019 — los roles familiares se cambian con calendario. Cierro instalando el reflejo para la próxima: \u2018¿qué tomo yo?\u2019.\u201d"
+  },
+
+  /* ============ FAMILIA · falta de apoyo · Nivel 3 ============ */
+  {
+    id: "s-apoyo-3", cat: "familia", sub: "falta de apoyo", nivel: 3,
+    titulo: "La noticia que nadie celebró", disciplina: "mente", emocion: "no elegido / decepción",
+    duracion: "~4 min", inicioT: 5, inicioC: 4,
+    contexto: "Conseguiste ESO: el logro por el que remaste dos años (el ascenso, el contrato, la beca — el tuyo). Lo anuncias en el grupo familiar con emoción medida y... tu madre responde \u201cqué bien hijo 👍\u201d y sigue con la foto del perro de tu tía. Tu hermana: \u201cfelicidades! oye ¿alguien tiene el número del gasista?\u201d. Nada más. El domingo los verás a todos.",
+    turnos: [
+      {
+        npc: {
+          base: "Domingo. Nadie menciona tu noticia. Tu madre: \u201c¿y ustedes qué cuentan de nuevo?\u201d — como si nada.",
+          tenso: "Domingo. Notan tu cara larga. Tu hermana: \u201c¿y a ti qué te pasa hoy?\u201d",
+          calido: "Domingo. Tu madre, sirviendo: \u201ca ver, cuéntanos bien eso del anuncio, que por chat no se entiende nada.\u201d"
+        },
+        opciones: [
+          { t: "\u201c¿De nuevo? Nada. Total, lo importante ya lo tapó el perro de la tía.\u201d — sarcasmo con sonrisa amarga.", tipo: "impulso", hab: "formula", dT: 3, dC: -2,
+            efecto: "Caras de \u2018¿y a este qué le pasa?\u2019. Ahora eres el resentido del almuerzo, y tu logro quedó asociado a una escena.",
+            fb: "Reproche encriptado en sarcasmo: esperas que descifren la indirecta Y se disculpen por lo que no saben que hicieron. Cobrar sin facturar, edición dominical." },
+          { t: "No decir nada del tema en todo el almuerzo. Si no les importó, no les va a importar.", tipo: "parcial", hab: "honestidad", dT: 1, dC: -1,
+            efecto: "El almuerzo pasa normal para todos menos para ti. Confirmaste tu tesis sin testearla — la profecía se autocumplió en silencio.",
+            fb: "El experimento amañado: no dar la oportunidad y concluir que no la habrían tomado. El silencio dolido no mide el amor ajeno; solo lo presume culpable." },
+          { t: "En un momento tranquilo, sin drama: \u201coigan, quiero contarles bien lo del anuncio, porque por chat quedó chico y para mí es enorme: son dos años de remar.\u201d — y contarlo con la emoción que merece.", tipo: "regulada", hab: "honestidad", dT: -1, dC: 2,
+            efecto: "Tu madre suelta el cucharón: \u201c¿DOS años? ¿Y por qué no dijiste que era tan importante?\u201d. Resulta que el 👍 era ignorancia de escala, no indiferencia.",
+            fb: "Darle tamaño a la noticia: la gente responde al tamaño que TÚ le pones. Un anuncio con \u2018emoción medida\u2019 recibe celebración medida — el termostato lo tenías tú." }
+        ]
+      },
+      {
+        npc: {
+          base: "Tu madre: \u201ces que como tú siempre le bajas el tono a tus cosas, una nunca sabe cuándo es de las grandes...\u201d",
+          tenso: "Tu hermana: \u201cbueno, tampoco es que nosotros seamos adivinos, ¿eh?\u201d",
+          calido: "Tu padre levanta el vaso: \u201cpues esto se brinda, ¿o no? ¡Por el muchacho!\u201d"
+        },
+        opciones: [
+          { t: "\u201cEs verdad, le bajo el tono — y me estoy dando cuenta de que después me duele que ustedes también se lo bajen. Voy a avisar cuando algo sea de las grandes. Esta lo es.\u201d", tipo: "regulada", hab: "honestidad", dT: -2, dC: 3,
+            efecto: "\u201cAvisa, sí, porque contigo no se sabe\u201d, se ríe tu hermana — y de pronto hay brindis, preguntas y tu tía pidiendo detalles. La celebración existía; le faltaba la señal.",
+            fb: "Insight en voz alta: reconociste tu parte del circuito (minimizar → recibir minimización → dolerte) y diste la corrección. Vulnerabilidad operativa, no queja." },
+          { t: "\u201cO sea que encima la culpa es mía por no gritar mis logros. Perfecto.\u201d", tipo: "impulso", hab: "escucha", dT: 3, dC: -2,
+            efecto: "\u201cNadie dijo eso...\u201d — pero el almuerzo ya entró en modo campo minado. Tu madre ofrecía una explicación y recibió un juicio.",
+            fb: "Oír acusación donde había mapa: ella describía el circuito, no repartía culpas. El filtro del dolido convierte explicaciones en ataques — y aliados en acusados." },
+          { t: "\u201cSí, bueno, ya está, no era para tanto tampoco...\u201d — y bajarle el tono otra vez.", tipo: "parcial", hab: "honestidad", dT: 0, dC: -1,
+            efecto: "El mecanismo completo, en vivo: minimizaste justo cuando explicaban que minimizas. La celebración se desinfló por segunda vez, ahora con autoría clara.",
+            fb: "La recaída instantánea: el patrón de bajarle el tono es tan automático que se ejecutó mientras lo diagnosticaban. Verlo en acción es el primer paso; interrumpirlo, el segundo." }
+        ]
+      },
+      {
+        npc: {
+          base: "Sobremesa. Tu madre, aparte: \u201coye... ¿hace cuánto te sientes así, de que no te celebramos?\u201d",
+          tenso: "Sobremesa. Tu hermana, aparte: \u201cqué intensito estás últimamente, ¿eh?\u201d",
+          calido: "Sobremesa. Tu padre te palmea: \u201cdos años remando... salió al padre, terco. Estoy orgulloso.\u201d"
+        },
+        opciones: [
+          { t: "\u201cUn tiempo ya, má. Y hoy entendí que es mitad y mitad: yo minimizo, ustedes van al ritmo que marco. Trato nuevo: yo aviso el tamaño de las cosas — y tú, cuando avise \u2018grande\u2019, me sueltas el cucharón dos minutos. ¿Va?\u201d", tipo: "regulada", hab: "formula", dT: -1, dC: 3,
+            efecto: "\u201cVa. Y esta noche hago tu torta, que dos años de remar se celebran con torta\u201d, sentencia. El circuito viejo acaba de recibir firmware nuevo.",
+            fb: "Acuerdo bidireccional con protocolo: señal tuya + respuesta suya. Los patrones familiares no se rompen con reproches — se reprograman con tratos concretos." },
+          { t: "\u201cDesde siempre, mamá. Desde el colegio que aquí solo se celebran las cosas de otros.\u201d", tipo: "impulso", hab: "formula", dT: 2, dC: -2,
+            efecto: "Su pregunta abierta recibió una condena histórica. Se repliega dolida: \u201cno sabía que llevabas esa cuenta de nosotros\u201d.",
+            fb: "El \u2018desde siempre\u2019: respondiste a una mano tendida con el expediente completo. La pregunta era una puerta; el archivo total la usó de diana." },
+          { t: "\u201cNo, nada, cosas mías. Olvídalo.\u201d", tipo: "parcial", hab: "honestidad", dT: 0, dC: -1,
+            efecto: "La mejor pregunta que tu madre te ha hecho en años murió en \u2018cosas mías\u2019. La puerta se cerró desde adentro.",
+            fb: "Retirada ante la puerta abierta: tanto doler por no ser visto, y cuando te miran de frente, esquivas. El patrón protege — y aísla." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "Resultó que la indiferencia era un malentendido de escala — y que el termostato de tus celebraciones lo manejabas tú. Salió el brindis, salió la torta, y salió algo mejor: un protocolo para que las próximas noticias grandes lleguen con su tamaño puesto.",
+      medio: "Hubo brindis tardío y media conversación. El circuito quedó descrito pero sin trato nuevo — se testeará solo en tu próximo logro.",
+      mal: "Tenías un logro enorme y saliste del domingo con una escena, un archivo abierto o un silencio más. La familia no falló la prueba — la prueba estaba amañada."
+    },
+    analisis: {
+      emocion: "No elegido/invisible + decepción (\u2018ni mi familia me celebra\u2019), con vergüenza de pedir celebración.",
+      necesidad: "Ser visto en lo importante — y descubriste que requiere una señal: avisar el tamaño.",
+      interpretacion: "\u201cRespuesta tibia = no les importo\u201d (era: ceguera de escala entrenada por TU propio minimizar).",
+      sesgo: "Filtro negativo + experimento amañado (no dar señal y concluir desinterés) + leer indiferencia donde había costumbre.",
+      ventana: "Amarillo melancólico, el más traicionero: no explota — gotea sarcasmo y silencio durante horas.",
+      alternativa: "Darle tamaño a la noticia + insight del circuito en voz alta + trato bidireccional con señal.",
+      consecuencia: "El patrón minimizar-doler-callar se autoalimenta durante décadas y termina en \u2018mi familia nunca me vio\u2019 — cuando media solución siempre estuvo en emitir la señal completa."
+    },
+    razonamiento: "La versión regulada piensa: \u201cDuele: no elegido. Pero ojo con el experimento amañado: anuncié en tono 3 y esperé respuesta tono 10. Antes de sentenciar a mi familia, pruebo con la señal completa: contarlo con su tamaño real. Si aun así hay tibieza, la fórmula. Y si resulta que era mi termostato — que es lo probable — lo digo en voz alta y propongo el trato: yo aviso \u2018grande\u2019, ustedes sueltan el cucharón.\u201d"
+  },
+
+  /* ============ TRABAJO · compañero conflictivo · Nivel 1 ============ */
+  {
+    id: "s-companero-1", cat: "trabajo", sub: "compañero conflictivo", nivel: 1,
+    titulo: "El pasivo-agresivo del chat", disciplina: "palabra", emocion: "provocado / injusticia",
+    duracion: "~3 min", inicioT: 4, inicioC: 4,
+    contexto: "Chat del equipo, 09:12. Marco escribe: \u201cBueno, ya que ALGUNOS entregan cuando quieren, tuve que rehacer el reporte anoche 🙂\u201d. Lo tuyo se entregó a tiempo — con un cambio de formato que ÉL pidió el viernes y olvidó avisar al resto. El emoji sonriente es lo que más te enciende. Todo el equipo lo leyó.",
+    turnos: [
+      {
+        npc: {
+          base: "El chat queda en silencio. Dos personas ponen \u201cvisto\u201d. Marco agrega: \u201cen fin, cosas del oficio 🙂\u201d.",
+          tenso: "Marco redobla: \u201cy no es la primera vez, pero bueno, uno se calla 🙂\u201d",
+          calido: "Un compañero tercia: \u201cojo Marco, el formato lo cambiaste tú el viernes, ¿no?\u201d"
+        },
+        opciones: [
+          { t: "Responder en el chat: \u201c\u2018ALGUNOS\u2019 tenemos el correo del viernes donde TÚ pediste el cambio. ¿Lo comparto al grupo o lo recuerdas solo? 🙂\u201d", tipo: "impulso", hab: "marco", dT: 3, dC: -2,
+            efecto: "Touché público — y guerra declarada. El equipo saca palomitas, el jefe frunce el ceño, y Marco jura venganza en silencio. Ganaste el punto; perdiste el clima.",
+            fb: "Duelo de sarcasmos con audiencia: tu evidencia era oro y la gastaste en humillar. Los pasivo-agresivos se desactivan en privado con hechos, no en público con sangre — el público es SU terreno." },
+          { t: "No responder nada y comentárselo a medio equipo por privado: \u201c¿viste lo de Marco? Increíble, ¿no?\u201d", tipo: "parcial", hab: "honestidad", dT: 1, dC: -1,
+            efecto: "Se arma el chat paralelo. La tensión ahora es subterránea y el conflicto tiene sucursales. Marco huele el frente y también recluta.",
+            fb: "Responder a la pasivo-agresión con más pasivo-agresión: la política de pasillo multiplica el problema en vez de encararlo. Dos bandos, cero solución." },
+          { t: "En el chat, neutro y breve: \u201cMi entrega salió a tiempo con el formato acordado el viernes — te reenvío el correo, Marco, para alinear.\u201d Y por privado: \u201c¿tienes 10 min ahora?\u201d", tipo: "regulada", hab: "marco", dT: -1, dC: 2,
+            efecto: "El dato queda registrado sin drama, la indirecta pública murió sin sangre, y Marco acepta la llamada con menos plumaje.",
+            fb: "La jugada doble: corrección factual pública (sin adjetivos, con evidencia) + conflicto real a privado. Neutralizas la narrativa sin darle el espectáculo que buscaba." }
+        ]
+      },
+      {
+        npc: {
+          base: "La llamada. Marco, cauto: \u201ca ver... ¿qué pasa?\u201d",
+          tenso: "La llamada. Marco, en guardia: \u201csi es por el mensaje, era una broma, ¿eh? No seas sensible.\u201d",
+          calido: "La llamada. Marco, más bajo: \u201cya vi el correo del viernes... la regué con el formato, sí.\u201d"
+        },
+        opciones: [
+          { t: "\u201cPasa esto: cuando algo mío te haga ruido, dímelo a mí directo — el mensaje de hoy con \u2018ALGUNOS\u2019 y sonrisita delante de todo el equipo, no. Yo hago lo mismo contigo: aquí estoy, de frente. ¿Estamos?\u201d", tipo: "regulada", hab: "limite", dT: -1, dC: 2,
+            efecto: "Pausa. \u201c...vale, sí. Me pasé con el mensaje\u201d, concede. No serán amigos — pero el canal directo quedó instalado y el 🙂 jubilado.",
+            fb: "Límite de canal, no de carácter: no le pediste que cambie su personalidad — le marcaste POR DÓNDE van los reclamos. Específico, recíproco, cumplible: el límite laboral perfecto." },
+          { t: "\u201c¿\u2018Sensible\u2019? Mira, Marco, todos sabemos cómo eres. Llevas años con el mismo teatrito y ya cansaste a medio piso.\u201d", tipo: "impulso", hab: "limite", dT: 3, dC: -3,
+            efecto: "\u201c¿\u2018Todos\u2019? ¿Quiénes son todos?\u201d — pasaste de un incidente con evidencia a un juicio de carácter sin testigos presentes. Ahora el ofendido oficial es él.",
+            fb: "Del hecho al veredicto de personalidad: \u2018cómo eres\u2019 + \u2018todos\u2019 es incomprobable e incendiario. Los conflictos laborales se ganan por incidentes documentados, no por diagnósticos de pasillo." },
+          { t: "\u201cNada grave... solo que el mensaje quedó raro. Pero bueno, ya está, no importa.\u201d", tipo: "parcial", hab: "limite", dT: 0, dC: 0,
+            efecto: "\u201cAh, ok\u201d — Marco cuelga aliviado y sin factura. El 🙂 volverá el mes que viene, ya validado como gratis.",
+            fb: "Llamada valiente, cobro cobarde: llegaste hasta la ventanilla y no emitiste la factura. \u2018No importa\u2019 es el fertilizante del pasivo-agresivo." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "La indirecta pública murió con un dato neutro, el conflicto real se resolvió en privado y quedó instalado el canal directo. Marco seguirá siendo Marco — pero contigo ya sabe que el teatrito no paga.",
+      medio: "El dato quedó aclarado; el patrón, a medias. Atento a la próxima sonrisita: los límites laborales se validan en la segunda ronda.",
+      mal: "Una indirecta de tercera terminó en guerra de bandos o en precedente gratis. Con pasivo-agresivos solo hay dos derrotas posibles: darles el espectáculo o darles el silencio."
+    },
+    analisis: {
+      emocion: "Provocado + injusticia (acusación pública falsa con emoji de coartada).",
+      necesidad: "Reputación protegida ante el equipo + canal directo para conflictos.",
+      interpretacion: "\u201cMe atacó = hay que devolverla más fuerte y en público\u201d (era: patrón pasivo-agresivo que se alimenta de audiencia).",
+      sesgo: "Personalizar la provocación + todo-o-nada (o duelo público o silencio — existía la doble jugada).",
+      ventana: "Amarillo con adrenalina de teclado: el chat permite responder en 8 segundos lo que merece 8 minutos. La ventana aquí se llama \u2018no apretar enviar\u2019.",
+      alternativa: "Corrección factual pública sin adjetivos + conflicto a privado + límite de canal recíproco.",
+      consecuencia: "Los duelos de sarcasmo en chats laborales quedan por escrito para siempre y definen tu marca ante jefes que ni participaron; la neutralidad con evidencia la define mejor."
+    },
+    razonamiento: "La versión regulada piensa: \u201cEl 🙂 es carnada de audiencia: quiere mi peor versión en público. Regla del chat: los hechos en el canal, el conflicto en privado. Primero el dato neutro con el correo — eso mata la narrativa. Después la llamada: sin diagnóstico de personalidad, solo límite de canal: \u2018reclamos, a mí directo\u2019. Y sin \u2018no importa\u2019 al final: la factura se emite completa o el teatrito vuelve con función doble.\u201d"
+  },
+
+  /* ============ TRABAJO · errores · Nivel 2 ============ */
+  {
+    id: "s-error-2", cat: "trabajo", sub: "errores", nivel: 2,
+    titulo: "El error fue tuyo", disciplina: "reparacion", emocion: "vergüenza / miedo",
+    duracion: "~4 min", inicioT: 6, inicioC: 4,
+    contexto: "Lunes 08:40. Revisando el envío del viernes descubres TU error: mandaste al cliente la versión vieja del presupuesto — con precios desactualizados, más bajos. El cliente ya respondió: \u201cperfecto, avanzamos con estos números\u201d. Nadie más lo ha visto todavía. El estómago se te hunde: puedes callarte y rezar, o hablar.",
+    turnos: [
+      {
+        npc: {
+          base: "Tu jefa pasa por tu escritorio: \u201c¿todo bien con la cuenta del cliente? Me llegó copia de que avanzan.\u201d",
+          tenso: "Tu jefa, seria, con el teléfono en la mano: \u201c¿me puedes explicar por qué el cliente tiene precios de marzo?\u201d",
+          calido: "Tu jefa, de buen humor: \u201cbuen arranque de semana, ¿no? El cliente avanzando y todo.\u201d"
+        },
+        opciones: [
+          { t: "\u201cSí, todo bien, avanzando...\u201d — y pasarte la mañana ideando cómo taparlo sin que se note.", tipo: "impulso", hab: "honestidad", dT: 2, dC: -1,
+            efecto: "Compras dos horas de alivio a interés usurero: cada minuto que pasa, el error se vuelve menos \u2018error\u2019 y más \u2018ocultamiento\u2019. Y los precios viejos siguen corriendo hacia el contrato.",
+            fb: "La matemática del encubrimiento: un error confesado a las 9 cuesta uno; descubierto a las 16, cuesta diez — porque ya no se juzga el error sino el silencio. La vergüenza te vendió tiempo caro." },
+          { t: "\u201cJusto de eso quería hablarte: encontré un error MÍO en el envío del viernes — fue la versión con precios viejos. El cliente ya aceptó esos números. Vengo con dos opciones de corrección y me hago cargo de la llamada incómoda.\u201d", tipo: "regulada", hab: "honestidad", dT: 1, dC: 3,
+            efecto: "Frunce el ceño — es un problema real — pero asiente: \u201cok. A ver esas opciones.\u201d Nota mental de jefa: \u2018este avisa rápido y trae soluciones\u2019. (Sí: la tensión sube al confesar. Es la subida barata.)",
+            fb: "El protocolo de oro del error propio: rápido + \u2018mío\u2019 sin diluir + opciones + asumir el costo incómodo. La reputación no se construye no fallando: se construye en cómo reportas el fallo." },
+          { t: "\u201cEh... puede que haya un tema con las versiones del presupuesto. El sistema de archivos es un caos, la verdad, cualquiera se confunde...\u201d", tipo: "parcial", hab: "honestidad", dT: 2, dC: -1,
+            efecto: "\u201c¿\u2018Puede que haya un tema\u2019? ¿Hay error o no hay error?\u201d — la niebla defensiva la irrita más que el problema. Y culpar al sistema sonó a lo que era.",
+            fb: "Confesión homeopática: \u2018puede que\u2019, voz pasiva y un chivo expiatorio de utilería. La media verdad exige interrogatorio — y el interrogatorio erosiona más que el error entero dicho de frente." }
+        ]
+      },
+      {
+        npc: {
+          base: "Tu jefa: \u201cA ver las opciones. ¿Y qué le decimos al cliente que ya celebró esos precios?\u201d",
+          tenso: "Tu jefa: \u201cesto nos puede costar la renovación, ¿lo entiendes? ¿Cómo pasó exactamente?\u201d",
+          calido: "Tu jefa: \u201cbueno, errores pasan. Lo importante: ¿cómo lo arreglamos con elegancia?\u201d"
+        },
+        opciones: [
+          { t: "\u201cOpción A: honrar los precios viejos solo este trimestre como gesto, y corregir desde el próximo — cuesta X pero retiene. Opción B: llamada hoy explicando el error administrativo con la versión nueva y un 5% de disculpa. Yo recomiendo A, y hago yo la llamada en ambos casos.\u201d", tipo: "regulada", hab: "formula", dT: -2, dC: 3,
+            efecto: "\u201cA, con tope de monto. Y sí: la llamada es tuya\u201d, decide en dos minutos. El error se convirtió en decisión ejecutiva — y tú, en alguien que gestiona sus propios incendios.",
+            fb: "Opciones con números + recomendación + cargar tú el costo: le diste a tu jefa una decisión, no un problema. Esa es la diferencia entre quien comete errores y quien los administra." },
+          { t: "\u201cNo sé... lo que tú digas. Tú eres la jefa.\u201d — encogiéndote.", tipo: "parcial", hab: "formula", dT: 1, dC: -1,
+            efecto: "Suspira y se lleva TU problema a su escritorio. Lo resolverá — y recordará quién se lo dejó en brazos.",
+            fb: "Confesar y evaporarse: dijiste la verdad y abandonaste la gestión. El error confesado sin plan sigue siendo una carga que otro paga — la mitad del mérito, perdida." },
+          { t: "\u201c¿Y si... simplemente no decimos nada y ajustamos los precios en la renovación del año que viene? Capaz ni lo nota.\u201d", tipo: "impulso", hab: "honestidad", dT: 3, dC: -3,
+            efecto: "Te mira dos segundos en silencio: \u201c¿me estás proponiendo esconderle números a un cliente?\u201d La reputación que salvaste confesando la acabas de hipotecar proponiendo.",
+            fb: "La recaída del encubridor: confesaste hacia adentro y propusiste ocultar hacia afuera. La integridad no es por audiencias — y tu jefa acaba de ver el doble estándar en directo." }
+        ]
+      },
+      {
+        npc: {
+          base: "Después de la llamada al cliente (aceptó la opción A de buena gana). Tu jefa: \u201cbien resuelto. ¿Y para que no se repita?\u201d",
+          tenso: "Después de la llamada. Tu jefa: \u201csalió bien DE MILAGRO. Esto no puede volver a pasar.\u201d",
+          calido: "Después de la llamada. Tu jefa: \u201cel cliente hasta agradeció la transparencia. Buen manejo.\u201d"
+        },
+        opciones: [
+          { t: "\u201cYa lo armé: nomenclatura con fecha en los archivos, y regla personal de verificar versión contra el registro antes de cualquier envío a cliente. Te mando el mini-protocolo hoy — sirve para todo el equipo, no solo para mí.\u201d", tipo: "regulada", hab: "marco", dT: -2, dC: 2,
+            efecto: "\u201cMándalo y lo instalamos para todos\u201d, dice. Tu error del viernes acaba de convertirse en el protocolo del equipo — la alquimia completa.",
+            fb: "Cerrar con sistema: el error individual convertido en mejora colectiva es la única forma de que un fallo SUME reputación. De culpable a autor del protocolo en un lunes." },
+          { t: "\u201cTranquila, no se repite. Estaré más atento, lo prometo.\u201d", tipo: "parcial", hab: "marco", dT: 0, dC: 0,
+            efecto: "\u201cOk...\u201d — la promesa de atención es lo que había antes del error. Sin sistema nuevo, la próxima distracción tiene el camino igual de libre.",
+            fb: "\u2018Más cuidado\u2019 no es un plan: es la esperanza con corbata. Los errores de proceso se cierran con proceso — la voluntad ya demostró su tasa de fallo el viernes." },
+          { t: "\u201cBueno, tampoco fue para tanto al final, ¿no? El cliente hasta contento quedó.\u201d", tipo: "impulso", hab: "reparar", dT: 2, dC: -2,
+            efecto: "La cara de tu jefa se endurece: el final feliz te duró treinta segundos de humildad. La minimización retroactiva borra la mitad del crédito ganado.",
+            fb: "Reescribir el error como anécdota apenas pasa el peligro: la vergüenza invertida. Salió bien PORQUE lo gestionaste en serio — tratarlo de nadería invita al siguiente." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "Del estómago hundido de las 08:40 al protocolo de equipo de las 17:00: error confesado rápido, opciones sobre la mesa, llamada incómoda asumida y sistema instalado. Así se convierte el peor lunes en un punto A FAVOR del expediente.",
+      medio: "El error se corrigió; el método quedó a medias. La reputación no perdió — tampoco ganó todo lo que este lunes ofrecía.",
+      mal: "El error costaba uno y el manejo lo dejó en diez: silencio, niebla o minimización. Los presupuestos se corrigen en una llamada; la confianza de una jefa, en meses."
+    },
+    analisis: {
+      emocion: "Vergüenza + miedo (a la imagen, al costo, al regaño) — el dúo que fabrica encubridores.",
+      necesidad: "Proteger la reputación — que paradójicamente se protege exponiendo el error rápido y con plan.",
+      interpretacion: "\u201cSi lo confieso, quedo como incompetente\u201d (al revés: el reporte rápido con opciones es la firma de los competentes).",
+      sesgo: "Catastrofizar la confesión + descuento de lo positivo (\u2018una mancha borra mi historial\u2019) + la tentación del silencio como \u2018prudencia\u2019.",
+      ventana: "Amarillo de vergüenza: no empuja a gritar sino a esconder. La acción opuesta aquí es hablar HOY, a las 9, con la voz firme.",
+      alternativa: "Confesión rápida en primera persona + opciones con números + asumir la llamada + cerrar con protocolo.",
+      consecuencia: "Los encubrimientos laborales tienen vida media corta y funeral largo: cuando estallan, ya no se juzga el error sino el carácter. El reporte rápido, repetido en el tiempo, construye la reputación exacta que la vergüenza creía proteger."
+    },
+    razonamiento: "La versión regulada piensa: \u201cEstómago hundido: vergüenza + miedo, los abogados del silencio. Matemática fría: confesado ahora cuesta 1, descubierto después cuesta 10. Acción opuesta a la vergüenza: hablar YA, en primera persona, sin \u2018el sistema\u2019 de escudo. Y no llevo un problema: llevo dos opciones con números, mi recomendación y mi disposición a la llamada fea. Al cierre, el protocolo — que el error del viernes al menos deje infraestructura.\u201d"
+  },
+
+  /* ============ TRABAJO · sobrecarga · Nivel 3 ============ */
+  {
+    id: "s-sobrecarga-3", cat: "trabajo", sub: "sobrecarga", nivel: 3,
+    titulo: "\u201cCuento contigo, ¿verdad?\u201d", disciplina: "palabra", emocion: "acorralado / saturado",
+    duracion: "~4 min", inicioT: 6, inicioC: 4,
+    contexto: "Jueves 18:20. Llevas tres semanas al 120%: dos proyectos, un incendio ajeno y las ojeras de testigo. Tu jefe aparece con esa sonrisa: \u201cSurgió algo grande: la propuesta para el cliente nuevo. La necesito el lunes. Sé que estás a tope, pero eres el único que puede sacarla... cuento contigo, ¿verdad?\u201d — y ya se está yendo, dando el sí por hecho.",
+    turnos: [
+      {
+        npc: {
+          base: "Tu jefe, medio girado hacia la puerta: \u201c¿Verdad que sí? Genial, le digo al cliente que...\u201d",
+          tenso: "Tu jefe frena y endurece: \u201cespera, ¿estás dudando? Esto es prioridad UNO.\u201d",
+          calido: "Tu jefe se detiene: \u201ca ver, dime... ¿cómo vienes de carga real? Sé honesto.\u201d"
+        },
+        opciones: [
+          { t: "\u201cSí, claro, yo lo saco...\u201d — mientras por dentro calculas cuál de tus fines de semana acabas de regalar. Otra vez.", tipo: "impulso", hab: "limite", dT: 1, dC: -1,
+            efecto: "Se va feliz. Tú te quedas con tres proyectos, cero fin de semana y una rabia sorda que mañana pagará alguien que no fue. El \u2018único que puede\u2019 acaba de renovar contrato.",
+            fb: "El sí automático: la sobrecarga crónica no la fabrica el jefe — la fabrica cada sí que dices con el cuerpo gritando no. Halago + prisa es la llave maestra; tu ventana era ese segundo antes de asentir." },
+          { t: "\u201c¿SABES QUÉ? No. Estoy HARTO de ser el bombero de esta oficina. Búscate a otro \u2018único\u2019.\u201d", tipo: "impulso", hab: "pausa", dT: 4, dC: -3,
+            efecto: "Tres semanas de presión salieron por la válvula equivocada, en el pasillo, a las 18:20. Tu jefe parpadea: acaba de conocer al \u2018conflictivo\u2019 — no al saturado.",
+            fb: "La explosión del complaciente: el que nunca dice no, cuando dice no, dice TODO — con intereses. El límite que no pusiste en tres semanas salió como demolición, y la demolición no negocia: etiqueta." },
+          { t: "Frenar el \u2018sí\u2019 en la garganta: \u201cQuiero darte una respuesta seria y no un sí de pasillo. Dame hasta mañana 9:00: reviso mi carga real y te traigo cómo SÍ se puede hacer — con prioridades sobre la mesa.\u201d", tipo: "regulada", hab: "pausa", dT: 1, dC: 1,
+            efecto: "\u201c...ok, mañana a las 9. Pero necesito ese sí\u201d, dice, algo descolocado: nadie le había pedido tiempo para pensar. La decisión importante acaba de mudarse de tu pasillo cansado a tu mañana lúcida.",
+            fb: "La pausa profesional: no dijiste no — dijiste \u2018decisión seria mañana\u2019. Sacaste la negociación del terreno del halago-con-prisa y la pusiste donde tú piensas mejor. Media batalla ganada solo con el horario." }
+        ]
+      },
+      {
+        npc: {
+          base: "Viernes 9:00, su oficina. \u201cA ver, ¿cómo lo sacamos?\u201d",
+          tenso: "Viernes 9:00. \u201cEspero que sea un sí, porque ya le adelanté al cliente que estabas en esto.\u201d",
+          calido: "Viernes 9:00. \u201cPensé en lo de ayer... es verdad que te tengo a tope. Dime cómo lo ves.\u201d"
+        },
+        opciones: [
+          { t: "Con una hoja: \u201cEsta es mi carga real: A entrega miércoles, B en fase crítica, más el soporte del incendio de C. La propuesta nueva cabe SI: A se pasa al equipo de Diana o B se mueve una semana. Elige tú qué se prioriza — lo que decidas, lo saco con calidad. Lo que no puedo es sumar sin restar: eso entrega tres cosas mediocres.\u201d", tipo: "regulada", hab: "limite", dT: -2, dC: 3,
+            efecto: "Mira la hoja en silencio. \u201c...B se mueve una semana. Hazlo.\u201d Acabas de decir \u2018no puedo con todo\u2019 sin decir no — y saliste con UNA prioridad clara en vez de tres incendios.",
+            fb: "El límite ejecutivo: carga visible + condición de posibilidad + la decisión de prioridades devuelta a quien corresponde (él). \u2018Sumar sin restar entrega mediocridad\u2019 es un argumento de negocio, no una queja — por eso funciona." },
+          { t: "\u201cMira... es que estoy muy cansado, de verdad. Tres semanas sin parar, mi pareja ya ni me ve, duermo cinco horas...\u201d", tipo: "parcial", hab: "formula", dT: 1, dC: 0,
+            efecto: "Pone cara de empatía de manual: \u201cte entiendo, es una época dura para todos... pero esta propuesta es clave, ¿eh?\u201d. Tu cansancio compitió contra su deadline — y los deadlines no tienen empatía.",
+            fb: "Argumentar con fatiga en vez de con estructura: real pero débil en ese idioma. Al jefe se le habla en prioridades, capacidad y calidad — el cansancio es dato tuyo; la mediocridad de tres entregas es problema SUYO." },
+          { t: "\u201cLo estuve pensando y... bueno, sí, lo saco. Ya me organizaré.\u201d", tipo: "impulso", hab: "limite", dT: 1, dC: -1,
+            efecto: "La pausa de anoche murió en la ventanilla: pediste tiempo para pensar y trajiste el mismo sí de ayer, ahora con sello oficial. El fin de semana sale del calendario.",
+            fb: "La pausa desperdiciada: ganaste el terreno (mañana, 9:00, lúcido) y entregaste la misma rendición. La pausa solo vale si la usas para volver con estructura — si no, es procrastinar el sí." }
+        ]
+      },
+      {
+        npc: {
+          base: "Tu jefe, cerrando: \u201cok, B se mueve. Oye... ¿y por qué no me habías dicho antes que venías tan cargado?\u201d",
+          tenso: "Tu jefe, seco: \u201cbien. Pero que no se vuelva costumbre esto de negociar cada encargo.\u201d",
+          calido: "Tu jefe, sonriendo: \u201casí da gusto: problemas con propuesta de solución. Aprendan, deberían todos.\u201d"
+        },
+        opciones: [
+          { t: "\u201cJusta pregunta — y es mi parte del problema: decía sí a todo y la carga era invisible hasta que crujía. Propongo arreglarlo de raíz: 15 minutos los lunes donde te muestro mi tablero de carga y prioridades. Tú decides con el mapa a la vista, y yo no vuelvo a llegar al 120% en silencio.\u201d", tipo: "regulada", hab: "marco", dT: -2, dC: 3,
+            efecto: "\u201cLunes 15 minutos. Hecho.\u201d La sobrecarga crónica acaba de perder su ingrediente principal: la invisibilidad. Y tú, el rol de mártir silencioso.",
+            fb: "Del episodio al sistema: reconociste tu mitad (el sí automático) e instalaste el mecanismo que la previene (carga visible semanal). Los límites que perduran no son muros: son tableros compartidos." },
+          { t: "\u201cPorque cada vez que alguien dice que está cargado aquí, lo miran como flojo. Esa es la verdad.\u201d", tipo: "impulso", hab: "marco", dT: 3, dC: -2,
+            efecto: "\u201c¿Perdón? ¿Quién lo mira como flojo?\u201d — tu diagnóstico de cultura, probable pero indefendible en ese despacho, convirtió tu victoria de prioridades en debate sobre tu actitud.",
+            fb: "Acusación sistémica sin evidencia en el momento de cierre: quizá sea cierto, pero lanzado así es un boomerang. Las culturas se cambian con datos y aliados — no con veredictos en la oficina del jefe." },
+          { t: "\u201cNo sé... no quería molestar, supongo.\u201d", tipo: "parcial", hab: "honestidad", dT: 0, dC: 0,
+            efecto: "\u201cBueno, avisa la próxima\u201d — y se acabó. La puerta a arreglar el sistema estaba abierta de par en par y pasaste de largo con un encogimiento de hombros.",
+            fb: "Autodiagnóstico sin propuesta: \u2018no quería molestar\u2019 nombra el patrón complaciente pero no lo desarma. Era EL momento de instalar el tablero semanal — las ventanas de sistema abren poco y cierran rápido." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "Dijiste \u2018no puedo con todo\u2019 sin pronunciar un no: pausa profesional, carga visible, prioridades devueltas a su dueño y un tablero semanal que jubila al mártir silencioso. El \u2018único que puede\u2019 ahora es el único que negocia — que es mejor puesto.",
+      medio: "Esta propuesta se acomodó; el patrón del sí automático sigue en nómina. La próxima sonrisa de las 18:20 dirá si aprendiste el movimiento o solo esta partida.",
+      mal: "O regalaste otro fin de semana con sonrisa congelada, o tres semanas de presión explotaron por la válvula del pasillo. En ambos casos el sistema queda intacto — y tú, más caro de reparar."
+    },
+    analisis: {
+      emocion: "Acorralado (halago + prisa + \u2018eres el único\u2019: la trampa perfecta) + saturación de tres semanas.",
+      necesidad: "Carga sostenible y reconocimiento que no cueste la salud — traducible a: prioridades explícitas y carga visible.",
+      interpretacion: "\u201cSi digo no, decepciono / me etiquetan de flojo\u201d y \u201caguantar en silencio es profesionalismo\u201d (es su opuesto: fabrica mediocridad y explosiones).",
+      sesgo: "Complacencia automática (el sí antes de pensar) + todo-o-nada del saturado (\u2018o trago o exploto\u2019) + leer la mente sobre la decepción del jefe.",
+      ventana: "El punto crítico dura UN segundo: entre el \u2018cuento contigo\u2019 y tu asentimiento. Toda la simulación se gana o se pierde en ese segundo — por eso la pausa es la jugada.",
+      alternativa: "Pausa profesional con hora → carga visible + condición de posibilidad + prioridades devueltas → tablero semanal de sistema.",
+      consecuencia: "Cada sí silencioso entrena a la organización a cargarte más — hasta el crujido, que llega con etiqueta de \u2018conflictivo\u2019 incluida. La carga visible negociada, en cambio, construye la única reputación sostenible: la del que entrega bien porque sabe decir cómo."
+    },
+    razonamiento: "La versión regulada piensa: \u201cHalago + prisa + \u2018único\u2019: reconozco la llave maestra de mi sí automático. La ventana es AHORA, antes de asentir: pausa profesional con hora — no es un no, es \u2018decisión seria mañana\u2019. En frío armo la hoja: carga real, condición de posibilidad, y la decisión de prioridades se la devuelvo a él, que es su trabajo. Hablo en idioma negocio (calidad, prioridades), no en idioma fatiga. Y al cierre, el sistema: tablero semanal — que mi carga no vuelva a ser invisible hasta el crujido.\u201d"
   }
 
   ];
@@ -5301,14 +6295,15 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
     return G.simEscenas.filter((e) => e.cat === cat && (!sub || e.sub === sub)).sort((a, b) => a.nivel - b.nivel);
   }
 
-  /** Progresión: dentro de una categoría, un nivel se desbloquea si es el menor
-      disponible o si algún nivel inferior de esa categoría ya fue completado. */
+  /** Progresión escalonada: el nivel mínimo de cada categoría está abierto;
+      completar el nivel K desbloquea hasta el K+1 de esa categoría. */
   function desbloqueada(escena) {
     const deCat = G.simEscenas.filter((e) => e.cat === escena.cat);
     const minNivel = Math.min(...deCat.map((e) => e.nivel));
     if (escena.nivel === minNivel) return true;
     const p = prog();
-    return deCat.some((e) => e.nivel < escena.nivel && p[e.id] && p[e.id].completada);
+    const maxComp = Math.max(0, ...deCat.filter((e) => p[e.id] && p[e.id].completada).map((e) => e.nivel));
+    return escena.nivel <= maxComp + 1;
   }
 
   function vencidas() {
@@ -5392,7 +6387,7 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
             return h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: () => selectorEscenas(c) },
               h("span", { class: "icono" }, c.nombre.split(" ")[0]),
               h("strong", null, c.nombre.replace(/^\S+\s/, "")),
-              h("span", null, n + " simulación" + (n === 1 ? "" : "es") + " · " + [...new Set(escenasDe(c.id).map((e) => e.sub))].join(", ")));
+              h("span", null, n + (n === 1 ? " simulación" : " simulaciones") + " · " + [...new Set(escenasDe(c.id).map((e) => e.sub))].join(", ")));
           })),
         h("p", { class: "tenue" }, "El catálogo crece por datos: cada escena es un objeto en js/data/simulaciones.js (formato documentado)."));
     }
@@ -5414,7 +6409,7 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
             h("p", { class: "entrada-cuerpo", style: "margin-top:6px" }, e.sub + " · entrena: " + e.emocion),
             abierta
               ? h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario btn-mini", onclick: () => jugar(e, false) }, "Entrar"))
-              : h("p", { class: "tenue" }, "Se desbloquea completando un nivel inferior de esta categoría."));
+              : h("p", { class: "tenue" }, "Se desbloquea completando el nivel anterior de esta categoría."));
         })),
         h("div", { class: "fila-botones" }, h("button", { class: "btn btn-fantasma", onclick: selectorCategorias }, "← Categorías")));
     }
