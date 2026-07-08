@@ -437,6 +437,34 @@ input[type="range"].semaforo::-moz-range-thumb {
 .flujo-dots .dot.hecho { background: var(--calma); border-color: var(--calma); }
 .flujo-dots .dot.actual { border-color: var(--calma); box-shadow: 0 0 0 3px var(--calma-fondo); }
 
+/* ---------- Arsenal práctico ---------- */
+textarea.quemando { animation: quemar 0.9s ease forwards; }
+@keyframes quemar {
+  0% { opacity: 1; }
+  60% { opacity: 0.4; filter: blur(1px); border-color: var(--rojo); }
+  100% { opacity: 0; filter: blur(3px); }
+}
+
+/* ---------- Flujo v2: dots clicables ---------- */
+.flujo-cab { margin-bottom: var(--e4); }
+.flujo-dots { margin-bottom: 0; }
+.flujo-dots .dot {
+  padding: 0; cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+.flujo-dots .dot:hover { transform: scale(1.35); border-color: var(--calma); }
+
+/* ---------- Simulador ---------- */
+.sim-medidores { display: flex; gap: var(--e4); margin: var(--e3) 0; }
+.sim-medidor { flex: 1; }
+.sim-medidor .barra-progreso { margin-top: 4px; }
+.sim-npc {
+  background: var(--superficie); border: 1px solid var(--linea);
+  border-radius: var(--radio-g) var(--radio-g) var(--radio-g) 4px;
+  padding: var(--e4) var(--e5); margin: var(--e4) 0;
+  font-size: 1.02rem; line-height: 1.6; white-space: pre-wrap;
+}
+
 </style>
 </head>
 <body>
@@ -864,7 +892,7 @@ Existen además **meta-emociones**: emociones sobre tus emociones. Rabia por sen
 **Señala:** una pérdida (real o simbólica: una expectativa, una imagen de futuro). **Empuja a:** retirarse, bajar el ritmo. **Necesita:** espacio para procesar, y compañía sin arreglos. **Qué hacer:** dejarla estar sin taparla con rabia ni con actividad frenética. En hombres especialmente, mucha rabia es tristeza sin permiso. Llorar regula; no es derrota. **Se vuelve problema cuando:** dura semanas ocupándolo todo, o cuando jamás se permite y sale siempre convertida en otra cosa.` },
 
       { titulo: "2.4 Vergüenza", md: `
-**Señala:** sensación de estar mal *tú* como persona (a diferencia de la culpa, que señala una *acción* mala). **Empuja a:** esconderte, o atacar para taparla. **Necesita:** ser nombrada y expuesta a la luz con alguien seguro; la vergüenza crece en secreto y se encoge al contarse. **Qué hacer:** convertirla en culpa siempre que se pueda ("hice algo dañino" en vez de "soy un desastre"), porque la acción se repara y la identidad no. Ojo: la vergüenza post-episodio sube tu activación de fondo y te deja más propenso al siguiente estallido; machacarte no es disciplina, es gasolina. **Se vuelve problema cuando:** cada error se convierte en juicio sobre tu valor total.` },
+**Señala:** sensación de estar mal *tú* como persona (a diferencia de la culpa, que señala una *acción* mala). **Empuja a:** esconderte, o atacar para taparla. **Necesita:** ser nombrada y expuesta a la luz con alguien seguro; la vergüenza crece en secreto y se encoge al contarse. **Qué hacer:** convertirla en culpa siempre que se pueda ("hice algo dañino" en vez de "soy un desastre"), porque la acción se repara y la identidad no. Ojo: la vergüenza post-episodio sube tu activación de fondo y te deja más propenso al siguiente estallido; machacarte no es disciplina, es gasolina. **Se vuelve problema cuando:** cada error se convierte en juicio sobre tu valor total. La herramienta *Autocompasión* trae los dos guiones de emergencia para este exacto momento.` },
 
       { titulo: "2.5 Culpa", md: `
 **Señala:** hiciste algo contra tus propios valores. **Empuja a:** reparar (su función es buena). **Necesita:** reparación concreta (6.5) y luego cierre. **Qué hacer:** usarla como combustible de reparación y cambio, no de autocastigo en bucle. Culpa que ya reparó y sigue doliendo en bucle es rumiación, y se trata como tal (5.7). **Se vuelve problema cuando:** te la generan para manejarte, o cuando la sientes por poner límites legítimos.` },
@@ -996,7 +1024,8 @@ Las tres están guiadas con animación en la herramienta *Respiración*.` },
 - **STOP:** **S**top (congela: no hables, no escribas) · **T**oma un paso atrás (físico o mental) · **O**bserva (¿qué número soy?, ¿qué siento?, ¿qué quiere hacer mi impulso?) · **P**rocede con intención (elige el siguiente paso, que casi siempre es la frase de salida + descarga).
 - **Surfear el impulso:** el impulso funciona en olas: sube, hace pico y baja solo en minutos *si no lo obedeces ni lo peleas*. Obsérvalo como una ola: "ahí está, subiendo... debe andar por 8... ya baja". Cada ola surfeada sin actuar debilita el patrón; cada una obedecida lo entrena. Estás jubilando un hábito a base de olas surfeadas.
 - **Acción opuesta:** cuando el impulso empuja fuerte hacia algo destructivo, haz deliberadamente lo contrario suave. ¿Empuja a atacar? Baja la voz y suaviza la cara. ¿Empuja a desaparecer? Di "necesito pausa, vuelvo a las 8". ¿Empuja a mandar el mensaje? Suelta el teléfono en otra habitación. No es reprimir: es no dejar que el impulso maneje el volante.
-- **Defusión (despegarte del pensamiento):** en vez de "no le importo", di mentalmente "estoy teniendo el pensamiento de que no le importo". Suena mínimo; el efecto es real: convierte el pensamiento de verdad-absoluta en evento mental observable. Funciona también con la certeza falsa: "estoy teniendo la certeza de que lo hizo a propósito".` },
+- **Defusión (despegarte del pensamiento):** en vez de "no le importo", di mentalmente "estoy teniendo el pensamiento de que no le importo". Suena mínimo; el efecto es real: convierte el pensamiento de verdad-absoluta en evento mental observable. Funciona también con la certeza falsa: "estoy teniendo la certeza de que lo hizo a propósito".
+- **Distancia por nombre (tercera persona):** háblate por tu nombre o en segunda persona: "¿qué le conviene hacer a [tu nombre] ahora?" en vez de "¿qué hago?". Crea distancia psicológica instantánea y casi sin esfuerzo — de las técnicas con mejor respaldo experimental que existen. Combínala con el test del amigo: aconséjate como aconsejarías a otro.` },
 
       { titulo: "4.6 Palabra", md: `
 - **Frases de salida** (dicen tres cosas: me importa + pausa + vuelvo). La colección completa, filtrable por contexto y con botón de copiar, está en la herramienta *Frases*. Elige 2–3, reescríbelas en tus palabras en *Mi cuaderno* y ensáyalas en voz alta: en caliente solo sale lo sobreaprendido.
@@ -1014,7 +1043,21 @@ Las tres están guiadas con animación en la herramienta *Respiración*.` },
 - **5 minutos** (baño, ir por agua): 10 suspiros fisiológicos + agua fría en muñecas + pregunta ancla.
 - **30 minutos** (episodio fuerte): protocolo completo de 4.7 — o directamente el botón SOS.` },
 
-      { titulo: "4.9 Errores que convierten la pausa en daño", md: `
+      { titulo: "4.9 Sobrevivir el pico: distracción con criterio y tu kit", md: `
+Cuando el pico es 9–10 y no puedes resolver nada YA, distraerse **con criterio** es legítimo: es un puente para pasar el pico, no evitación crónica. El menú (ACCEPTS, de la TDC): una **A**ctividad que absorba · **C**ontribuir (ayudar a alguien) · generar otra **E**moción (una comedia, música que te mueva) · a**P**artar el problema un rato a propósito · ocupar los pensamien**T**os (contar de 7 en 7, recitar) · una **S**ensación fuerte (hielo en la mano, ducha, sabor intenso).
+
+Y prepara en frío tu **kit de los 5 sentidos** (autoconsuelo, TDC): una vista (foto, lugar), un sonido (playlist de emergencia), un olor (café, una colonia), un sabor (té, algo lento), un tacto (manta, mascota, ducha caliente). En crisis no se improvisa: se abre el kit. Guárdalo en *Mi cuaderno*.` },
+
+      { titulo: "4.10 El arsenal por nivel de evidencia (honestidad de domador)", md: `
+Un experto sabe qué tan probada está cada arma. Resumen honesto:
+
+- **Evidencia alta:** suspiro fisiológico (ensayo controlado, Stanford 2023) · etiquetar la emoción con precisión (neuroimagen: nombrar baja la amígdala) · hablarte en tercera persona (Kross) · reevaluación cognitiva / mirada alternativa (la más estudiada; OJO: pierde fuerza por encima de ~8/10 — por eso el orden es cuerpo primero) · exhalación más larga que la inhalación (mecanismo vagal) · practicar en frío.
+- **Evidencia media:** frío en la cara (mecanismo alto, uso clínico medio) · 4-7-8 · respiración cuadrada · STOP · surfear el impulso · acción opuesta (mejor para tristeza y vergüenza) · 5-4-3-2-1 · defusión · pausa de autocompasión · relajación muscular · zumbido vagal · escritura expresiva.
+- **Evidencia baja o anecdótica (riesgo cero, útil si a TI te sirve):** sacudida somática y caídas de talón · pendulación · abrazo de mariposa · RAIN como paquete. El tapping (EFT) muestra efectos en estudios pero con debate serio sobre si el golpeteo añade algo a la exposición + reencuadre que ya contiene; no lo incluimos como herramienta.
+
+Regla de oro del compendio: **si una técnica no te mueve nada tras 1–2 semanas de práctica en frío, cámbiala.** Hay muchas; la mejor es la que tú usas.` },
+
+      { titulo: "4.11 Errores que convierten la pausa en daño", md: `
 Usar la frase de salida con tono helado (eso es retirada castigo con disfraz). Rumiar durante la pausa. Volver antes de tiempo con el cuerpo encendido. No volver nunca. Usar "necesito espacio" como forma elegante de desaparecer. La pausa protege la conversación; el castigo la cierra. La diferencia siempre está en el tono al irte y en si cumples la vuelta.` }
     ]
   },
@@ -1050,7 +1093,9 @@ Tu umbral no es fijo: sube y baja con el estado del cuerpo. No es consejo genér
 - **Cafeína:** en exceso imita la activación (corazón rápido, inquietud) y te acerca al amarillo de base.
 - **Comida:** hambre = irritabilidad química. No es metáfora.
 - **Ejercicio regular:** válvula de descarga y ensanchador de ventana. Tres veces por semana cambia el terreno de fondo.
-- **Carga acumulada:** en semanas de estrés alto, avisa a los tuyos ("estoy en semana difícil, ténme paciencia") y sube la vigilancia. Saber que estás en terreno frágil ya reduce episodios.` },
+- **Carga acumulada:** en semanas de estrés alto, avisa a los tuyos ("estoy en semana difícil, ténme paciencia") y sube la vigilancia. Saber que estás en terreno frágil ya reduce episodios.
+
+**El chequeo HALT.** Antes de tomarte en serio una emoción intensa o meterte a resolver un problema emocional complejo, revisa cuatro básicos: ¿tengo **H**ambre? ¿vengo **A**rrastrando enojo de otra cosa? ¿estoy **L**onely (solo, sin contacto real hace días)? ¿estoy **T**an cansado que todo pesa doble? Si algo de eso está en rojo, atiéndelo primero: media hora de comida, sueño o contacto humano estabiliza más que una hora de análisis.` },
 
       { titulo: "5.4 La autopsia de episodios (con ejemplo resuelto)", md: `
 Va a volver a pasar mientras aprendes; cada episodio es oro **si lo procesas**. A las horas, en frío, diez minutos con la herramienta *Autopsia*. Hazla como investigador, no como juez. Ejemplo resuelto:
@@ -1092,6 +1137,8 @@ Para trabajar en frío las interpretaciones calientes:
 3. **Emoción e intensidad:** desestimado + miedo a perder, 8/10.
 4. **Mirada alternativa** (usa: tres explicaciones posibles + test del amigo —*¿qué le diría yo a un amigo en esta situación exacta?*— + caza de distorsiones del 5.5): "Estaba en cena. 'Siempre' es falso: ayer respondió al minuto. Estoy leyendo la mente y razonando desde la emoción."
 5. **Re-evalúa la intensidad:** 4/10. No desaparece —no es magia—, pero por debajo del umbral de impulso ya eliges tú.
+
+**Bonus de reencuadre:** la activación también se puede reinterpretar. "Estoy nervioso" y "estoy encendido, el cuerpo se está preparando" son la misma fisiología con dos etiquetas — y la segunda rinde mejor. No es negar: es elegir la lectura útil de un dato ambiguo.
 
 Hazla por escrito las primeras 8–10 veces (sirve el campo de notas de la *Autopsia* o papel); después el proceso corre solo en la cabeza.` },
 
@@ -1289,6 +1336,8 @@ El principio: **los niveles no se leen, se ganan.** Cada punto sale de práctica
 - **Palabra:** escenarios de comunicación del Dojo, tus frases propias en el cuaderno, retos de expresión.
 - **Reparación:** autopsias (+3, y +2 si incluyen plan si-entonces), escenarios de reparación.
 - **Terreno:** terreno anotado en el check-in, retos de sueño/alcohol/ejercicio.
+
+Y las herramientas de campo también puntúan: cada **descarga física** completada (+1 Cuerpo), cada **ola surfeada** con su curva (+2 Cuerpo), cada **STOP guiado** terminado (+2 Detección), cada **borrador que murió o se reescribió en frío** (+3 Palabra) y cada **conversación preparada que efectivamente tuviste** (+3 Palabra), cada **anclaje completado** (+1 Detección) y cada **práctica de autocompasión** (+2 Reparación — reparar también es contigo).
 
 Cada disciplina sube por niveles (Aprendiz → Practicante → Avanzado → Experto → Maestro) y el conjunto define tu rango, hasta **Maestro de la Ventana**. El reto del día apunta automáticamente a tu disciplina más floja: los expertos entrenan su punto débil, no su truco favorito.` },
 
@@ -1824,7 +1873,15 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
     T("t46","comunicacion","Ya mandaste la bomba: primeras palabras","'Lo que te escribí estuvo mal, en fondo y forma. No lo pienso. ¿Puedo llamarte y lo hablamos bien?' — y luego reparación completa."),
     // Largo plazo
     T("t47","largo","Las 4 curvas del progreso real","Detección más temprana · recuperación más rápida · menor intensidad de daño · mejor reparación. Cero episodios NO es la métrica."),
-    T("t48","largo","Protocolo de recaída en 5 pasos","Sin etiqueta de identidad · autopsia en 24–48 h · reparación si hubo daño · ajustar el plan · seguir sin autocastigo.")
+    T("t48","largo","Protocolo de recaída en 5 pasos","Sin etiqueta de identidad · autopsia en 24–48 h · reparación si hubo daño · ajustar el plan · seguir sin autocastigo."),
+    T("t49","caliente","Técnica de la tercera persona (evidencia alta)","Háblate por tu nombre: '¿qué le conviene hacer a [nombre] ahora?'. Crea distancia psicológica casi sin esfuerzo."),
+    T("t50","frio","HALT: el chequeo previo","¿Hambre · Arrastro enojo · soLo · Tan cansado? Si algo está en rojo, atiéndelo antes de analizar la emoción."),
+    T("t51","caliente","4-7-8: receta y para qué","Inhala 4, retén 7, exhala 8. Para bajar revoluciones o dormir. Si retener agobia: acorta manteniendo exhalación > inhalación."),
+    T("t52","caliente","Precaución del frío en la cara","El reflejo de inmersión baja el pulso de golpe. Con problemas cardiacos o bradicardia: usar otra palanca."),
+    T("t53","caliente","ACCEPTS: distraerse con criterio","Actividad · Contribuir · otra Emoción · aPartar un rato · ocupar los pensamienTos · Sensación fuerte. Puente para el pico, no evitación crónica."),
+    T("t54","frio","Reinterpretar la activación","'Nervioso' y 'encendido/preparándome' son la misma fisiología con dos etiquetas. Elige la lectura útil."),
+    T("t55","caliente","Zumbido vagal: por qué funciona","Exhalación larga + vibración grave (mmm/voo) estimulan el nervio vago. Cuanto más grave, más vibra."),
+    T("t56","caliente","La regla del compendio","Si una técnica no te mueve nada tras 1–2 semanas de práctica en frío, cámbiala. La mejor es la que TÚ usas.")
   ];
 })();
 
@@ -1865,7 +1922,605 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
     R("r27","palabra","Prepara por escrito la apertura suave de una conversación pendiente (no hace falta tenerla hoy)."),
     R("r28","reparacion","Relee tu última autopsia y verifica: ¿cumpliste el si-entonces que te propusiste?"),
     R("r29","terreno","Día de carga alta: avísale a alguien cercano 'hoy vengo con poca batería, ténme paciencia'."),
-    R("r30","deteccion","Ejercicio de 2 minutos de atención a la respiración. Cada 'me fui / vuelvo' es una repetición.")
+    R("r30","deteccion","Ejercicio de 2 minutos de atención a la respiración. Cada 'me fui / vuelvo' es una repetición."),
+    R("r31","mente","Ante la próxima molestia, háblate por tu nombre: '¿qué le conviene hacer a [tu nombre] ahora?'"),
+    R("r32","terreno","Chequeo HALT antes de tu próxima decisión cargada: ¿hambre, enojo arrastrado, soledad, cansancio?"),
+    R("r33","cuerpo","Prueba el zumbido vagal: 6 exhalaciones con mmm grave. Nota dónde vibra."),
+    R("r34","terreno","Arma tu kit de 5 sentidos en Mi cuaderno: una vista, un sonido, un olor, un sabor, un tacto de emergencia.")
+  ];
+})();
+
+</script>
+  <script>
+/* Ventana · simulaciones del Dojo (motor de conversaciones ramificadas)
+   ---------------------------------------------------------------------
+   FORMATO DE AUTORÍA (añadir escenas = añadir datos, sin tocar código):
+
+   escena = {
+     id, cat, sub, nivel (1-5), titulo, disciplina, emocion (fibra que entrena),
+     duracion ("~3 min"), inicioT, inicioC (tensión/conexión 0-10 iniciales),
+     contexto: "texto de situación",
+     turnos: [ {
+       npc: { base:"...", tenso:"... (si T>=7)", calido:"... (si C>=7)" },
+       opciones: [ { t, tipo: "impulso|parcial|regulada", hab: etiqueta de habilidad,
+                     dT, dC (efecto en tensión/conexión), efecto:"consecuencia narrada",
+                     fb:"mecanismo (se revela solo al final)" } ×3 ]
+     } ],
+     cierres: { bien, medio, mal },   // según (C−T) final: ≥3 / entre / ≤−3
+     analisis: { emocion, necesidad, interpretacion, sesgo, ventana, alternativa, consecuencia },
+     razonamiento: "monólogo interno de una persona regulada, paso a paso"
+   }
+
+   Habilidades (alimentan las competencias): pausa · formula · validar · limite ·
+   defusion · escucha · honestidad · reparar · marco
+   --------------------------------------------------------------------- */
+(function () {
+  const G = (window.Guia = window.Guia || {});
+
+  G.simCategorias = [
+    { id: "pareja", nombre: "❤️ Pareja", subs: ["mensajes", "celos", "discusiones", "cancelaciones", "distancia", "reconciliación", "críticas", "convivencia", "inseguridad", "ruptura"] },
+    { id: "familia", nombre: "👨‍👩‍👧 Familia", subs: ["comparaciones", "críticas", "control", "falta de apoyo", "hermanos"] },
+    { id: "amigos", nombre: "👥 Amigos", subs: ["bromas", "exclusión", "deudas", "distancia"] },
+    { id: "trabajo", nombre: "💼 Trabajo", subs: ["jefe crítico", "compañero conflictivo", "errores", "sobrecarga", "crédito ajeno"] },
+    { id: "autoestima", nombre: "🧍 Autoestima", subs: ["vergüenza", "comparación", "fracaso"] },
+    { id: "desconocidos", nombre: "🌍 Desconocidos", subs: ["conflictos", "atención al cliente", "tráfico"] }
+  ];
+
+  G.simEscenas = [
+
+  /* ============ PAREJA · mensajes · Nivel 1 ============ */
+  {
+    id: "s-visto-1", cat: "pareja", sub: "mensajes", nivel: 1,
+    titulo: "El visto de las 22:30", disciplina: "mente", emocion: "rechazo / no elegido",
+    duracion: "~3 min", inicioT: 4, inicioC: 5,
+    contexto: "Le escribiste a las 19:00 sobre el plan del sábado, con ganas. Son las 22:30: visto, sin respuesta — y la ves conectada. El pecho ya avisó. Al fin, a las 23:10, te llega: \u201cHola! Recién veo esto bien, día de locos\u201d.",
+    turnos: [
+      {
+        npc: {
+          base: "Ella: \u201cHola! Recién veo esto bien, día de locos. ¿Qué decías del sábado?\u201d",
+          tenso: "Ella: \u201cHola... perdón, día de locos. ¿Todo bien? Te siento raro.\u201d",
+          calido: "Ella: \u201cHolaaa, perdón, día de locos 😅 cuéntame lo del sábado que me interesa.\u201d"
+        },
+        opciones: [
+          { t: "\u201cSí, claro, \u2018recién\u2019. Estuviste conectada toda la noche.\u201d", tipo: "impulso", hab: "defusion", dT: 3, dC: -2,
+            efecto: "Silencio de un minuto. Cuando responde, el tono cambió: ahora se defiende.",
+            fb: "Leer la mente + sarcasmo: presentaste tu película (\u2018me ignoró a propósito\u2019) como hecho probado. Ahora el tema es tu tono, no tu necesidad." },
+          { t: "\u201cNada, olvídalo. Ya no importa.\u201d", tipo: "parcial", hab: "limite", dT: 1, dC: -2,
+            efecto: "Ella insiste: \u201c¿cómo que ya no importa?\u201d. El plan se enfrió y el malestar quedó vivo, sin nombre.",
+            fb: "Demolición suave: castigas retirando el tema. El asunto no muere; hiberna con intereses." },
+          { t: "\u201cTranquila. Te confieso que el visto me dejó rumiando un rato 😅 ¿Te cuento lo del sábado?\u201d", tipo: "regulada", hab: "honestidad", dT: -1, dC: 2,
+            efecto: "Ella se ríe: \u201cuy, perdón, en serio fue un día horrible\u201d. La conversación se abre.",
+            fb: "Honestidad ligera sin acusación: nombraste lo tuyo (\u2018me dejó rumiando\u2019) sin convertirlo en cargo. Eso invita, no acorrala." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201cEs que de verdad no paré en todo el día. ¿Estás molesto?\u201d",
+          tenso: "Ella: \u201c¿Sabes qué? Si vas a estar así mejor hablamos otro día.\u201d",
+          calido: "Ella: \u201cJajaja te entiendo. Bueno, dime: ¿qué armamos el sábado?\u201d"
+        },
+        opciones: [
+          { t: "\u201c¿Molesto yo? Para nada.\u201d (seco, que lo note)", tipo: "impulso", hab: "honestidad", dT: 2, dC: -2,
+            efecto: "Lo nota. Ahora hay dos conversaciones: la hablada y la congelada por debajo.",
+            fb: "Pseudo-calma: negar con el texto y castigar con el tono. Nadie puede reparar lo que niegas que existe." },
+          { t: "\u201cUn poco me removió, sí. No es grave: cuando llevo horas esperando algo que me ilusiona, el visto me juega en contra.\u201d", tipo: "regulada", hab: "formula", dT: -2, dC: 2,
+            efecto: "\u201cUf, tiene sentido. La próxima te aviso aunque sea con un emoji\u201d, dice. Baja la tensión de verdad.",
+            fb: "La fórmula en miniatura: hecho + emoción + contexto, sin \u2018tú siempre\u2019. Ella pudo entender sin defenderse." },
+          { t: "\u201cMolesto no... pero admite que dejarme en visto estando conectada es feo.\u201d", tipo: "parcial", hab: "formula", dT: 1, dC: 0,
+            efecto: "\u201cNo estaba \u2018conectada para ti\u2019, estaba apagando incendios\u201d, responde. Empate técnico con roce.",
+            fb: "Mitad y mitad: expresaste, pero pidiendo una confesión (\u2018admite\u2019). Pedir culpa produce defensa; pedir cuidado produce cambio." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201cBueno... ¿y el sábado entonces? Yo sigo con ganas.\u201d",
+          tenso: "Ella: \u201cMira, mejor lo hablamos mañana con calma, ¿sí?\u201d",
+          calido: "Ella: \u201cOye, y gracias por decírmelo sin drama. ¿Sábado entonces?\u201d"
+        },
+        opciones: [
+          { t: "\u201cYa no sé si quiero hacer nada el sábado.\u201d", tipo: "impulso", hab: "limite", dT: 3, dC: -3,
+            efecto: "El plan muere. Ganaste diez segundos de poder y perdiste la noche que querías.",
+            fb: "Decisión drástica como castigo: sacrificas lo que TÚ querías para que el otro sienta el costo. Autosabotaje de manual." },
+          { t: "\u201cSábado sí. Y una cosa pequeña: si un día no puedes responder, un \u2018luego te escribo\u2019 me ordena la cabeza.\u201d", tipo: "regulada", hab: "formula", dT: -1, dC: 2,
+            efecto: "\u201cHecho\u201d, dice. Plan confirmado y petición instalada sin herida.",
+            fb: "Petición concreta hacia adelante, en verde. Así se cierra el ciclo: necesidad nombrada → pedida → acordada." },
+          { t: "\u201cSábado va. (y el tema del visto, guardado para la próxima)\u201d", tipo: "parcial", hab: "limite", dT: 0, dC: 0,
+            efecto: "La noche se salva. La fibra queda sin nombrar, lista para sonar más fuerte la próxima vez.",
+            fb: "Evitar no es regular: sin petición, el mismo visto volverá a doler igual. Te faltó un paso, no la calma." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "Terminan riéndose del \u201cdía de locos\u201d y con el sábado armado. Tu necesidad quedó dicha sin que nadie sangrara — y eso enseña más que cualquier discusión ganada.",
+      medio: "El plan sobrevive, pero queda estática en la línea. Nada se rompió; nada se resolvió del todo.",
+      mal: "La conversación se enfrió y el sábado quedó en el aire. El visto dolía 4; la conversación lo subió a 8."
+    },
+    analisis: {
+      emocion: "Rechazo / sentirte no elegido (con tapa de rabia fría).",
+      necesidad: "Confirmación de que le importas — pedible con palabras.",
+      interpretacion: "\u201cConectada + sin responderme = no le importo / soy el último\u201d.",
+      sesgo: "Leer la mente + razonamiento emocional (\u201clo siento fuerte, luego es verdad\u201d).",
+      ventana: "Amarillo alto (5–6): aún había mente disponible; el riesgo era responder en el pico de la urgencia por el chat.",
+      alternativa: "Nombrar lo tuyo sin acusar y pedir hacia adelante (\u2018un aviso me ordena la cabeza\u2019).",
+      consecuencia: "En la vida real, este patrón repetido convierte cada visto en un examen sorpresa — y a tu pareja, en alguien que escribe con miedo."
+    },
+    razonamiento: "Una persona regulada aquí piensa: \u201cOk, pecho apretado y urgencia: estoy en 6. Lo que siento es \u2018no elegido\u2019, no rabia. Mi impulso quiere sarcasmo — frase espejo clásica. El dato real: un visto y un \u2018día de locos\u2019; mi película: \u2018le da igual\u2019. Tres alternativas existen y no las miré. Necesito confirmación: eso se PIDE. La pido ligera ahora y concreta al final. Y el sábado no se toca: no incendio lo que quiero.\u201d"
+  },
+
+  /* ============ PAREJA · celos · Nivel 2 ============ */
+  {
+    id: "s-celos-2", cat: "pareja", sub: "celos", nivel: 2,
+    titulo: "La foto con el ex", disciplina: "mente", emocion: "celos / insuficiencia",
+    duracion: "~4 min", inicioT: 5, inicioC: 5,
+    contexto: "Abres una red social y ahí está: tu pareja en la foto grupal de un cumpleaños de anoche... y en la esquina, su ex. Ella te había dicho \u201cvoy a lo de Caro, gente de la uni\u201d. No mintió — pero no lo mencionó. El estómago se cierra. Ella acaba de escribirte: \u201cBuen día 🌞 ¿café más tarde?\u201d.",
+    turnos: [
+      {
+        npc: {
+          base: "Ella: \u201cBuen día 🌞 ¿café más tarde?\u201d",
+          tenso: "Ella: \u201c¿Pasa algo? Estás rarísimo desde temprano.\u201d",
+          calido: "Ella: \u201cBuen díaaa. Anoche estuvo lindo el cumple, te extrañé.\u201d"
+        },
+        opciones: [
+          { t: "\u201cQué conveniente no mencionar que iba a estar tu ex.\u201d", tipo: "impulso", hab: "defusion", dT: 3, dC: -2,
+            efecto: "\u201c¿Perdón? ¿Me estás revisando las fotos?\u201d — el tema ya no es el ex: es tu tono y tu vigilancia.",
+            fb: "Acusación con premisa oculta (\u2018lo ocultaste a propósito\u2019). Abriste el juicio con la sentencia escrita." },
+          { t: "\u201cCafé va 🙂\u201d (y por dentro, a rumiar la foto todo el día)", tipo: "parcial", hab: "honestidad", dT: 1, dC: -1,
+            efecto: "El café será con un tercero invisible en la mesa. La rumiación cobra su renta hora a hora.",
+            fb: "Evitación: proteges la paz de hoy hipotecando la de la semana. Lo no dicho no desaparece; fermenta." },
+          { t: "\u201cCafé va. Y te aviso con honestidad: vi la foto del cumple y algo se me movió con lo del ex. Quiero hablarlo tranquilo, sin drama.\u201d", tipo: "regulada", hab: "honestidad", dT: -1, dC: 2,
+            efecto: "\u201cAh... claro que sí. Gracias por decírmelo así\u201d, responde. La conversación difícil ya tiene marco y hora.",
+            fb: "Honestidad + marco: anuncias el tema sin sentencia y le das lugar. Así llega la conversación con dos adultos, no dos abogados." }
+        ]
+      },
+      {
+        npc: {
+          base: "En el café. Ella: \u201cA ver, dime. ¿Qué te movió de la foto?\u201d",
+          tenso: "En el café. Ella, a la defensiva: \u201cSi vamos a pelear por una foto, dilo ya.\u201d",
+          calido: "En el café. Ella, suave: \u201cImaginé que algo así podía pasar. Pregúntame lo que quieras.\u201d"
+        },
+        opciones: [
+          { t: "\u201c¿Hablaste con él? ¿De qué? ¿Quién invitó a quién? Muéstrame el chat del grupo.\u201d", tipo: "impulso", hab: "marco", dT: 3, dC: -3,
+            efecto: "Se cruza de brazos: \u201cno voy a vivir dando exámenes\u201d. El interrogatorio produjo la distancia que temías.",
+            fb: "Miedo disfrazado de control: cada pregunta-fiscal confirma que no confías — y la confianza no se obtiene por registro." },
+          { t: "\u201cLa verdad simple: cuando lo vi sentí celos y un poco de \u2018¿seré suficiente?\u2019. No te acuso de nada. Necesito saber cómo estás tú con ese tema.\u201d", tipo: "regulada", hab: "formula", dT: -2, dC: 3,
+            efecto: "Ella baja la guardia: \u201cno hay tema. Ni le hablé más de un hola. Y me gusta que me lo digas así en vez de explotar\u201d.",
+            fb: "Nombrar la emoción primaria (insuficiencia, no rabia) desarma. Pediste información, no confesión: eso sí se puede dar." },
+          { t: "\u201cNo, si yo no tengo problema... es tu vida.\u201d (tono de mártir)", tipo: "parcial", hab: "honestidad", dT: 1, dC: -1,
+            efecto: "\u201c¿Entonces por qué lo mencionas?\u201d — el mensaje doble la confunde y la agota.",
+            fb: "Indirecta con moño: dices \u2018no pasa nada\u2019 esperando que insista. Obligar a adivinar es cobrar sin facturar." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201c¿Y qué necesitas de mí con esto, concretamente?\u201d",
+          tenso: "Ella: \u201cMira, yo no controlo quién va a un cumpleaños. ¿Qué quieres que haga?\u201d",
+          calido: "Ella: \u201cTe agradezco esta charla. ¿Hay algo que te dejaría más tranquilo?\u201d"
+        },
+        opciones: [
+          { t: "\u201cQue no vayas a lugares donde esté él. Punto.\u201d", tipo: "impulso", hab: "limite", dT: 3, dC: -3,
+            efecto: "\u201cEso no va a pasar\u201d, dice, y tiene razón. Pediste un control imposible y quedó plantada la semilla de \u2018eres controlador\u2019.",
+            fb: "Ultimátum sobre la conducta ajena: los límites son sobre lo TUYO. Prohibir personas es pedir una jaula, no cuidado." },
+          { t: "\u201cNada, olvídalo. Ya bastante hice con decirlo.\u201d", tipo: "parcial", hab: "marco", dT: 1, dC: 0,
+            efecto: "La charla muere en tierra de nadie. Fue valiente abrirla; quedó incompleta sin petición.",
+            fb: "Retirada en la última milla: la conversación difícil vale por su cierre. Sin petición concreta, todo el coraje anterior rinde la mitad." },
+          { t: "\u201cSolo esto: si él va a estar en un plan, mencionármelo antes. No para pedir permiso — para que mi cabeza no arme películas.\u201d", tipo: "regulada", hab: "marco", dT: -2, dC: 3,
+            efecto: "\u201cEso es justo y fácil: hecho\u201d, dice. Sales del café más cerca que antes de la foto.",
+            fb: "Petición pequeña, concreta, sobre información (no sobre su libertad). Convierte celos en un acuerdo operativo. Nivel domador." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "La foto que pudo ser una mina terminó siendo un acuerdo y una charla que sumó confianza. Los celos hablados en verde construyen; actuados en rojo, demuelen.",
+      medio: "Nadie explotó, pero el tema quedó a medio digerir. Volverá — ojalá lo recibas con la versión regulada.",
+      mal: "Lo que era una foto ahora es \u2018el problema de tus celos\u2019. El control produjo exactamente la distancia que temías."
+    },
+    analisis: {
+      emocion: "Celos, con la primaria debajo: insuficiencia (\u2018¿seré suficiente?\u2019).",
+      necesidad: "Confirmación del vínculo + información para no rellenar con película.",
+      interpretacion: "\u201cNo lo mencionó = lo ocultó = hay algo\u201d.",
+      sesgo: "Filtro negativo (una esquina de una foto borró el resto) + leer la mente sobre la omisión.",
+      ventana: "Amarillo desde temprano y sostenido: el riesgo era rumiar horas y llegar al café en 7.",
+      alternativa: "Anunciar el tema con marco, nombrar la primaria y cerrar con petición de información (no de control).",
+      consecuencia: "El patrón interrogatorio-vigilancia, repetido, entrena a la pareja a ocultar cosas inocentes para evitar juicios — la profecía autocumplida de los celos."
+    },
+    razonamiento: "La versión regulada piensa: \u201cEstómago cerrado: celos. ¿Debajo? \u2018No soy suficiente\u2019. Dato: una foto grupal y una omisión; película: \u2018ocultamiento\u2019. Si interrogo, confirmo que soy de quien hay que esconderse. Lo que necesito es información y confirmación — ambas se piden. Marco primero, primaria después, petición chica al final. Y su libertad no entra en la negociación: eso es lo que la hace quedarse.\u201d"
+  },
+
+  /* ============ AMIGOS · bromas · Nivel 1 ============ */
+  {
+    id: "s-broma-1", cat: "amigos", sub: "bromas", nivel: 1,
+    titulo: "La broma que rayó", disciplina: "palabra", emocion: "desestimado",
+    duracion: "~2 min", inicioT: 4, inicioC: 6,
+    contexto: "Cena con amigos. Cuentas con ilusión tu nuevo proyecto y Dani suelta, riéndose: \u201c¿otra de tus ideas millonarias? Avísame cuando dure más de un mes\u201d. Risas en la mesa. Algo se te aprieta.",
+    turnos: [
+      {
+        npc: {
+          base: "Dani sigue: \u201ces broma, hermano, tú sabes cómo soy\u201d.",
+          tenso: "Dani, notando tu cara: \u201cuy, ¿te ofendiste? Era un chiste...\u201d",
+          calido: "Dani: \u201cya, en serio, cuéntame de qué va.\u201d"
+        },
+        opciones: [
+          { t: "\u201c¿Y tú qué has terminado tú en tu vida, aparte de cervezas?\u201d", tipo: "impulso", hab: "limite", dT: 3, dC: -2,
+            efecto: "\u201cUuuh\u201d, hace la mesa. Ahora hay dos heridos y un público.",
+            fb: "Frase espejo con público: devolviste el golpe amplificado. El chiste era barato; tu respuesta lo volvió caro." },
+          { t: "Reírte con todos y cambiar de tema.", tipo: "parcial", hab: "honestidad", dT: 0, dC: -1,
+            efecto: "La cena sigue. La frase se archiva en la lista invisible — la que un día explota \u2018por nada\u2019.",
+            fb: "Tragarse el golpe protege la noche e hipoteca la amistad: la tercera broma igual cobrará las tres juntas." },
+          { t: "Sonreír y decir tranquilo: \u201cjaja, ok — pero en serio: esta me importa. Luego te cuento bien y me das tu opinión de verdad.\u201d", tipo: "regulada", hab: "limite", dT: -1, dC: 1,
+            efecto: "\u201cVale, vale, perdón. Cuéntame\u201d, dice Dani, ya sin galería. El límite entró sin drama.",
+            fb: "Límite suave en tiempo real: marcaste \u2018esto me importa\u2019 sin sermón ni herida. Temprano y aburrido gana a épico y tarde." }
+        ]
+      },
+      {
+        npc: {
+          base: "Más tarde, a solas, Dani: \u201coye, ¿de verdad te molestó lo de antes?\u201d",
+          tenso: "Más tarde, Dani, seco: \u201cqué sensible andas últimamente\u201d.",
+          calido: "Más tarde, Dani: \u201cperdón por la broma, a veces se me pasa la mano. ¿Todo bien?\u201d"
+        },
+        opciones: [
+          { t: "\u201cNo, cero. Tú tranquilo.\u201d (y bajarle al chat una semana)", tipo: "impulso", hab: "honestidad", dT: 1, dC: -2,
+            efecto: "Dani nota el hielo pero no el motivo. Castigas con distancia lo que negaste con palabras.",
+            fb: "Retirada castigo: la versión silenciosa del reproche. Nadie repara lo que se le niega que existe." },
+          { t: "\u201cUn poco, sí. Cuando me ilusiono con algo y la primera respuesta es burla, me pincha. No necesito porras: solo que la primera bala no sea al proyecto.\u201d", tipo: "regulada", hab: "formula", dT: -2, dC: 3,
+            efecto: "\u201cUf, justo. Perdón, en serio. Cuéntamelo bien ahora\u201d, dice. La amistad salió más sólida que antes de la broma.",
+            fb: "La fórmula entre amigos: hecho + emoción + petición realista. Directo, sin drama, sin lista de agravios." },
+          { t: "\u201cLo de siempre contigo: todo es chiste. Un día se te va a acabar la gracia.\u201d", tipo: "parcial", hab: "formula", dT: 2, dC: -1,
+            efecto: "\u201cBueno, ya, tampoco es para tanto\u201d — el \u2018siempre\u2019 lo puso a defenderse en vez de a escucharte.",
+            fb: "\u2018Siempre\u2019 + amenaza vaga: convertiste un caso concreto en juicio a su carácter. El caso se podía ganar; el juicio, jamás." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "El chiste costó dos minutos de conversación honesta y compró meses de bromas mejor calibradas. Así se cuida una amistad sin volverse de cristal.",
+      medio: "La noche se salvó; la fibra quedó sin nombre. Nada grave — todavía.",
+      mal: "Una broma de tercera terminó en distancia de primera. El golpe no lo dio Dani: lo dio la respuesta."
+    },
+    analisis: {
+      emocion: "Desestimado (te reíste = tapa social; debajo: \u2018lo mío no vale\u2019).",
+      necesidad: "Valoración — que lo importante para ti se trate como importante.",
+      interpretacion: "\u201cSe burla = me considera un fracasado\u201d.",
+      sesgo: "Personalizar + todo-o-nada (\u2018todo es chiste contigo\u2019).",
+      ventana: "Amarillo bajo con público — el factor galería multiplica el impulso de la frase espejo.",
+      alternativa: "Límite suave inmediato + fórmula en privado.",
+      consecuencia: "Tragarse bromas sistemáticamente fabrica la explosión diferida \u2018por nada\u2019 que después nadie entiende — ni tú."
+    },
+    razonamiento: "La versión regulada piensa: \u201cPinchazo: desestimado. El impulso quiere frase espejo, y hay público — carnada perfecta. El costo real de la broma es 2/10; que no lo suba yo a 8. Límite chico ahora (\u2018esta me importa\u2019), y lo fino, en privado, con la fórmula. Sin \u2018siempre\u2019: solo esta broma, esta petición.\u201d"
+  },
+
+  /* ============ TRABAJO · jefe crítico · Nivel 2 ============ */
+  {
+    id: "s-jefe-2", cat: "trabajo", sub: "jefe crítico", nivel: 2,
+    titulo: "Criticado frente al cliente", disciplina: "palabra", emocion: "injusticia / humillación",
+    duracion: "~4 min", inicioT: 6, inicioC: 4,
+    contexto: "Reunión con cliente. Presentas el avance y tu jefe te corta: \u201cesto está flojo, esperaba más de ti\u201d — delante de todos. Parte del retraso fue por datos que ÉL entregó tarde. El calor sube por el cuello. El cliente mira su cuaderno, incómodo.",
+    turnos: [
+      {
+        npc: {
+          base: "Silencio en la sala. El cliente carraspea. Tu jefe espera tu reacción.",
+          tenso: "Tu jefe agrega: \u201c¿y bien? ¿Alguna explicación?\u201d",
+          calido: "El cliente suaviza: \u201cbueno, hay cosas rescatables en el avance...\u201d"
+        },
+        opciones: [
+          { t: "\u201cFlojo estuvo que TÚ me pasaras los datos con una semana de retraso.\u201d", tipo: "impulso", hab: "pausa", dT: 4, dC: -3,
+            efecto: "El cliente baja la vista. Tu jefe enrojece. Puede que tengas razón — y acabas de perder la sala entera.",
+            fb: "Reclamo justo, momento suicida: la razón defendida en rojo y con público sale envuelta en metralla, y todos responden a la metralla." },
+          { t: "\u201cTomo nota. Reviso los puntos y les traigo el detalle en una hora.\u201d — y sigues presentando lo sólido.", tipo: "regulada", hab: "pausa", dT: -2, dC: 2,
+            efecto: "La reunión se recompone. El cliente asiente. Compraste el terreno donde tu versión SÍ puede ganar: en frío y con datos.",
+            fb: "Protocolo de 30 segundos: frase neutra + seguir. No tragaste la injusticia: la moviste al terreno donde se cobra entera." },
+          { t: "Callar el resto de la reunión, respondiendo con monosílabos.", tipo: "parcial", hab: "pausa", dT: 1, dC: -2,
+            efecto: "La reunión cojea hasta el final. Tu silencio se leyó como culpa, no como dignidad.",
+            fb: "Retirada en vivo: sobreviviste sin explotar, pero cediste la narrativa. El silencio total también comunica — y mal." }
+        ]
+      },
+      {
+        npc: {
+          base: "Terminada la reunión, tu jefe te alcanza en el pasillo: \u201c¿todo bien? Te vi tenso.\u201d",
+          tenso: "Tu jefe, cortante: \u201cespero ese detalle en una hora. Y más profesionalismo la próxima.\u201d",
+          calido: "Tu jefe, más suave: \u201coye... quizá fui duro ahí adentro.\u201d"
+        },
+        opciones: [
+          { t: "\u201cTenso tú, que me tiras bajo el bus delante del cliente.\u201d", tipo: "impulso", hab: "formula", dT: 3, dC: -2,
+            efecto: "\u201cCuidado con ese tono\u201d, responde. La conversación que podía ganarse acaba de volverse disciplinaria.",
+            fb: "Metáfora-ataque en caliente: el fondo (justo) murió en la forma. Con jerarquía de por medio, la forma ES el campo de batalla." },
+          { t: "\u201cTodo bien.\u201d (y a rumiar la injusticia toda la semana)", tipo: "parcial", hab: "honestidad", dT: 0, dC: -1,
+            efecto: "La semana se envenena en silencio. El patrón queda instalado: te puede criticar en público gratis.",
+            fb: "El precio del \u2018todo bien\u2019 falso: paz de pasillo a cambio de precedente. Lo no reclamado se vuelve costumbre." },
+          { t: "\u201cQuiero hablarlo bien, no en el pasillo. ¿Tienes 15 minutos a las 4? Llevo el detalle de los datos y algo sobre la forma de la reunión.\u201d", tipo: "regulada", hab: "marco", dT: -1, dC: 2,
+            efecto: "\u201cOk, a las 4\u201d, dice, ya en otro tono. Acabas de fijar el terreno y la agenda: fondo Y forma.",
+            fb: "Marco de domador: tema anunciado, hora puesta, dos puntos separados (los datos = hechos; la forma = límite). Nada de emboscadas." }
+        ]
+      },
+      {
+        npc: {
+          base: "A las 4, su oficina. \u201cA ver, ¿qué tienes?\u201d",
+          tenso: "A las 4. \u201cQue sea rápido, tengo otra reunión.\u201d",
+          calido: "A las 4. \u201cPasa. Y sobre lo de hoy... te escucho.\u201d"
+        },
+        opciones: [
+          { t: "Cronología con fechas: \u201clos datos llegaron el 12, lo acordado era el 5; con eso, el avance cubre lo posible. Y aparte: la crítica delante del cliente me desautoriza — te pido que ese feedback sea en privado.\u201d", tipo: "regulada", hab: "limite", dT: -2, dC: 3,
+            efecto: "Mira las fechas en silencio. \u201cTienes razón en los plazos. Y... ok con lo del cliente.\u201d No es una disculpa épica — es un precedente ganado.",
+            fb: "Reclamo con puntería: evidencia + petición de límite, sin adjetivos. Difícil de esquivar, imposible de castigar." },
+          { t: "\u201cSolo quería decir que no fue mi culpa.\u201d (sin fechas, con tono dolido)", tipo: "parcial", hab: "formula", dT: 0, dC: 0,
+            efecto: "\u201cTodos tenemos excusas\u201d, corta. Sin evidencia, tu verdad compitió contra su versión — y la jerarquía desempata.",
+            fb: "Fondo correcto, munición ausente: en el trabajo, la razón sin documentos es una opinión. Los hechos son tu fórmula aquí." },
+          { t: "\u201c¿Sabes qué? Estoy considerando mis opciones fuera de esta empresa.\u201d", tipo: "impulso", hab: "limite", dT: 3, dC: -3,
+            efecto: "\u201cHaz lo que consideres\u201d, responde neutro. Jugaste tu carta más cara para un pulso de pasillo — y la mesa lo notó.",
+            fb: "Ultimátum inflacionario: amenazas con el máximo por un conflicto mediano. Si no lo cumples, pierdes crédito; si lo cumples en caliente, pierdes más." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "Saliste con los plazos aclarados, un límite instalado y tu profesionalismo intacto. Así se pelea una injusticia: fría, documentada, con la forma como bandera.",
+      medio: "Sobreviviste al día sin daños mayores, pero el precedente quedó a medias. La próxima crítica pública dirá si costó o no.",
+      mal: "La injusticia inicial era de tu jefe; el desenlace terminó siendo tuyo. En jerarquías, el que pierde la forma pierde el fondo."
+    },
+    analisis: {
+      emocion: "Injusticia + humillación (el ingrediente público multiplica todo).",
+      necesidad: "Ser oído antes del juicio + que el feedback tenga forma digna.",
+      interpretacion: "\u201cMe sacrificó delante del cliente; quedar callado = aceptar la culpa\u201d.",
+      sesgo: "Todo-o-nada bajo presión (\u2018o exploto ahora o trago para siempre\u2019 — existía la tercera vía: aplazar).",
+      ventana: "Rojo situacional con salida bloqueada: el protocolo de 30 segundos era LA jugada.",
+      alternativa: "Frase neutra en vivo → marco en privado → evidencia + límite.",
+      consecuencia: "Explotar en la sala te cuesta la reputación; tragar en silencio te cuesta el precedente. La vía regulada cobra la injusticia sin pagar peaje."
+    },
+    razonamiento: "La versión regulada piensa: \u201cCalor en el cuello, público, jerarquía: rojo con salida bloqueada. Nada importante se decide aquí. Frase neutra, sigo presentando: eso me compra el terreno. La injusticia es real y SE COBRA — a las 4, con fechas. Dos carpetas separadas: los datos (hechos) y la forma (límite). Y mi carta de renuncia no se juega en un pasillo.\u201d"
+  },
+
+  /* ============ FAMILIA · comparaciones · Nivel 2 ============ */
+  {
+    id: "s-comparacion-2", cat: "familia", sub: "comparaciones", nivel: 2,
+    titulo: "\u201cTu primo ya se compró casa\u201d", disciplina: "palabra", emocion: "insuficiencia",
+    duracion: "~3 min", inicioT: 5, inicioC: 5,
+    contexto: "Almuerzo familiar. Tu madre, sirviendo el postre, suelta: \u201c¿supiste que tu primo ya se compró casa? Y es dos años menor que tú...\u201d. La mesa te mira de reojo. Conoces este guion de memoria; hoy duele igual.",
+    turnos: [
+      {
+        npc: {
+          base: "Tu madre sigue: \u201cyo lo digo por tu bien, para que te motives\u201d.",
+          tenso: "Tu madre, dolida: \u201cya ni comentarles nada se puede a ustedes\u201d.",
+          calido: "Tu madre: \u201cbueno, cada quien su ritmo, ¿no? ¿Quieres más postre?\u201d"
+        },
+        opciones: [
+          { t: "\u201c¿Y él sabe que su mamá no lo usa de vara para medir a los demás? Qué suerte la suya.\u201d", tipo: "impulso", hab: "limite", dT: 3, dC: -2,
+            efecto: "El sarcasmo cae en la mesa como un vaso roto. Tu madre se repliega herida; tu padre suspira. El postre sabe a batalla.",
+            fb: "Sarcasmo espejo con familia: hiere a quien te hirió y a todos los testigos. La fibra era tuya; la metralla, para la mesa." },
+          { t: "Sonreír, decir \u201cqué bien por él\u201d y cambiar de tema una vez más.", tipo: "parcial", hab: "honestidad", dT: 0, dC: -1,
+            efecto: "La comida sigue en paz. La comparación número 47 se archiva junto a las otras 46. La 48 dolerá más.",
+            fb: "El peaje del silencio: cada comparación tragada baja el umbral de la explosión diferida — esa que un día caerá \u2018por nada\u2019 en Navidad." },
+          { t: "Tranquilo, sin drama: \u201cme alegro por el primo. Ma, un pedido: las comparaciones no me motivan, me pesan. Prefiero que me preguntes cómo voy con lo mío.\u201d", tipo: "regulada", hab: "limite", dT: -1, dC: 1,
+            efecto: "Silencio corto. \u201cBueno... ¿y cómo vas con lo tuyo?\u201d, pregunta, algo torpe pero genuina. Primer ladrillo puesto.",
+            fb: "Límite + redirección en una sola jugada: no juzgaste su intención (\u2018por tu bien\u2019), reencauzaste el canal. Con familia, aburrido y repetido vence a épico." }
+        ]
+      },
+      {
+        npc: {
+          base: "Más tarde, en la cocina, tu madre a solas: \u201c¿te molestó lo del primo, verdad?\u201d",
+          tenso: "En la cocina, tu madre, defensiva: \u201cahora resulta que una ya no puede hablar\u201d.",
+          calido: "En la cocina, tu madre: \u201coye... creo que a veces te comparo mucho. Perdón.\u201d"
+        },
+        opciones: [
+          { t: "\u201cSí, ma. Cuando me comparas siento que lo que hago no alcanza nunca. Sé que quieres motivarme — pero conmigo funciona al revés. Pregúntame por mis avances: eso sí me empuja.\u201d", tipo: "regulada", hab: "formula", dT: -2, dC: 3,
+            efecto: "Se le humedecen los ojos: \u201cyo no sabía que lo sentías así\u201d. No cambiará en un día — pero hoy escuchó el manual de instrucciones.",
+            fb: "Fórmula con validación de su intención: separaste el PARA QUÉ (bueno) del CÓMO (dañino). Así se reeduca sin declarar la guerra." },
+          { t: "\u201cNo, para nada.\u201d (y despedirte más temprano que de costumbre)", tipo: "impulso", hab: "honestidad", dT: 1, dC: -2,
+            efecto: "Te vas con el nudo puesto. Ella se queda con la duda. El guion queda intacto para el próximo almuerzo.",
+            fb: "Negar + castigar con retirada: la combinación que garantiza repetición infinita del mismo domingo." },
+          { t: "\u201cLlevas veinte años comparándome, mamá. VEINTE.\u201d", tipo: "parcial", hab: "formula", dT: 2, dC: -1,
+            efecto: "\u201cAy, exagerado...\u201d — el historial completo la abrumó y la defensa le tapó los oídos.",
+            fb: "Verdad probable, dosis letal: descargar veinte años en una frase produce defensa, no cambio. Se empieza por HOY, con una petición." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "El guion de veinte años recibió su primera edición: un límite sin guerra y un canal nuevo (\u2018pregúntame por lo mío\u2019). Las familias no cambian en un almuerzo — cambian a base de almuerzos así.",
+      medio: "La paz del domingo se salvó y el guion sigue en cartelera. Decide tú cuántas funciones más aguanta la fibra.",
+      mal: "La comparación dolía; la sobremesa terminó doliendo más. Con familia, el sarcasmo siempre cobra comisión doble."
+    },
+    analisis: {
+      emocion: "Insuficiencia (\u2018no alcanzo\u2019), con tapa de sarcasmo.",
+      necesidad: "Reconocimiento del propio camino — y un canal de interés genuino (\u2018pregúntame\u2019).",
+      interpretacion: "\u201cMe compara = me considera un fracaso\u201d (cuando su código torpe dice \u2018quiero motivarte\u2019).",
+      sesgo: "Leer la mente sobre la intención + todo-o-nada histórico (\u2018veinte años\u2019).",
+      ventana: "Amarillo con público familiar: el terreno con más pilas viejas por metro cuadrado.",
+      alternativa: "Límite suave + redirección en mesa; fórmula con validación de intención, a solas.",
+      consecuencia: "Tragar comparaciones fabrica la explosión navideña; el límite repetido y aburrido, en cambio, reescribe guiones de décadas."
+    },
+    razonamiento: "La versión regulada piensa: \u201cPinchazo conocido: insuficiencia, pila de años. Su intención probablemente es torpe, no cruel — eso cambia mi jugada. En mesa: límite corto + redirección, cero juicio. A solas: la fórmula, validando su \u2018para qué\u2019 y corrigiendo su \u2018cómo\u2019, con una petición usable. Y sin abrir el archivo de veinte años: hoy se edita una página, no el libro.\u201d"
+  },
+
+  /* ============ PAREJA · distancia · Nivel 3 ============ */
+  {
+    id: "s-distancia-3", cat: "pareja", sub: "distancia", nivel: 3,
+    titulo: "Dos semanas de frío", disciplina: "mente", emocion: "miedo a perder",
+    duracion: "~5 min", inicioT: 6, inicioC: 3,
+    contexto: "Hace dos semanas que la sientes lejos: respuestas cortas, menos planes, un \u201cestoy cansada\u201d que se repite. Anoche te quedaste mirando el techo armando teorías. Hoy te dice: \u201coye, ¿cenamos el jueves? Quiero que hablemos\u201d. El estómago se te cae al piso.",
+    turnos: [
+      {
+        npc: {
+          base: "Ella: \u201cNada malo, tranquilo. Solo quiero que hablemos con tiempo.\u201d",
+          tenso: "Ella: \u201c¿Ves? Por esto mismo necesito que hablemos...\u201d",
+          calido: "Ella: \u201cTranquilo 🙂 es para ponernos al día en serio, hace rato no lo hacemos.\u201d"
+        },
+        opciones: [
+          { t: "\u201c¿\u2018Que hablemos\u2019? Dime YA qué pasa. No aguanto hasta el jueves con esto.\u201d", tipo: "impulso", hab: "marco", dT: 3, dC: -2,
+            efecto: "\u201cJusto por esto es difícil hablarte de cosas\u201d, responde. Tu urgencia acaba de darle un dato en tu contra.",
+            fb: "La urgencia es tuya, no del tema: exigir la conversación YA es pedir tenerla en tu peor versión. El pánico negocia fatal." },
+          { t: "\u201cJueves perfecto.\u201d — y pasarte tres días releyendo chats y ensayando defensas.", tipo: "parcial", hab: "defusion", dT: 2, dC: -1,
+            efecto: "Llegas al jueves con ojeras y un juicio ya celebrado en tu cabeza. Ella nota que llegaste a un tribunal, no a una cena.",
+            fb: "Aceptar el marco y sabotearlo por dentro: tres días de rumiación te sientan en la mesa a 7/10 antes del primer plato." },
+          { t: "\u201cJueves va. Te confieso que mi cabeza ya quiere armar películas — dame un titular para no llegar con teorías: ¿es de preocuparse?\u201d", tipo: "regulada", hab: "honestidad", dT: -2, dC: 2,
+            efecto: "\u201cNo es ruptura, tonto. Es que necesito contarte cómo me he sentido\u201d, dice. Tres días de rumiación, desactivados con una pregunta.",
+            fb: "Pedir el titular: honestidad sobre tu mente + petición de información mínima. La incertidumbre con marco pesa la mitad." }
+        ]
+      },
+      {
+        npc: {
+          base: "Jueves, la cena. Ella: \u201cÚltimamente me he sentido sola en la relación. Siento que cargo yo con los planes, con las conversaciones... y me cansé un poco.\u201d",
+          tenso: "Jueves. Ella, cansada: \u201cmira, seré directa: así como estamos, yo no puedo seguir mucho tiempo más.\u201d",
+          calido: "Jueves. Ella, suave: \u201cquiero decirte algo difícil, y te lo digo porque me importa lo nuestro: me he sentido sola.\u201d"
+        },
+        opciones: [
+          { t: "\u201c¿Sola TÚ? ¿Y todo lo que yo hago no cuenta? Hice una lista mental: el mes pasado organicé...\u201d", tipo: "impulso", hab: "escucha", dT: 3, dC: -3,
+            efecto: "Se le apagan los ojos: \u201cesto es exactamente a lo que me refiero\u201d. Tu defensa acaba de demostrar su punto.",
+            fb: "Defensa con inventario: ella trajo una emoción y recibió un alegato. Sentirse sola no se rebate con contabilidad — se escucha." },
+          { t: "\u201cEntiendo... o sea que la relación va mal. ¿Quieres terminar? Dilo de una vez.\u201d", tipo: "parcial", hab: "defusion", dT: 2, dC: -2,
+            efecto: "\u201c¡No dije eso!\u201d — tu catástrofe la obligó a consolarte a ti, justo cuando ella pedía ser escuchada.",
+            fb: "Catastrofizar en voz alta: saltaste de \u2018me siento sola\u2019 a \u2018ruptura\u2019. Ahora ella cuida tu pánico en vez de compartir su cansancio." },
+          { t: "Respirar. \u201cGracias por decírmelo así. Quiero entenderlo bien: ¿en qué momentos lo has sentido más? Cuéntame, te escucho.\u201d", tipo: "regulada", hab: "escucha", dT: -2, dC: 3,
+            efecto: "Habla diez minutos. Suelta cosas de meses. Al final dice: \u201cgracias por no ponerte a la defensiva — hacía mucho que no me sentía escuchada así\u201d.",
+            fb: "Validar antes de responder: la jugada más difícil y la más rentable. Escuchar el dolor ajeno sin defenderte no es aceptar culpas: es abrir la puerta por donde vuelve la cercanía." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella termina: \u201c...y no te lo digo como reproche. Te lo digo porque quiero que esto funcione. ¿Tú cómo lo ves?\u201d",
+          tenso: "Ella: \u201cen fin. Ya lo dije. ¿Vas a decir algo o me arrepiento de haber hablado?\u201d",
+          calido: "Ella, tomándote la mano: \u201c¿tú cómo has estado con todo esto? Ahora te toca a ti.\u201d"
+        },
+        opciones: [
+          { t: "\u201cLo veo así: tienes razón en parte, y yo también me he sentido lejos — y me dio miedo preguntar. Propongo algo concreto: un plan fijo a la semana que armemos entre los dos, y decirnos estas cosas antes de que se acumulen dos semanas.\u201d", tipo: "regulada", hab: "formula", dT: -2, dC: 3,
+            efecto: "\u201cTrato hecho\u201d, dice, y por primera vez en dos semanas la sientes cerca. La distancia era un síntoma; la conversación, el tratamiento.",
+            fb: "Reconocer + exponerte (\u2018me dio miedo preguntar\u2019) + propuesta operativa. Vulnerabilidad con plan: la combinación que reconstruye." },
+          { t: "\u201cOk. Voy a cambiar, lo prometo. Nunca más te vas a sentir así.\u201d", tipo: "parcial", hab: "reparar", dT: 0, dC: 0,
+            efecto: "Sonríe a medias: \u201cno me prometas \u2018nunca más\u2019... prométeme martes\u201d. La promesa épica le suena a las anteriores.",
+            fb: "El \u2018nunca más\u2019 es incobrable y ella lo sabe: promete el método (algo chico y repetible), no la perfección." },
+          { t: "\u201cYo también tendría mi lista de quejas, ¿eh? Pero bueno, hablemos de la tuya, como siempre.\u201d", tipo: "impulso", hab: "escucha", dT: 3, dC: -3,
+            efecto: "Se cierra como una puerta: \u201colvídalo\u201d. La cena que iba a acercarlos terminó midiendo quién carga más.",
+            fb: "El marcador de agravios: convertiste una mano tendida en competencia de víctimas. En ese juego pierden los dos aunque uno gane." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "La distancia tenía nombre y no era el que temías: era acumulación sin conversación. Salieron con un plan chico y la sensación rara y buena de haberse dicho la verdad sin sangre.",
+      medio: "Se dijeron cosas; faltó aterrizarlas. La distancia se acortó un poco — el jueves que viene dirá si fue conversación o tregua.",
+      mal: "Ella pidió ser escuchada y encontró un tribunal. La distancia de dos semanas ahora tiene un motivo nuevo — y este sí es tuyo."
+    },
+    analisis: {
+      emocion: "Miedo a perder (tres días de ansiedad anticipatoria), y en la cena: impulso de defensa ante la crítica.",
+      necesidad: "Certidumbre mínima (el \u2018titular\u2019) y, en la cena, la de ELLA: ser escuchada — atenderla era también atender lo tuyo.",
+      interpretacion: "\u201c\u2018Quiero que hablemos\u2019 = ruptura\u201d y \u201c\u2018me siento sola\u2019 = me acusa de fallar\u201d.",
+      sesgo: "Catastrofizar + personalizar (su cansancio como veredicto sobre ti) + adivinar el futuro tres días seguidos.",
+      ventana: "La trampa era ANTES de la cena: llegar en 7 tras 72 horas de rumiación. El terreno se jugaba de lunes a jueves.",
+      alternativa: "Pedir titular → cortar rumiación → validar primero → reconocer + propuesta chica.",
+      consecuencia: "Defenderse del \u2018me siento sola\u2019 la enseña a no volver a decirlo — y la soledad no dicha es la antesala real de las rupturas."
+    },
+    razonamiento: "La versión regulada piensa: \u201cEstómago al piso: miedo a perder. Mi mente va a escribir tres días de guiones — le pido un titular y le quito la pluma. En la cena, regla de oro: su emoción primero, mi versión después. \u2018Me siento sola\u2019 no es un cargo: es un mapa. Valido, pregunto dónde, y cierro con algo chico y repetible. Las promesas épicas son para películas; los martes fijos son para parejas.\u201d"
+  },
+
+  /* ============ PAREJA · reconciliación · Nivel 4 · SIMULACIÓN LARGA ============ */
+  {
+    id: "s-reconciliacion-4", cat: "pareja", sub: "reconciliación", nivel: 4,
+    titulo: "La conversación de volver (larga)", disciplina: "reparacion", emocion: "vergüenza / esperanza",
+    duracion: "~12 min", inicioT: 7, inicioC: 2,
+    contexto: "Hace un mes explotaste feo: mensaje bomba, retirada, cosas dichas que aún te queman. Ella pidió distancia y la respetaste — un mes entrenando, un mes en silencio. Ayer te escribió: \u201cHola. ¿Tomamos un café el sábado?\u201d. Es tu conversación más importante del año, y lo sabes.",
+    turnos: [
+      {
+        npc: {
+          base: "Sábado. Llega seria, se sienta. \u201cHola. Gracias por venir.\u201d Un silencio espeso.",
+          tenso: "Sábado. Llega con los brazos cruzados. \u201cVine porque creo que merecemos cerrar esto como adultos.\u201d",
+          calido: "Sábado. Llega y te sonríe apenas. \u201cHola... te ves bien. Gracias por respetar el espacio.\u201d"
+        },
+        opciones: [
+          { t: "\u201cUn mes, ¿eh? Pensé que no ibas a escribir nunca.\u201d (medio reproche, medio chiste)", tipo: "impulso", hab: "honestidad", dT: 2, dC: -1,
+            efecto: "Su media sonrisa desaparece. Empezaste cobrando la espera que tú mismo causaste.",
+            fb: "Reproche disfrazado de humor: el primer minuto marca la conversación entera, y lo gastaste facturando." },
+          { t: "\u201cGracias a ti por escribir. Estoy nervioso, te lo digo de frente. Y me alegra verte.\u201d", tipo: "regulada", hab: "honestidad", dT: -2, dC: 2,
+            efecto: "Se le suaviza el gesto: \u201cyo también estoy nerviosa\u201d. El hielo se agrieta por el lado correcto.",
+            fb: "Vulnerabilidad de apertura: nombrar el nervio lo desactiva y da permiso al de ella. Apertura suave de manual." },
+          { t: "Sonreír y esperar en silencio a que ella hable primero.", tipo: "parcial", hab: "escucha", dT: 1, dC: 0,
+            efecto: "El silencio se estira incómodo. Ella esperaba señales tuyas; la pelota era tuya y no lo viste.",
+            fb: "Escuchar es oro después de abrir — pero quien dañó abre. El silencio inicial del que debe reparar se lee como frialdad." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201cQuiero empezar yo. Lo que pasó ese día me dolió muchísimo. No solo el mensaje... todo lo de después.\u201d",
+          tenso: "Ella, dura: \u201cA ver, te escucho. ¿Qué tienes para decir de lo que hiciste?\u201d",
+          calido: "Ella: \u201cAntes de todo: sé que este mes también fue duro para ti. Pero necesito hablar de ese día.\u201d"
+        },
+        opciones: [
+          { t: "\u201cLo sé. Y antes de explicar nada: lo que escribí esa noche estuvo mal. El mensaje, el tono, y desaparecer después. Te lastimé, y era lo último que quería hacer.\u201d", tipo: "regulada", hab: "reparar", dT: -2, dC: 3,
+            efecto: "Exhala, como soltando un mes de aire. \u201cNecesitaba oír exactamente eso, sin adornos.\u201d",
+            fb: "Paso 1 y 3 de la reparación: reconocer lo específico + validar el impacto. Sin \u2018pero\u2019, sin contexto todavía. Primero la herida, después la historia." },
+          { t: "\u201cSí... pero entiende que ese día yo venía de una semana horrible y tú tampoco me respondías, entonces...\u201d", tipo: "impulso", hab: "reparar", dT: 3, dC: -3,
+            efecto: "\u201cAhí está el \u2018pero\u2019\u201d, dice, y mira la puerta. El mes de silencio casi se reinicia en un minuto.",
+            fb: "El \u2018pero\u2019 asesino: borró el reconocimiento y convirtió tu disculpa en defensa. La explicación puede existir — DESPUÉS de que la herida sea escuchada entera." },
+          { t: "\u201cFui un desastre. Soy un desastre. No sé ni cómo aceptaste venir, la verdad...\u201d", tipo: "parcial", hab: "reparar", dT: 1, dC: -1,
+            efecto: "Ella suspira: \u201cno vine a consolarte a ti\u201d. Tu culpa acaba de pedirle trabajo justo a la persona herida.",
+            fb: "Autoflagelo que demanda consuelo: la vergüenza gritada invierte los roles — la víctima termina cuidando al ofensor. Firmeza sin drama: \u2018hice algo dañino\u2019, no \u2018soy un desastre\u2019." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201c¿Y qué pasó contigo ese día? Porque no fue la primera vez... y necesito entender si puede ser la última.\u201d",
+          tenso: "Ella: \u201cPorque perdón ya me habías pedido antes. ¿Qué haría diferente esta vez, exactamente?\u201d",
+          calido: "Ella: \u201cCuéntame qué pasaba por tu cabeza. Quiero entenderte, de verdad.\u201d"
+        },
+        opciones: [
+          { t: "\u201cAlgo se me cruzó, no sé... tú me conoces, soy intenso. Pero ya pasó.\u201d", tipo: "impulso", hab: "honestidad", dT: 2, dC: -2,
+            efecto: "\u201c\u2018Ya pasó\u2019 fue lo que dijiste la vez anterior\u201d, responde. La vaguedad le confirma que nada cambió.",
+            fb: "\u2018Soy así\u2019 + \u2018ya pasó\u2019: la no-explicación. Ella no pregunta por curiosidad — audita si hay proceso. Vaguedad = no lo hay." },
+          { t: "\u201cTe cuento con precisión, porque lo estudié: me sentí no elegido, lo tapé con rabia, y mandé el mensaje en el pico en vez de esperar. Este mes entrené eso: tengo un protocolo — pausa, descarga, y nada importante se envía en caliente. Ya lo usé varias veces. No te prometo perfección; te prometo el método y repararlo rápido cuando falle.\u201d", tipo: "regulada", hab: "honestidad", dT: -2, dC: 3,
+            efecto: "Te mira distinto — como evaluando algo nuevo. \u201cEs la primera vez que te oigo hablar así de ti.\u201d",
+            fb: "La respuesta que reconstruye: mecanismo entendido + entrenamiento verificable + promesa del método (no de \u2018nunca más\u2019). Confianza = predictibilidad, y acabas de mostrar el plano." },
+          { t: "\u201cEstoy yendo a terapia... bueno, estoy por empezar. Y leí mucho del tema.\u201d", tipo: "parcial", hab: "honestidad", dT: 0, dC: 0,
+            efecto: "\u201cOk...\u201d, dice, sin brillo. Las intenciones futuras pesan poco contra un historial presente.",
+            fb: "Proceso en futuro: mejor que nada, pero ella necesita evidencia de HOY. \u2018Estoy por\u2019 compite mal contra \u2018ya hice\u2019." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella guarda silencio un momento. \u201cHay algo más que me cuesta decir... Ese mensaje me dio miedo. No de ti — de lo que somos cuando escalamos. Los dos.\u201d",
+          tenso: "Ella: \u201cY te soy honesta: una parte de mí vino a despedirse. Convénceme de que no debería.\u201d",
+          calido: "Ella: \u201cYo también tengo lo mío, ¿sabes? Yo desaparezco, tú explotas. Somos un buen equipo para el desastre\u201d — media sonrisa triste."
+        },
+        opciones: [
+          { t: "\u201cEso que dices es exactamente lo que quiero cambiar: el sistema de los dos, no solo yo. ¿Te cuento una idea? Se llama la conversación del contrato: acordar una señal para frenar ANTES de escalar, y una pausa que siempre vuelve.\u201d", tipo: "regulada", hab: "marco", dT: -2, dC: 3,
+            efecto: "\u201c¿Una señal...?\u201d — se inclina hacia adelante por primera vez. Pasaron de juzgar el pasado a diseñar el futuro.",
+            fb: "Reencuadre de sistema: aceptaste el \u2018los dos\u2019 sin defensa y trajiste arquitectura, no promesas. Diseñar juntos es la forma más alta de reparar." },
+          { t: "\u201cNo digas eso... yo jamás te haría daño de verdad, tú lo sabes.\u201d", tipo: "impulso", hab: "escucha", dT: 2, dC: -2,
+            efecto: "\u201cYa me lo hiciste\u201d, responde bajito. Minimizaste su miedo justo cuando te lo confiaba.",
+            fb: "Invalidación con buena intención: \u2018no sientas eso\u2019 nunca ha apagado un miedo — solo enseña a no contarlo." },
+          { t: "\u201cSi una parte de ti vino a despedirse, quizá deberíamos terminar de una vez y ya.\u201d", tipo: "parcial", hab: "defusion", dT: 3, dC: -3,
+            efecto: "\u201c¿Ves? Ahí está: todo o nada en tres segundos\u201d, dice con tristeza. Tu demolición preventiva casi ejecuta el miedo de ambos.",
+            fb: "Romper tú primero para no sentir el golpe: la decisión drástica del miedo. Ella mencionó UNA parte; tú sentenciaste el todo." }
+        ]
+      },
+      {
+        npc: {
+          base: "Ella: \u201cOk... supongamos que lo intentamos. ¿Qué pasa la primera vez que vuelvas a escalar? Porque va a pasar.\u201d",
+          tenso: "Ella: \u201cUna condición: a la primera bomba nueva, se acabó. ¿Puedes vivir con eso?\u201d",
+          calido: "Ella: \u201cMe gusta cómo suena. Pero seamos realistas: ¿y cuando falles? Porque los dos vamos a fallar.\u201d"
+        },
+        opciones: [
+          { t: "\u201cNo va a pasar. Te lo juro por lo que quieras.\u201d", tipo: "impulso", hab: "reparar", dT: 2, dC: -1,
+            efecto: "\u201cEso no existe y lo sabes\u201d, responde. El juramento imposible le suena a los de antes.",
+            fb: "Jurar la perfección: prometes algo que ningún humano controla. Cada \u2018nunca más\u2019 incumplido devalúa todos los siguientes." },
+          { t: "\u201cVa a pasar, tienes razón. Y esta es la diferencia: cuando pase, control de daños en horas — retiro lo dicho, pausa real, y reparación completa, no un \u2018perdón\u2019 al vuelo. Me puedes medir por eso: no por no caer, sino por cómo me levanto. Y acepto que tú definas tu límite.\u201d", tipo: "regulada", hab: "reparar", dT: -2, dC: 3,
+            efecto: "Silencio largo. \u201c...Está bien. Intentémoslo. Despacio.\u201d Y por primera vez en un mes, te sostiene la mirada sin dolor.",
+            fb: "El protocolo de recaída, ofrecido de frente: expectativas realistas + criterio medible + respeto a su límite. Así suena un adulto que va en serio." },
+          { t: "\u201cBueno, si tú también trabajas lo tuyo de desaparecer, yo trabajo lo mío.\u201d", tipo: "parcial", hab: "limite", dT: 1, dC: 0,
+            efecto: "\u201cO sea, condiciones...\u201d — no es injusto lo que pides, pero el momento lo volvió transacción.",
+            fb: "Punto válido, turno equivocado: el trabajo de ella existe y se conversa — cuando tu reparación esté completa. Hoy tocaba tu parte del puente." }
+        ]
+      }
+    ],
+    cierres: {
+      bien: "No volvieron \u2018como antes\u2019 — volvieron mejor equipados: con señal acordada, protocolo de recaída y la prueba de que pueden hablar de lo peor sin sangrar. La reconciliación no fue el café: fue el sistema que salió de él.",
+      medio: "Quedó la puerta entreabierta y tareas para los dos. No es poco después de un mensaje bomba — pero el puente aún necesita vigas.",
+      mal: "El mes de silencio encontró su segunda temporada. La conversación más importante del año pedía tu mejor versión, y llegó la de siempre."
+    },
+    analisis: {
+      emocion: "Vergüenza (por lo hecho) + miedo a perder + esperanza — el cóctel más inflamable que existe.",
+      necesidad: "La tuya: redención. La de ella: seguridad verificable. Solo la segunda desbloquea la primera.",
+      interpretacion: "\u201cSi menciona despedirse = ya lo decidió\u201d, \u201csi explico mi contexto = me entenderá\u201d (al revés: primero la herida).",
+      sesgo: "Todo-o-nada bajo miedo + el \u2018pero\u2019 justificador + vergüenza convertida en demanda de consuelo.",
+      ventana: "Duración larga = maratón de regulación: el riesgo no era un pico sino sostener el verde 40 minutos con la fibra expuesta.",
+      alternativa: "Vulnerabilidad de apertura → reconocimiento sin \u2018pero\u2019 → mecanismo + método verificable → diseño de sistema → protocolo de recaída.",
+      consecuencia: "Las reconciliaciones no fallan por falta de amor: fallan por reparaciones a medias que dejan la herida negociando el futuro."
+    },
+    razonamiento: "La versión regulada piensa: \u201cEsta conversación se gana ANTES: terreno cuidado, ensayo mental, mis frases listas. Adentro: yo dañé, yo abro. Su herida entera primero, mi contexto después o nunca. Mi vergüenza no es su trabajo. Cuando pregunte \u2018¿y si vuelve a pasar?\u2019, no juro imposibles: ofrezco el protocolo y un criterio para medirme. Y si menciona despedirse, no demuelo: escucho — una parte no es el todo.\u201d"
+  }
+
   ];
 })();
 
@@ -1981,6 +2636,13 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
     nodos.push(h("details", { class: "tarjeta", style: "padding:16px 24px" },
       h("summary", { style: "cursor:pointer;font-weight:600" }, "Explorar herramientas y guía"),
       h("div", { class: "tarjeta-fila", style: "margin-top:16px" },
+        tarjetaAccion("#/stop", "🛑", "STOP guiado", "El amarillo, paso a paso."),
+        tarjetaAccion("#/anclaje", "🖐", "Anclaje", "5-4-3-2-1, pendulación, mariposa."),
+        tarjetaAccion("#/compasion", "🫀", "Autocompasión", "Neff y RAIN: cortar la gasolina."),
+        tarjetaAccion("#/ola", "🌊", "Surf de la ola", "Tu pico graficado bajando solo."),
+        tarjetaAccion("#/vaciadero", "🔥", "Vaciadero", "Quemar la bomba o candado de frío."),
+        tarjetaAccion("#/descarga", "⚡", "Descarga", "Frío, ejercicio, caminata guiadas."),
+        tarjetaAccion("#/conversacion", "🎯", "Preparador", "Tu fórmula, con detector de peros."),
         tarjetaAccion("#/dojo", "⛩️", "Dojo", "Escenarios con feedback: falla gratis aquí."),
         tarjetaAccion("#/repaso", "🗂️", "Repaso", "Tarjetas espaciadas: memoria bajo presión."),
         tarjetaAccion("#/autopsia", "🔍", "Autopsia", "Procesa el último episodio en frío."),
@@ -2087,16 +2749,24 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
     ));
   }
 
-  /* ---- Paso 2: respiración ---- */
+  /* ---- Paso 2: descarga a elegir (protocolo TIPP) ---- */
   function paso2() {
     limpiar();
-    const escenario = G.respiracion.crearEscenario({ tecnica: "suspiro", autoIniciar: true });
+    const zona = h("div");
+    function elegir(id) {
+      G.dom.montar(zona,
+        G.descarga.crearDescarga(id),
+        h("div", { class: "fila-botones", style: "justify-content:center;margin-top:8px" },
+          h("button", { class: "btn btn-fantasma btn-mini", onclick: () => pintarSelector() }, "← otra palanca")));
+    }
+    function pintarSelector() { G.dom.montar(zona, G.descarga.crearSelector(elegir)); }
+    pintarSelector();
     pinta(marco(2,
       h("h2", null, "Primero el cuerpo"),
-      h("p", { class: "suave" }, "Suspiro fisiológico: doble inhalación por la nariz, exhalación larga por la boca. Sigue el círculo."),
-      escenario.el,
+      h("p", { class: "suave" }, "La activación es química: se baja por el cuerpo, no por la lógica. Elige tu palanca — el frío es la más rápida."),
+      zona,
       h("div", { class: "fila-botones" },
-        h("button", { class: "btn", onclick: () => { escenario.detener(); paso3(); } }, "Siguiente →")
+        h("button", { class: "btn", onclick: paso3 }, "Siguiente →")
       )
     ));
   }
@@ -2147,6 +2817,9 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
       ancla,
       h("div", { class: "fila-botones" },
         btnReloj,
+        h("button", { class: "btn", onclick: () => { cerrar(); G.prefill = { ola: { nivel: 8 } }; G.router.navegar("#/ola"); } }, "🌊 Surfear la ola (ver tu curva)"),
+        h("button", { class: "btn", onclick: () => { cerrar(); G.router.navegar("#/vaciadero"); } }, "🔥 Vaciadero"),
+        h("button", { class: "btn", onclick: () => { cerrar(); G.router.navegar("#/anclaje"); } }, "🖐 Anclaje 5-4-3-2-1"),
         h("button", { class: "btn", onclick: paso4 }, "Ya estoy más abajo →")
       )
     ));
@@ -2169,7 +2842,8 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
         }, "Registrar este momento (check-in)"),
         h("button", { class: "btn", onclick: cerrar }, "Cerrar")
       ),
-      h("p", { class: "tenue" }, "En unas horas, ya en frío: hazle la autopsia a este episodio. Ahí está el oro.")
+      h("p", { class: "tenue" }, "En unas horas, ya en frío: hazle la autopsia a este episodio. Ahí está el oro."),
+      h("p", { class: "tenue" }, "Y si viene la vergüenza a cobrar: herramienta Autocompasión — machacarte es gasolina, no disciplina.")
     ));
   }
 
@@ -2197,7 +2871,7 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
   const TECNICAS = {
     suspiro: {
       nombre: "Suspiro fisiológico",
-      descripcion: "La manera más rápida conocida de bajar la activación. Doble inhalación por la nariz + exhalación larga por la boca.",
+      descripcion: "La manera más rápida conocida de bajar la activación: doble inhalación por la nariz + exhalación LARGA por la boca (el ingrediente activo es la exhalación). Evidencia: alta (ensayo controlado de Stanford, 2023).",
       ciclos: 8,
       fases: [
         { txt: "Inhala profundo por la nariz", dur: 1800, expandir: true },
@@ -2207,16 +2881,35 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
     },
     exhalacion: {
       nombre: "Exhalación alargada (4–8)",
-      descripcion: "Inhala en 4, exhala en 8. La exhalación larga es la que frena el sistema de alarma.",
+      descripcion: "Inhala en 4, exhala en 8. La exhalación al doble de la inhalación frena el sistema de alarma (es la P de \u201cpaced breathing\u201d del TIPP). Evidencia: alta como mecanismo.",
       ciclos: 10,
       fases: [
         { txt: "Inhala por la nariz", dur: 4000, expandir: true },
         { txt: "Exhala lento", dur: 8000, expandir: false }
       ]
     },
+    t478: {
+      nombre: "4-7-8",
+      descripcion: "Inhala 4, retén 7, exhala 8 con sonido suave. Para bajar revoluciones o dormir. Si retener 7 agobia, acorta la escala manteniendo la exhalación más larga que la inhalación. Evidencia: media.",
+      ciclos: 4,
+      fases: [
+        { txt: "Inhala por la nariz", dur: 4000, expandir: true },
+        { txt: "Retén (suave, sin apretar)", dur: 7000, expandir: true },
+        { txt: "Exhala por la boca, lento", dur: 8000, expandir: false }
+      ]
+    },
+    zumbido: {
+      nombre: "Zumbido vagal (abeja / Voo)",
+      descripcion: "Exhala emitiendo un mmm o vooo GRAVE y sostenido: la vibración + la exhalación larga estimulan el nervio vago. Cuanto más grave, más vibra en el pecho. Evidencia: media (mecanismo compartido con humming/Om).",
+      ciclos: 6,
+      fases: [
+        { txt: "Inhala hondo por la nariz", dur: 3500, expandir: true },
+        { txt: "Exhala con zumbido grave (mmm / voo)", dur: 7500, expandir: false }
+      ]
+    },
     cuadrada: {
       nombre: "Respiración cuadrada (4-4-4-4)",
-      descripcion: "Para antes de una conversación difícil. Inhala, sostén, exhala, sostén.",
+      descripcion: "Para antes de una conversación difícil: calma manteniéndote alerta. Si las retenciones tensan, acórtalas. Evidencia: media (uso táctico documentado).",
       ciclos: 6,
       fases: [
         { txt: "Inhala", dur: 4000, expandir: true },
@@ -2744,7 +3437,8 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
     { id: "sientonces", et: "Mis planes si-entonces (mínimo 2)", ayuda: "\u201cSi pasa X, entonces hago Y.\u201d Ensáyalos a diario (5.2)." },
     { id: "distorsiones", et: "Mis 2–3 distorsiones de cabecera", ayuda: "Del catálogo 5.5: leer la mente, todo o nada, los debería…" },
     { id: "norte", et: "Mi norte (quién quiero ser, 2–3 líneas)", ayuda: "No qué quieres dejar de hacer: quién quieres ser (9.2)." },
-    { id: "contrato", et: "Mi señal acordada del contrato (Anexo H)", ayuda: "La palabra o gesto que tus cercanos pueden usar si te ven escalar." }
+    { id: "contrato", et: "Mi señal acordada del contrato (Anexo H)", ayuda: "La palabra o gesto que tus cercanos pueden usar si te ven escalar." },
+    { id: "kit", et: "Mi kit de 5 sentidos (4.9)", ayuda: "Vista, sonido, olor, sabor y tacto de emergencia. En crisis no se improvisa: se abre el kit." }
   ];
 
   function vista(vista) {
@@ -2767,11 +3461,30 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
       return h("div", null, h("label", { class: "etiqueta" }, c.et), h("p", { class: "ayuda", style: "margin-bottom:6px" }, c.ayuda), area);
     });
 
+    function reflexiones() {
+      const lista = G.storage.leer("reflexiones", []).slice().reverse();
+      if (!lista.length) return null;
+      return h("div", { class: "tarjeta" },
+        h("h3", { class: "mt0", style: "font-family:var(--f-titulo)" }, "Reflexiones del Dojo"),
+        h("p", { class: "tenue" }, "Lo que respondiste en el modo terapeuta después de cada simulación."),
+        ...lista.map((r) => h("div", { class: "entrada" },
+          h("div", { class: "entrada-cab" },
+            h("strong", null, r.titulo),
+            h("span", { class: "entrada-fecha", style: "margin-left:auto" }, new Date(r.ts).toLocaleDateString("es")),
+            h("button", { class: "btn btn-mini btn-fantasma", onclick: () => {
+              G.storage.guardar("reflexiones", G.storage.leer("reflexiones", []).filter((x) => x.ts !== r.ts));
+              vistaRefrescar();
+            } }, "✕")),
+          h("div", { class: "entrada-cuerpo" }, r.r.filter(Boolean).join("\n\n") || "(sin texto)"))));
+    }
+    function vistaRefrescar() { G.vistas.cuaderno(vista); }
+
     montar(vista,
       h("p", { class: "eyebrow" }, "Herramienta · tu mapa"),
       h("h1", { class: "titulo" }, "Mi cuaderno"),
       h("p", { class: "subtitulo" }, "La versión tuya de la guía. Se guarda solo mientras escribes, en este dispositivo."),
-      h("div", { class: "tarjeta" }, h("div", { class: "fila separado" }, h("span", { class: "tenue" }, "Guardado automático"), estado), ...bloques)
+      h("div", { class: "tarjeta" }, h("div", { class: "fila separado" }, h("span", { class: "tenue" }, "Guardado automático"), estado), ...bloques),
+      reflexiones()
     );
   }
 
@@ -2964,18 +3677,30 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
       const historial = G.storage.leer("dojo", []);
       const total = historial.length;
       const reguladas = historial.filter((d) => d.tipo === "regulada").length;
+      const rec = G.simulador ? G.simulador.recomendacion() : null;
+      const due = G.simulador ? G.simulador.vencidas().length : 0;
       montar(vista,
-        h("p", { class: "eyebrow" }, "Herramienta · práctica deliberada"),
+        h("p", { class: "eyebrow" }, "Herramienta · simulador de entrenamiento emocional"),
         h("h1", { class: "titulo" }, "Dojo"),
-        h("p", { class: "subtitulo" }, "Veinte situaciones reales. Eliges cómo responder y el feedback te nombra el mecanismo. Aquí se falla gratis para no fallar caro afuera."),
-        h("div", { class: "tarjeta" },
-          h("p", { class: "suave" }, total
-            ? "Llevas " + total + " respuestas, " + reguladas + " reguladas (" + Math.round((reguladas / total) * 100) + "%)."
-            : "Primera sesión: cinco escenarios, dos minutos. El ensayo en frío es lo que aparece solo en caliente."),
+        h("p", { class: "subtitulo" }, "Conversaciones que evolucionan según tus decisiones, con consecuencias reales y análisis psicológico al final. Sin puntos durante la práctica: el criterio se entrena, no se premia."),
+        rec && h("div", { class: "tarjeta", style: "border-color:var(--ambar)" },
+          h("p", { class: "eyebrow" }, "Entrenamiento recomendado" + (due ? " · " + due + " pendiente(s) de repetición espaciada" : "")),
+          h("p", null, h("strong", null, rec.escena.titulo), " — nivel " + rec.escena.nivel + " · " + rec.escena.duracion),
+          h("p", { class: "tenue" }, rec.motivo),
           h("div", { class: "fila-botones" },
-            h("button", { class: "btn btn-primario", onclick: empezar }, "Entrenar (5 escenarios)"))
-        )
-      );
+            h("button", { class: "btn btn-primario btn-mini", onclick: () => { G.simPrefs = { modo: "entrenar", escenaId: rec.escena.id }; G.router.navegar("#/simulador"); } }, "Entrenar ahora"))),
+        h("div", { class: "tarjeta-fila" },
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: () => { G.simPrefs = { modo: "entrenar" }; G.router.navegar("#/simulador"); } },
+            h("span", { class: "icono" }, "🎓"), h("strong", null, "Modo entrenamiento"),
+            h("span", null, "Eliges categoría, situación y nivel. Progresión desbloqueable.")),
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: () => { G.simPrefs = { modo: "examen" }; G.router.navegar("#/simulador"); } },
+            h("span", { class: "icono" }, "⚖"), h("strong", null, "Modo examen"),
+            h("span", null, "Situación sorpresa: no sabes qué emoción pone a prueba. Prioriza tus fallos vencidos.")),
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: empezar },
+            h("span", { class: "icono" }, "⚡"), h("strong", null, "Práctica rápida"),
+            h("span", null, total
+              ? total + " respuestas, " + Math.round((reguladas / total) * 100) + "% reguladas. 5 escenarios de un turno, 2 min."
+              : "5 escenarios de un turno, 2 minutos. También alimenta el flujo diario."))));
     }
 
     function empezar() {
@@ -3318,6 +4043,23 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
                 (r.dojo.length ? Math.round((r.dojo.filter((d) => d.tipo === "regulada").length / r.dojo.length) * 100) : 0) + "% reguladas)" +
                 (r.top.length ? " · emociones top: " + r.top.map(([e]) => e).join(", ") : "")))
           ),
+      (() => {
+        const c = G.simulador.competencias();
+        const rec = G.simulador.recomendacion();
+        if (!c.total) return h("div", { class: "tarjeta" },
+          h("h3", { class: "mt0", style: "font-family:var(--f-titulo)" }, "Competencias (simulador)"),
+          h("p", { class: "suave mb0" }, "Aún sin datos: unas cuantas simulaciones en el Dojo y este panel te dirá tus fortalezas y tus puntos flojos, con nombre y apellido."));
+        return h("div", { class: "tarjeta" },
+          h("h3", { class: "mt0", style: "font-family:var(--f-titulo)" }, "Competencias (simulador)"),
+          c.fortalezas.length ? h("div", null, h("p", { class: "eyebrow" }, "Fortalezas"),
+            h("div", { class: "prosa", html: G.md.render(c.fortalezas.map((f) => "- ✔ " + f).join("\n")) })) : null,
+          c.entrenar.length ? h("div", null, h("p", { class: "eyebrow", style: "color:var(--ambar)" }, "Por entrenar"),
+            h("div", { class: "prosa", html: G.md.render(c.entrenar.map((f) => "- • " + f).join("\n")) })) : null,
+          !c.fortalezas.length && !c.entrenar.length ? h("p", { class: "suave" }, "Con " + c.total + " decisiones aún no hay patrón claro; unas simulaciones más y aparece.") : null,
+          h("p", { class: "tenue" }, "Recomendación: " + rec.escena.titulo + " — " + rec.motivo),
+          h("div", { class: "fila-botones" },
+            h("button", { class: "btn btn-mini btn-primario", onclick: () => { G.simPrefs = { modo: "entrenar", escenaId: rec.escena.id }; G.router.navegar("#/simulador"); } }, "Entrenar ahora")));
+      })(),
       h("div", { class: "tarjeta" },
         h("h3", { class: "mt0", style: "font-family:var(--f-titulo)" }, "Informe para terapeuta"),
         h("p", { class: "suave" }, "Resumen de tus patrones y últimas autopsias, listo para llevar a consulta. Movimiento de experto: entrenar con datos y con entrenador."),
@@ -3392,6 +4134,23 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
 
     // Cuerpo
     p.cuerpo += respSes * 2 + sosOk * 3;
+    p.cuerpo += (st.leer("descargas", 0) || 0) * 1;
+    p.cuerpo += st.leer("olas", []).length * 2;
+
+    // Nuevas herramientas cognitivas y de palabra
+    p.deteccion += st.leer("stops", []).length * 2;
+    p.deteccion += (st.leer("anclajes", 0) || 0) * 1;
+    p.reparacion += (st.leer("compasiones", 0) || 0) * 2;
+    p.palabra += (st.leer("borradores_salvados", 0) || 0) * 3;
+    p.palabra += st.leer("conversaciones", []).filter((c) => c.estado === "hecha").length * 3;
+
+    // Simulador: cada turno regulado/parcial suma a la disciplina de su escena
+    for (const t of st.leer("sim_turnos", [])) {
+      const esc = (G.simEscenas || []).find((e) => e.id === t.escena);
+      const disc = esc ? esc.disciplina : "mente";
+      const pts = t.tipo === "regulada" ? 2 : t.tipo === "parcial" ? 1 : 0;
+      if (p[disc] != null) p[disc] += pts;
+    }
 
     // Mente: repasos + aciertos dojo (regulada 2, parcial 1) van a su disciplina
     p.mente += Math.floor(repaso.revisadas / 2);
@@ -3513,13 +4272,1355 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
 
 </script>
   <script>
-/* Ventana · flujo de entrenamiento diario
-   Un solo botón que encadena la práctica del día: Check-in → Reto → Dojo (×2)
-   → Repaso (×5) → Cierre con puntos ganados y racha. Cada paso es saltable.
-   ~5 minutos. Diseñado para que la decisión sea UNA: empezar. */
+/* Ventana · Vaciadero
+   Dos armas contra el mensaje bomba:
+   1) La nota que se quema: escribe TODO, sin filtro. No se guarda nunca, no se
+      envía nunca. El botón la destruye. (Descarga verbal sin víctima.)
+   2) El borrador frío: si algo sí habrá que decir, se escribe AQUÍ (no en el
+      chat) y queda con candado de tiempo. Abrirlo antes cuesta fricción a
+      propósito. Cada borrador que muere o se reescribe en frío suma Maestría. */
+(function () {
+  const G = (window.Guia = window.Guia || {});
+  const { h, montar, toast, fechaCorta, copiar } = G.dom;
+  const HORA = 60 * 60 * 1000;
+
+  /* ---- Nota que se quema ---- */
+  function crearQuemador(alQuemar) {
+    const area = h("textarea", {
+      style: "min-height:180px",
+      placeholder: "Suéltalo TODO aquí. Sin filtro, sin gramática, sin piedad. Nadie va a leer esto — ni tú mañana."
+    });
+    const btn = h("button", { class: "btn btn-peligro", onclick: () => {
+      if (!area.value.trim()) { toast("Primero suéltalo"); return; }
+      area.classList.add("quemando");
+      btn.disabled = true;
+      setTimeout(() => {
+        area.value = "";
+        area.classList.remove("quemando");
+        btn.disabled = false;
+        toast("Quemado. Eso ya no existe.");
+        if (alQuemar) alQuemar();
+      }, 900);
+    } }, "🔥 Quemar (no se guarda, no se envía)");
+    return h("div", null, area, h("div", { class: "fila-botones" }, btn),
+      h("p", { class: "tenue" }, "Nada de lo que escribas aquí toca el almacenamiento. Es descarga, no documento."));
+  }
+
+  /* ---- Borradores fríos ---- */
+  function guardarBorrador(texto, horas) {
+    const lista = G.storage.leer("borradores", []);
+    lista.push({ id: Date.now(), ts: new Date().toISOString(), texto, abreEn: Date.now() + horas * HORA, estado: "bloqueado" });
+    G.storage.guardar("borradores", lista);
+  }
+
+  function marcarSalvado() {
+    G.storage.guardar("borradores_salvados", (G.storage.leer("borradores_salvados", 0) || 0) + 1);
+  }
+
+  function vista(vista) {
+    const areaBorrador = h("textarea", { style: "min-height:140px",
+      placeholder: "Si esto SÍ va a tener que decirse, escríbelo aquí — no en el chat. El chat tiene botón de enviar; esto tiene candado." });
+    const horasSel = h("select", null,
+      h("option", { value: "2" }, "Se abre en 2 horas"),
+      h("option", { value: "6" }, "Se abre en 6 horas"),
+      h("option", { value: "16" }, "Se abre mañana"));
+
+    function listaBorradores() {
+      const lista = G.storage.leer("borradores", []).slice().reverse();
+      if (!lista.length) return h("div", { class: "vacio" }, "Sin borradores. Ojalá siga así: significa que nada urgente nació en caliente.");
+      return h("div", null, lista.map((b) => {
+        const abierto = Date.now() >= b.abreEn;
+        const restanteMin = Math.max(0, Math.ceil((b.abreEn - Date.now()) / 60000));
+        const cuerpo = h("div", { class: "entrada-cuerpo oculto" }, b.texto);
+        const acciones = h("div", { class: "fila-botones oculto" },
+          h("button", { class: "btn btn-mini btn-primario", onclick: async () => { await copiar(b.texto); toast("Copiado para reescribir en frío"); } }, "Copiar"),
+          h("button", { class: "btn btn-mini", onclick: () => { finalizar(b.id, "reescrito"); } }, "Lo reescribí en frío ✓"),
+          h("button", { class: "btn btn-mini btn-peligro", onclick: () => { finalizar(b.id, "muerto"); } }, "No hacía falta · quemar"));
+
+        function abrir() {
+          cuerpo.classList.remove("oculto");
+          acciones.classList.remove("oculto");
+        }
+
+        const cabecera = h("div", { class: "entrada-cab" },
+          abierto ? h("span", { class: "badge badge-verde" }, "listo para releer en frío")
+                  : h("span", { class: "badge badge-ambar" }, "🔒 " + (restanteMin >= 60 ? Math.ceil(restanteMin / 60) + " h" : restanteMin + " min")),
+          h("span", { class: "entrada-fecha", style: "margin-left:auto" }, fechaCorta(b.ts)));
+
+        const fila = h("div", { class: "entrada" }, cabecera);
+        if (abierto) {
+          cabecera.append(h("button", { class: "btn btn-mini", onclick: abrir }, "Releer"));
+        } else {
+          // Fricción deliberada: abrir antes exige mantener presionado 3 segundos.
+          const btnForzar = h("button", { class: "btn btn-mini btn-fantasma" }, "Abrir antes (mantén 3 s)");
+          let t = null;
+          const inicia = () => { t = setTimeout(() => { abrir(); toast("Abierto antes de tiempo. Respira antes de decidir."); }, 3000); };
+          const cancela = () => { if (t) { clearTimeout(t); t = null; } };
+          btnForzar.addEventListener("pointerdown", inicia);
+          btnForzar.addEventListener("pointerup", cancela);
+          btnForzar.addEventListener("pointerleave", cancela);
+          btnForzar.addEventListener("keydown", (e) => { if (e.key === "Enter") inicia(); });
+          btnForzar.addEventListener("keyup", cancela);
+          cabecera.append(btnForzar);
+        }
+        fila.append(cuerpo, acciones);
+        return fila;
+      }));
+    }
+
+    function finalizar(id, modo) {
+      const lista = G.storage.leer("borradores", []).filter((x) => x.id !== id);
+      G.storage.guardar("borradores", lista);
+      marcarSalvado();
+      toast(modo === "muerto" ? "Un mensaje bomba menos en el mundo. +3 Palabra" : "Reescrito en frío. +3 Palabra");
+      vistaRender(vista);
+    }
+
+    montar(vista,
+      h("p", { class: "eyebrow" }, "Herramienta · contra el mensaje bomba"),
+      h("h1", { class: "titulo" }, "Vaciadero"),
+      h("p", { class: "subtitulo" }, "Primero se descarga, después se decide. Lo que solo necesita salir, se quema. Lo que sí habrá que decir, espera con candado."),
+      h("div", { class: "tarjeta" },
+        h("h3", { class: "mt0", style: "font-family:var(--f-titulo)" }, "La nota que se quema"),
+        crearQuemador()),
+      h("div", { class: "tarjeta" },
+        h("h3", { class: "mt0", style: "font-family:var(--f-titulo)" }, "Borrador frío"),
+        areaBorrador,
+        h("div", { class: "fila", style: "margin-top:12px" }, horasSel,
+          h("button", { class: "btn btn-primario", onclick: () => {
+            if (!areaBorrador.value.trim()) { toast("El borrador está vacío"); return; }
+            guardarBorrador(areaBorrador.value, Number(horasSel.value));
+            areaBorrador.value = "";
+            toast("Guardado con candado. Tu yo en frío decide.");
+            vistaRender(vista);
+          } }, "Guardar con candado"))),
+      h("h3", { style: "font-family:var(--f-titulo)" }, "En espera"),
+      listaBorradores());
+  }
+
+  function vistaRender(v) { vista(v); }
+
+  G.vaciadero = { crearQuemador };
+  G.vistas = G.vistas || {};
+  G.vistas.vaciadero = vista;
+})();
+
+</script>
+  <script>
+/* Ventana · Surf de la ola
+   Urge surfing operativo: registras tu número al empezar y cada vez que la app
+   te lo pide (o cuando quieras), y VES tu propia curva bajar en vivo.
+   Es la demostración empírica de la tesis central: el pico pasa solo si no le
+   echas leña. Cada ola surfeada completa suma Maestría (Cuerpo). */
+(function () {
+  const G = (window.Guia = window.Guia || {});
+  const { h, montar, toast, claseNivel } = G.dom;
+  const NS = "http://www.w3.org/2000/svg";
+  const INTERVALO_AVISO = 90 * 1000; // cada 90 s pide lectura
+
+  function svg(tag, attrs) {
+    const el = document.createElementNS(NS, tag);
+    for (const [k, v] of Object.entries(attrs || {})) el.setAttribute(k, v);
+    return el;
+  }
+
+  function vista(vista) {
+    let puntos = [];          // { t: segundos desde inicio, v: 0-10 }
+    let inicio = null;
+    let temporizadores = [];
+    const pre = (G.prefill && G.prefill.ola && G.prefill.ola.nivel) || 8;
+    if (G.prefill && G.prefill.ola) G.prefill = null;
+
+    function limpiar() { temporizadores.forEach((x) => { clearTimeout(x); clearInterval(x); }); temporizadores = []; }
+
+    /* ---- pantalla inicial ---- */
+    function pantallaInicio() {
+      let nivel = pre;
+      const lectura = h("div", { class: "lectura-numero " + claseNivel(nivel) }, String(nivel));
+      const desl = h("input", { type: "range", class: "semaforo", min: "0", max: "10", value: String(nivel),
+        "aria-label": "Intensidad del impulso ahora",
+        oninput: (e) => { nivel = Number(e.target.value); lectura.textContent = String(nivel); lectura.className = "lectura-numero " + claseNivel(nivel); } });
+
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Herramienta · el pico, medido"),
+        h("h1", { class: "titulo" }, "Surf de la ola"),
+        h("p", { class: "subtitulo" }, "El impulso es una ola: sube, hace pico y baja sola si no la obedeces ni la peleas. Aquí no vas a creerlo: vas a verlo, con tus propios números."),
+        h("div", { class: "tarjeta" },
+          h("label", { class: "etiqueta" }, "¿Qué tan fuerte empuja el impulso ahora?"),
+          h("div", { class: "fila" }, lectura, h("div", { style: "flex:1" }, desl)),
+          h("p", { class: "ayuda" }, "Mientras surfeas: nada de releer el chat ni ensayar respuestas — eso es leña. Camina, respira, mira la curva."),
+          h("div", { class: "fila-botones" },
+            h("button", { class: "btn btn-primario", onclick: () => empezar(nivel) }, "Empezar a surfear"))));
+    }
+
+    /* ---- surf activo ---- */
+    function empezar(nivelInicial) {
+      inicio = Date.now();
+      puntos = [{ t: 0, v: nivelInicial }];
+      pantallaSurf(false);
+      programarAviso();
+    }
+
+    function programarAviso() {
+      temporizadores.push(setTimeout(() => pantallaSurf(true), INTERVALO_AVISO));
+    }
+
+    function grafica() {
+      const W = 640, H = 200, m = 26;
+      const el = svg("svg", { viewBox: "0 0 " + W + " " + H, class: "grafica", role: "img", "aria-label": "Curva de tu impulso en el tiempo" });
+      const maxT = Math.max(300, (puntos[puntos.length - 1].t || 0) + 60);
+      const x = (t) => m + (t / maxT) * (W - 2 * m);
+      const y = (v) => H - m - (v / 10) * (H - 2 * m);
+      el.append(svg("rect", { x: m, y: y(6), width: W - 2 * m, height: y(0) - y(6), fill: "rgba(127,209,185,0.10)" }));
+      [0, 5, 10].forEach((v) => {
+        el.append(svg("line", { x1: m, y1: y(v), x2: W - m, y2: y(v), stroke: "var(--linea)" }));
+        const t = svg("text", { x: 4, y: y(v) + 4, fill: "var(--tinta-tenue)", "font-size": 11 }); t.textContent = v; el.append(t);
+      });
+      let d = "";
+      puntos.forEach((p, i) => { d += (i ? " L " : "M ") + x(p.t).toFixed(1) + " " + y(p.v).toFixed(1); });
+      el.append(svg("path", { d, fill: "none", stroke: "var(--calma)", "stroke-width": 3, "stroke-linecap": "round" }));
+      puntos.forEach((p) => el.append(svg("circle", { cx: x(p.t), cy: y(p.v), r: 4, fill: p.v <= 3 ? "var(--calma)" : p.v <= 6 ? "var(--ambar)" : "var(--rojo)" })));
+      return el;
+    }
+
+    function pantallaSurf(pidiendo) {
+      limpiar();
+      const ultimo = puntos[puntos.length - 1];
+      const minutos = Math.floor((Date.now() - inicio) / 60000);
+
+      const botonera = h("div", { class: "grupo-chips" });
+      for (let v = 0; v <= 10; v++) {
+        botonera.append(h("button", { class: "chip", onclick: () => registrar(v) }, String(v)));
+      }
+
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Surfeando · minuto " + minutos),
+        h("h1", { class: "titulo", style: "font-size:1.5rem" },
+          pidiendo ? "¿Y ahora, cuánto empuja?" : "Ola en curso"),
+        grafica(),
+        h("div", { class: "tarjeta" },
+          h("p", { class: "suave mb0" }, pidiendo
+            ? "Sin pensar mucho: el primer número que salga."
+            : "Última lectura: " + ultimo.v + "/10. Te pregunto de nuevo en un rato — o anota cuando notes cambio."),
+          botonera,
+          h("div", { class: "fila-botones" },
+            h("button", { class: "btn", onclick: () => terminar(false) }, "Terminar surf"))));
+      if (!pidiendo) programarAviso();
+    }
+
+    function registrar(v) {
+      puntos.push({ t: Math.round((Date.now() - inicio) / 1000), v });
+      if (v <= 3 && puntos.length >= 3) terminar(true);
+      else pantallaSurf(false);
+    }
+
+    function terminar(porVerde) {
+      limpiar();
+      const pico = Math.max(...puntos.map((p) => p.v));
+      const final = puntos[puntos.length - 1].v;
+      const minutos = Math.max(1, Math.round((Date.now() - inicio) / 60000));
+      const olas = G.storage.leer("olas", []);
+      olas.push({ ts: new Date().toISOString(), pico, final, minutos, lecturas: puntos.length });
+      G.storage.guardar("olas", olas);
+
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Ola surfeada · +2 Cuerpo"),
+        h("h1", { class: "titulo" }, pico + " → " + final + " en " + minutos + " min"),
+        grafica(),
+        h("div", { class: "tarjeta", style: "border-color:var(--calma)" },
+          h("p", { class: "suave mb0" }, porVerde
+            ? "Ahí está: bajó sola. Sin mensaje, sin frase espejo, sin costo. Esta curva es tuya — la próxima vez que la urgencia grite \u201cAHORA\u201d, recuerda que ya la viste mentir."
+            : "Cada ola surfeada sin actuar debilita el patrón. La curva queda registrada: tus propios datos contra la urgencia.")),
+        h("div", { class: "fila-botones" },
+          h("a", { class: "btn btn-primario", href: "#/checkin" }, "Registrar el momento"),
+          h("a", { class: "btn", href: "#/inicio" }, "Cerrar")));
+    }
+
+    pantallaInicio();
+  }
+
+  G.vistas = G.vistas || {};
+  G.vistas.ola = vista;
+})();
+
+</script>
+  <script>
+/* Ventana · Descarga física (protocolo TIPP de la TDC)
+   La activación es química y motora: se baja por el cuerpo, no por la lógica.
+   Cuatro palancas con guía y temporizador. Reutilizable dentro del SOS. */
+(function () {
+  const G = (window.Guia = window.Guia || {});
+  const { h, montar, toast } = G.dom;
+
+  const DESCARGAS = {
+    frio: {
+      nombre: "Frío", icono: "🧊", dur: 30, rondas: 3,
+      titulo: "Agua fría en la cara",
+      guia: "Cara al agua fría (o algo helado bajo los ojos y pómulos — ahí vive el reflejo), aguantando la respiración suave. El reflejo de inmersión frena el corazón directamente: la palanca fisiológica más rápida que existe. Evidencia: alta (mecanismo). ⚠ PRECAUCIÓN: baja el pulso de golpe — si tienes problemas cardiacos o bradicardia, usa otra palanca.",
+      pasos: "30 segundos de frío · respira normal · repite hasta 3 rondas."
+    },
+    ejercicio: {
+      nombre: "Ejercicio intenso", icono: "⚡", dur: 60, rondas: 2,
+      titulo: "Quemar la química",
+      guia: "La activación es energía de pelea/huida ya inyectada en sangre: dale salida. Sentadillas rápidas, flexiones contra la pared, subir escaleras, saltos suaves — lo que tengas a mano, al 80% de intensidad.",
+      pasos: "60 segundos fuerte · 30 de pausa · segunda ronda si sigues arriba."
+    },
+    caminar: {
+      nombre: "Caminar", icono: "👣", dur: 600, rondas: 1,
+      titulo: "Caminata de descarga",
+      guia: "Paso rápido, mejor afuera, sin teléfono en la mano. Marca el ritmo con los pies (el movimiento alternado calma). Si aparece el bucle mental, cuenta pasos de 4 en 4.",
+      pasos: "10 minutos mínimo. La regla: no vuelvas hasta que el cuerpo esté quieto de verdad."
+    },
+    tension: {
+      nombre: "Tensión y suelta", icono: "🤜", dur: 0, rondas: 1,
+      titulo: "Relajación muscular pareada",
+      guia: "La cuarta palanca del TIPP: tensar fuerte al inhalar y soltar DE GOLPE al exhalar. El efecto vive en el contraste al soltar. Evidencia: media-alta (Jacobson).",
+      pasos: "4 grupos musculares · 6 s de tensión + 15 s notando la suelta."
+    },
+    sacudida: {
+      nombre: "Sacudida", icono: "🫨", dur: 0, rondas: 1,
+      titulo: "Descarga somática",
+      guia: "Sacude enérgicamente manos, brazos y piernas — el mecanismo instintivo de los mamíferos para soltar la energía de supervivencia. Remata con caídas de talón: puntas de pie y dejarte caer sobre los talones. Evidencia: baja (clínica somática); riesgo cero y muy práctico.",
+      pasos: "60 segundos de sacudida + 10 caídas de talón."
+    },
+    respirar: {
+      nombre: "Respiración", icono: "◐", dur: 0, rondas: 1,
+      titulo: "Suspiro fisiológico",
+      guia: "", pasos: ""
+    }
+  };
+
+  const GRUPOS_PMR = ["puños y antebrazos", "hombros y cuello", "cara y mandíbula", "piernas y glúteos"];
+
+  /** Crea el bloque de una descarga con temporizador. */
+  function crearDescarga(id, alCompletar) {
+    const c = DESCARGAS[id];
+    let hechoEspecial = false;
+    function completaEspecial() {
+      if (hechoEspecial) return;
+      hechoEspecial = true;
+      G.storage.guardar("descargas", (G.storage.leer("descargas", 0) || 0) + 1);
+      toast("+1 Cuerpo");
+      if (alCompletar) alCompletar();
+    }
+
+    if (id === "tension") {
+      let grupo = 0, fase = "listo";
+      const titulo = h("p", { class: "fase-respiracion" }, "Grupo 1: " + GRUPOS_PMR[0]);
+      const reloj = h("div", { class: "temporizador" }, "—");
+      const btn = h("button", { class: "btn btn-primario", onclick: ronda }, "Tensar");
+      function ronda() {
+        if (fase === "listo") {
+          fase = "tension"; btn.disabled = true;
+          cuenta(6, "TENSA fuerte (inhala)", () => {
+            cuenta(15, "SUELTA de golpe (exhala) — nota el contraste", () => {
+              grupo++;
+              if (grupo >= GRUPOS_PMR.length) {
+                titulo.textContent = "Cuerpo recorrido.";
+                reloj.textContent = "✓";
+                btn.classList.add("oculto");
+                completaEspecial();
+              } else {
+                fase = "listo"; btn.disabled = false; btn.textContent = "Tensar";
+                titulo.textContent = "Grupo " + (grupo + 1) + ": " + GRUPOS_PMR[grupo];
+                reloj.textContent = "—";
+              }
+            });
+          });
+        }
+      }
+      function cuenta(seg, texto, fin) {
+        titulo.textContent = GRUPOS_PMR[grupo] + " · " + texto;
+        let rest = seg;
+        reloj.textContent = rest;
+        const intv = setInterval(() => {
+          rest--;
+          reloj.textContent = rest;
+          if (rest <= 0) { clearInterval(intv); fin(); }
+        }, 1000);
+      }
+      return h("div", null,
+        h("p", { class: "suave" }, c.guia), h("p", { class: "tenue" }, c.pasos),
+        titulo, h("div", { class: "centro" }, reloj),
+        h("div", { class: "fila-botones", style: "justify-content:center" }, btn));
+    }
+
+    if (id === "sacudida") {
+      const reloj = h("div", { class: "temporizador" }, "01:00");
+      const estado = h("p", { class: "suave centro" }, "Sacude todo: manos, brazos, hombros, piernas.");
+      const btn = h("button", { class: "btn btn-primario", onclick: () => {
+        btn.disabled = true;
+        let rest = 60;
+        const intv = setInterval(() => {
+          rest--;
+          reloj.textContent = "00:" + String(rest).padStart(2, "0");
+          if (rest <= 0) {
+            clearInterval(intv);
+            reloj.textContent = "✓";
+            estado.textContent = "Ahora: 10 caídas de talón — puntas de pie y déjate caer.";
+            btn.classList.add("oculto");
+            btnFin.classList.remove("oculto");
+          }
+        }, 1000);
+      } }, "Empezar sacudida");
+      const btnFin = h("button", { class: "btn btn-primario oculto", onclick: () => { estado.textContent = "Hecho. ¿Dónde quedó el número?"; btnFin.classList.add("oculto"); completaEspecial(); } }, "Talones hechos ✓");
+      return h("div", null,
+        h("p", { class: "suave" }, c.guia), h("p", { class: "tenue" }, c.pasos),
+        h("div", { class: "centro" }, reloj), estado,
+        h("div", { class: "fila-botones", style: "justify-content:center" }, btn, btnFin));
+    }
+
+    if (id === "respirar") {
+      const esc = G.respiracion.crearEscenario({ tecnica: "suspiro", autoIniciar: true, alTerminar: () => completa() });
+      return h("div", null, esc.el);
+    }
+
+    let ronda = 1, restante = c.dur, intv = null, hecho = false;
+    const reloj = h("div", { class: "temporizador" }, formato(restante));
+    const estado = h("p", { class: "suave centro" }, "Ronda " + ronda + " de " + c.rondas);
+    const btn = h("button", { class: "btn btn-primario", onclick: alternar }, "Empezar");
+
+    function formato(s) { return String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); }
+
+    function alternar() {
+      if (intv) { clearInterval(intv); intv = null; btn.textContent = "Reanudar"; return; }
+      btn.textContent = "Pausar";
+      intv = setInterval(() => {
+        restante--;
+        reloj.textContent = formato(restante);
+        if (restante <= 0) {
+          clearInterval(intv); intv = null;
+          if (ronda < c.rondas) {
+            ronda++; restante = c.dur;
+            estado.textContent = "Ronda " + ronda + " de " + c.rondas + " · cuando estés listo";
+            reloj.textContent = formato(restante);
+            btn.textContent = "Siguiente ronda";
+          } else {
+            reloj.textContent = "✓";
+            estado.textContent = "Hecho. Escucha el cuerpo: ¿bajó el número?";
+            btn.classList.add("oculto");
+            completa();
+          }
+        }
+      }, 1000);
+    }
+
+    function completa() {
+      if (hecho) return;
+      hecho = true;
+      G.storage.guardar("descargas", (G.storage.leer("descargas", 0) || 0) + 1);
+      toast("+1 Cuerpo");
+      if (alCompletar) alCompletar();
+    }
+
+    return h("div", null,
+      h("p", { class: "suave" }, c.guia),
+      h("p", { class: "tenue" }, c.pasos),
+      h("div", { class: "centro" }, reloj), estado,
+      h("div", { class: "fila-botones", style: "justify-content:center" }, btn));
+  }
+
+  /** Selector de descargas (grid). usada por la vista y por el SOS. */
+  function crearSelector(alElegir) {
+    return h("div", { class: "tarjeta-fila" },
+      Object.entries(DESCARGAS).map(([id, c]) =>
+        h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: () => alElegir(id) },
+          h("span", { class: "icono" }, c.icono),
+          h("strong", null, c.nombre),
+          h("span", null, id === "respirar" ? "Doble inhalación + exhalación larga" : c.pasos))));
+  }
+
+  function vista(vista) {
+    function inicio() {
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Herramienta · el cuerpo primero"),
+        h("h1", { class: "titulo" }, "Descarga física"),
+        h("p", { class: "subtitulo" }, "En 7+ la mente no coopera: la activación se baja por el cuerpo. Elige tu palanca — el frío es la más rápida; el ejercicio, la más completa."),
+        crearSelector(elegir));
+    }
+    function elegir(id) {
+      const c = DESCARGAS[id];
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Descarga · " + c.nombre),
+        h("h1", { class: "titulo", style: "font-size:1.5rem" }, c.titulo || c.nombre),
+        h("div", { class: "tarjeta" }, crearDescarga(id)),
+        h("div", { class: "fila-botones" }, h("button", { class: "btn", onclick: inicio }, "← Elegir otra")));
+    }
+    inicio();
+  }
+
+  G.descarga = { crearDescarga, crearSelector, DESCARGAS };
+  G.vistas = G.vistas || {};
+  G.vistas.descarga = vista;
+})();
+
+</script>
+  <script>
+/* Ventana · STOP guiado + Detector de películas
+   Para el amarillo (4–6): la mente todavía coopera, así que aquí va la
+   artillería cognitiva. STOP te lleva de la mano; el Detector separa el hecho
+   de la historia y rompe la certeza falsa con tus propias alternativas. */
+(function () {
+  const G = (window.Guia = window.Guia || {});
+  const { h, montar, toast, claseNivel, claveDia } = G.dom;
+
+  const EMOCIONES = ["rechazado", "no elegido", "ignorado", "invisible", "desestimado", "humillado",
+    "tratado injustamente", "acusado en falso", "miedo a perder", "inseguro", "celoso",
+    "avergonzado", "insuficiente", "traicionado", "decepcionado", "frustrado", "impotente",
+    "no escuchado", "incomprendido", "saturado", "acorralado", "controlado"];
+
+  const IMPULSOS = ["frase espejo", "mensaje bomba", "retirada castigo", "ultimátum",
+    "decisión drástica", "sarcasmo", "desaparecer", "demolición"];
+
+  function chips(lista, alElegir) {
+    const cont = h("div", { class: "grupo-chips" });
+    lista.forEach((x) => cont.append(h("button", { class: "chip", "aria-pressed": "false", onclick: (e) => {
+      const activo = e.currentTarget.getAttribute("aria-pressed") === "true";
+      e.currentTarget.setAttribute("aria-pressed", String(!activo));
+      alElegir();
+    } }, x)));
+    cont.seleccionados = () => [...cont.querySelectorAll('[aria-pressed="true"]')].map((c) => c.textContent);
+    return cont;
+  }
+
+  function vista(vista) {
+    const datos = { nivel: 5, emociones: [], impulsos: [], hecho: "", historia: "", alternativas: ["", "", ""], nivelFinal: null };
+    if (G.prefill && G.prefill.stop) { datos.nivel = G.prefill.stop.nivel; G.prefill = null; }
+
+    function cabecera(letra, titulo) {
+      return [
+        h("p", { class: "eyebrow" }, "STOP guiado · " + letra),
+        h("h1", { class: "titulo", style: "font-size:1.5rem" }, titulo)];
+    }
+
+    /* S — congelar */
+    function pasoS() {
+      montar(vista, ...cabecera("S · Stop", "Congela"),
+        h("div", { class: "tarjeta" },
+          h("p", { class: "grande", style: "font-size:1.1rem" }, "No hables. No escribas. No decidas. Solo por un minuto, las manos quietas."),
+          h("p", { class: "suave" }, "Acabas de hacer lo más difícil: interrumpir el automático. Todo lo demás es más fácil que esto."),
+          h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario", onclick: pasoT }, "Congelado →"))));
+    }
+
+    /* T — paso atrás */
+    function pasoT() {
+      montar(vista, ...cabecera("T · Toma distancia", "Un paso atrás"),
+        h("div", { class: "tarjeta" },
+          h("p", null, "Literal si puedes: suelta el teléfono, recuéstate en la silla, o sal un momento (\u201cdame un segundo, voy por agua\u201d). Un suspiro fisiológico: doble inhalación por la nariz, exhalación larga."),
+          h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario", onclick: pasoO }, "Hecho →"))));
+    }
+
+    /* O — observar */
+    function pasoO() {
+      const lectura = h("span", { class: "lectura-numero " + claseNivel(datos.nivel), style: "font-size:1.8rem;min-width:52px" }, String(datos.nivel));
+      const desl = h("input", { type: "range", class: "semaforo", min: "0", max: "10", value: String(datos.nivel),
+        oninput: (e) => { datos.nivel = Number(e.target.value); lectura.textContent = String(datos.nivel); lectura.className = "lectura-numero " + claseNivel(datos.nivel); lectura.style.fontSize = "1.8rem"; lectura.style.minWidth = "52px"; } });
+      const chEmo = chips(EMOCIONES, () => {});
+      const chImp = chips(IMPULSOS, () => {});
+
+      montar(vista, ...cabecera("O · Observa", "Ponle números y nombres"),
+        h("div", { class: "tarjeta" },
+          h("label", { class: "etiqueta" }, "¿Qué número soy ahora?"),
+          h("div", { class: "fila" }, lectura, h("div", { style: "flex:1" }, desl)),
+          h("label", { class: "etiqueta" }, "¿Qué siento? (elige los que apliquen)"), chEmo,
+          h("label", { class: "etiqueta" }, "¿Qué quiere hacer mi impulso?"), chImp,
+          h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario", onclick: () => {
+            datos.emociones = chEmo.seleccionados();
+            datos.impulsos = chImp.seleccionados();
+            pasoP();
+          } }, "Observado →"))));
+    }
+
+    /* P — proceder con intención */
+    function pasoP() {
+      registrar("stop");
+      const frase = (G.storage.leer("cuaderno", {}).frases || "").split("\n")[0] ||
+        "Esto me importa y quiero hablarlo bien. Dame un momento.";
+      montar(vista, ...cabecera("P · Procede", "Elige el siguiente movimiento"),
+        datos.impulsos.length ? h("p", { class: "suave" },
+          "Tu impulso quiere: " + datos.impulsos.join(", ") + ". Ya lo viste venir — eso es medio freno. Ahora, la jugada:") : null,
+        h("div", { class: "tarjeta-fila" },
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: async () => { await G.dom.copiar(frase); toast("Frase copiada. Dila y sal."); } },
+            h("span", { class: "icono" }, "💬"), h("strong", null, "Decir mi frase de salida"), h("span", null, "\u201c" + frase + "\u201d")),
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: () => G.router.navegar("#/descarga") },
+            h("span", { class: "icono" }, "⚡"), h("strong", null, "Descarga física"), h("span", null, "Frío, ejercicio, caminar: bajar el número por el cuerpo.")),
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: () => G.router.navegar("#/vaciadero") },
+            h("span", { class: "icono" }, "🔥"), h("strong", null, "Vaciadero"), h("span", null, "Escribirlo todo donde no hay botón de enviar.")),
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: () => G.router.navegar("#/anclaje") },
+            h("span", { class: "icono" }, "🖐"), h("strong", null, "Anclaje 5-4-3-2-1"), h("span", null, "Si la cabeza está en niebla o en bucle: los sentidos primero.")),
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: pasoDetector },
+            h("span", { class: "icono" }, "🎬"), h("strong", null, "Detector de películas"), h("span", null, "Separar el hecho de la historia que me estoy contando."))));
+    }
+
+    /* Detector de películas */
+    function pasoDetector() {
+      const hecho = h("textarea", { placeholder: "Solo lo que grabaría una cámara: \u201cvisto a las 22:30, sin respuesta\u201d. Sin adjetivos, sin intenciones." });
+      const historia = h("textarea", { placeholder: "La película: \u201cno le importo, siempre soy el último\u201d. Escríbela tal cual suena por dentro." });
+      montar(vista, ...cabecera("Detector · 1 de 2", "Hecho vs. historia"),
+        h("div", { class: "tarjeta" },
+          h("label", { class: "etiqueta" }, "El hecho (lo que grabaría una cámara)"), hecho,
+          h("label", { class: "etiqueta" }, "La historia (lo que me estoy contando)"), historia,
+          h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario", onclick: () => {
+            datos.hecho = hecho.value.trim(); datos.historia = historia.value.trim();
+            pasoAlternativas();
+          } }, "Siguiente →"))));
+    }
+
+    function pasoAlternativas() {
+      const areas = [0, 1, 2].map((i) => h("input", { type: "text", placeholder: "Alternativa " + (i + 1), style: "margin-bottom:8px" }));
+      montar(vista, ...cabecera("Detector · 2 de 2", "Tres explicaciones alternativas"),
+        h("div", { class: "tarjeta" },
+          datos.hecho && h("p", { class: "suave" }, h("strong", null, "El hecho: "), datos.hecho),
+          h("p", { class: "tenue" }, "No hace falta creerlas: hace falta romper el monopolio de la primera. Ayuda: ¿qué explicaciones tienen que ver con SU vida y no contigo? ¿Qué le dirías a un amigo con este hecho exacto?"),
+          ...areas,
+          h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario", onclick: () => {
+            datos.alternativas = areas.map((a) => a.value.trim()).filter(Boolean);
+            pasoReevaluar();
+          } }, "Listo →"))));
+    }
+
+    function pasoReevaluar() {
+      let v = datos.nivel;
+      const lectura = h("span", { class: "lectura-numero " + claseNivel(v), style: "font-size:1.8rem;min-width:52px" }, String(v));
+      const desl = h("input", { type: "range", class: "semaforo", min: "0", max: "10", value: String(v),
+        oninput: (e) => { v = Number(e.target.value); lectura.textContent = String(v); lectura.className = "lectura-numero " + claseNivel(v); lectura.style.fontSize = "1.8rem"; lectura.style.minWidth = "52px"; } });
+      montar(vista, ...cabecera("Detector · cierre", "¿Y ahora, qué número?"),
+        h("div", { class: "tarjeta" },
+          h("div", { class: "fila" }, lectura, h("div", { style: "flex:1" }, desl)),
+          h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario", onclick: () => {
+            datos.nivelFinal = v;
+            registrar("detector");
+            cierre();
+          } }, "Cerrar STOP"))));
+    }
+
+    function cierre() {
+      const bajo = datos.nivelFinal != null && datos.nivelFinal < datos.nivel;
+      montar(vista,
+        h("p", { class: "eyebrow" }, "STOP completo · +2 Detección"),
+        h("h1", { class: "titulo" }, bajo ? datos.nivel + " → " + datos.nivelFinal : "Interrumpido a tiempo"),
+        h("div", { class: "tarjeta", style: "border-color:var(--calma)" },
+          h("p", { class: "suave mb0" }, bajo
+            ? "La historia perdió fuerza cuando dejó de ser la única. No desapareció — no es magia — pero por debajo del umbral del impulso, ya eliges tú."
+            : "Viste el amarillo, lo nombraste y elegiste el siguiente paso. Eso es exactamente la habilidad. El número baja con la práctica.")),
+        h("div", { class: "fila-botones" },
+          h("a", { class: "btn btn-primario", href: "#/checkin" }, "Registrar el momento"),
+          h("a", { class: "btn", href: "#/inicio" }, "Cerrar")));
+    }
+
+    function registrar(tipo) {
+      const lista = G.storage.leer("stops", []);
+      lista.push({ ts: new Date().toISOString(), dia: claveDia(), tipo, nivel: datos.nivel, nivelFinal: datos.nivelFinal,
+        emociones: datos.emociones, impulsos: datos.impulsos });
+      G.storage.guardar("stops", lista);
+    }
+
+    pasoS();
+  }
+
+  G.vistas = G.vistas || {};
+  G.vistas.stop = vista;
+})();
+
+</script>
+  <script>
+/* Ventana · Preparador de conversaciones
+   La fórmula del Libro 6, hecha máquina: te pregunta las piezas, arma la frase
+   y la apertura suave, y su DETECTOR te avisa en vivo si metiste un "pero",
+   un reproche o un "siempre/nunca". Puntería antes de disparar. */
+(function () {
+  const G = (window.Guia = window.Guia || {});
+  const { h, montar, toast, copiar, fechaCorta } = G.dom;
+
+  const EMOCIONES = ["dejado de lado", "desestimado", "ignorado", "no escuchado", "no elegido",
+    "tratado injustamente", "inseguro", "decepcionado", "traicionado", "acorralado", "invisible", "insuficiente"];
+
+  /* Detector: patrones que sabotean el mensaje, con explicación. */
+  const PATRONES = [
+    { re: /\bpero\b/i, aviso: "\u201cPero\u201d detectado: borra todo lo anterior. Corta la frase ahí o reformula sin él." },
+    { re: /\bes que t[uú]\b|\bt[uú] tambi[eé]n\b/i, aviso: "Contraataque detectado (\u201ces que tú…\u201d): convierte la petición en pelea." },
+    { re: /\bsiempre\b|\bnunca\b|\bjam[aá]s\b/i, aviso: "\u201cSiempre/nunca\u201d: casi siempre falso y siempre incendiario. Cámbialo por el caso concreto." },
+    { re: /\bdeber[ií]as\b|\bten[ií]as que\b/i, aviso: "\u201cDeberías\u201d: suena a sentencia. Mejor pide hacia adelante: \u201cte pido que…\u201d." },
+    { re: /\begoísta\b|\bmalagradecid|desconsiderad|\bt[oó]xic/i, aviso: "Etiqueta detectada: describe el hecho, no sentencies a la persona." },
+    { re: /\?\?|!!|\bya\b.*\bmismo\b/i, aviso: "Tono de urgencia: si esto arde, no es momento de mandarlo. 24 horas." },
+    { re: /\bme hiciste\b|\bpor tu culpa\b/i, aviso: "Acusación directa: prueba \u201ccuando pasó X, me sentí Y\u201d — abre en vez de atacar." }
+  ];
+
+  function analizar(texto) {
+    const avisos = [];
+    for (const p of PATRONES) if (p.re.test(texto)) avisos.push(p.aviso);
+    return avisos;
+  }
+
+  function vista(vista) {
+    const hecho = h("input", { type: "text", placeholder: "cancelaste el plan avisando dos horas antes" });
+    const emocionSel = h("select", null, EMOCIONES.map((e) => h("option", { value: e }, e)));
+    const significado = h("input", { type: "text", placeholder: "llevaba días esperándolo" });
+    const peticion = h("input", { type: "text", placeholder: "que me avises apenas sepas que algo cambia" });
+    const zonaAvisos = h("div");
+    const zonaResultado = h("div");
+
+    function revisar() {
+      const todo = [hecho.value, significado.value, peticion.value].join(" · ");
+      const avisos = analizar(todo);
+      G.dom.montar(zonaAvisos, ...avisos.map((a) => h("div", { class: "aviso", style: "margin-bottom:8px" }, "⚠ " + a)));
+      return avisos.length;
+    }
+    [hecho, significado, peticion].forEach((el) => el.addEventListener("input", revisar));
+
+    function generar() {
+      if (!hecho.value.trim() || !peticion.value.trim()) { toast("Falta el hecho o la petición"); return; }
+      revisar();
+      const frase = "Cuando " + limpia(hecho.value) + ", me sentí " + emocionSel.value +
+        ", porque para mí " + (limpia(significado.value) || "era importante") +
+        ". Te pido " + limpia(peticion.value) + ".";
+      const apertura = "Quiero hablarte de algo que me dolió. No es un juicio ni una pelea: quiero que lo entendamos y me tomará dos minutos.";
+
+      const texto = apertura + "\n\n" + frase;
+      G.dom.montar(zonaResultado,
+        h("div", { class: "tarjeta", style: "border-color:var(--calma)" },
+          h("p", { class: "eyebrow" }, "Apertura suave"),
+          h("p", null, apertura),
+          h("p", { class: "eyebrow", style: "margin-top:16px" }, "Tu fórmula"),
+          h("p", { style: "font-size:1.05rem" }, frase),
+          h("div", { class: "fila-botones" },
+            h("button", { class: "btn btn-primario", onclick: async () => toast(await copiar(texto) ? "Copiado. En persona o por llamada, no por chat." : "No pude copiar aquí") }, "Copiar"),
+            h("button", { class: "btn", onclick: () => guardar(frase) }, "Guardar como pendiente")),
+          h("p", { class: "tenue" }, "Lista de despegue: ¿los dos en verde? ¿sin público? ¿sin alcohol? ¿sabes qué quieres que pase al final? Si algo falla, no es el momento — es la emboscada.")));
+    }
+
+    function limpia(s) { return s.trim().replace(/\.+$/, ""); }
+
+    function guardar(frase) {
+      const lista = G.storage.leer("conversaciones", []);
+      lista.push({ id: Date.now(), ts: new Date().toISOString(), frase, estado: "pendiente" });
+      G.storage.guardar("conversaciones", lista);
+      toast("Guardada. Cuando la tengas, márcala: +3 Palabra");
+      vistaRender(vista);
+    }
+
+    function pendientes() {
+      const lista = G.storage.leer("conversaciones", []).slice().reverse();
+      if (!lista.length) return null;
+      return h("div", null,
+        h("h3", { style: "font-family:var(--f-titulo)" }, "Conversaciones preparadas"),
+        lista.map((c) => h("div", { class: "entrada" },
+          h("div", { class: "entrada-cab" },
+            c.estado === "hecha" ? h("span", { class: "badge badge-verde" }, "tenida ✓") : h("span", { class: "badge badge-ambar" }, "pendiente"),
+            h("span", { class: "entrada-fecha", style: "margin-left:auto" }, fechaCorta(c.ts)),
+            c.estado !== "hecha" && h("button", { class: "btn btn-mini btn-primario", onclick: () => {
+              c.estado = "hecha";
+              const todas = G.storage.leer("conversaciones", []).map((x) => x.id === c.id ? c : x);
+              G.storage.guardar("conversaciones", todas);
+              toast("+3 Palabra. ¿Cómo salió? Vale una nota en el check-in.");
+              vistaRender(vista);
+            } }, "La tuve ✓"),
+            h("button", { class: "btn btn-mini btn-fantasma", onclick: () => {
+              G.storage.guardar("conversaciones", G.storage.leer("conversaciones", []).filter((x) => x.id !== c.id));
+              vistaRender(vista);
+            } }, "✕")),
+          h("div", { class: "entrada-cuerpo" }, c.frase))));
+    }
+
+    montar(vista,
+      h("p", { class: "eyebrow" }, "Herramienta · puntería antes de disparar"),
+      h("h1", { class: "titulo" }, "Preparador de conversaciones"),
+      h("p", { class: "subtitulo" }, "Me das las piezas, armo tu fórmula y tu apertura — y el detector te avisa si se coló un \u201cpero\u201d, un reproche o un \u201csiempre\u201d."),
+      h("div", { class: "tarjeta" },
+        h("label", { class: "etiqueta" }, "El hecho (sin adjetivos, lo que grabaría una cámara)"), hecho,
+        h("label", { class: "etiqueta" }, "Me sentí…"), emocionSel,
+        h("label", { class: "etiqueta" }, "Porque para mí… (qué significó)"), significado,
+        h("label", { class: "etiqueta" }, "Te pido… (concreto, hacia adelante)"), peticion,
+        zonaAvisos,
+        h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario", onclick: generar }, "Armar mi fórmula"))),
+      zonaResultado,
+      pendientes());
+  }
+
+  function vistaRender(v) { vista(v); }
+
+  G.conversacion = { analizar };
+  G.vistas = G.vistas || {};
+  G.vistas.conversacion = vista;
+})();
+
+</script>
+  <script>
+/* Ventana · Anclaje
+   Para cortar el bucle mental, la disociación o el pánico: forzar a la
+   atención a procesar el aquí y ahora. Tres modos, con su nivel de evidencia
+   declarado. Cada anclaje completado suma +1 Detección. */
+(function () {
+  const G = (window.Guia = window.Guia || {});
+  const { h, montar, toast } = G.dom;
+
+  function registrar() {
+    G.storage.guardar("anclajes", (G.storage.leer("anclajes", 0) || 0) + 1);
+    toast("+1 Detección");
+  }
+
+  const SENTIDOS = [
+    { n: 5, texto: "cosas que VES", ayuda: "Con detalle: color, forma, textura. Despacio.", icono: "👁" },
+    { n: 4, texto: "cosas que puedes TOCAR", ayuda: "Tócalas de verdad si puedes: textura, temperatura.", icono: "✋" },
+    { n: 3, texto: "sonidos que OYES", ayuda: "Cercanos y lejanos. Espera a distinguirlos.", icono: "👂" },
+    { n: 2, texto: "olores que HUELES", ayuda: "Si no hay, nombra dos que te gusten, de memoria.", icono: "👃" },
+    { n: 1, texto: "sabor que notas", ayuda: "El de tu boca ahora, o uno que recuerdes bien.", icono: "👅" }
+  ];
+
+  function vista(vista) {
+    function inicio() {
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Herramienta · aquí y ahora"),
+        h("h1", { class: "titulo" }, "Anclaje"),
+        h("p", { class: "subtitulo" }, "Cuando la cabeza se va — bucle, pánico, niebla — la salida no es pensar mejor: es obligar a los sentidos a procesar el presente."),
+        h("div", { class: "tarjeta-fila" },
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: () => cincoCuatro(0, 0) },
+            h("span", { class: "icono" }, "🖐"), h("strong", null, "5-4-3-2-1"),
+            h("span", null, "Recorre los cinco sentidos, en voz alta. Evidencia: media (uso clínico amplio).")),
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: pendulacionSetup },
+            h("span", { class: "icono" }, "🌗"), h("strong", null, "Pendulación"),
+            h("span", null, "Alternar entre la zona incómoda y una zona neutral del cuerpo. Evidencia: baja (clínica somática).")),
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: mariposa },
+            h("span", { class: "icono" }, "🦋"), h("strong", null, "Abrazo de mariposa"),
+            h("span", null, "Golpeteo bilateral lento de autoconsuelo. Evidencia: baja-media."))));
+    }
+
+    /* ---- 5-4-3-2-1 ---- */
+    function cincoCuatro(iSentido, contados) {
+      const s = SENTIDOS[iSentido];
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Anclaje 5-4-3-2-1 · " + (iSentido + 1) + " de 5"),
+        h("h1", { class: "titulo", style: "font-size:1.6rem" }, s.icono + " Nombra " + s.n + " " + s.texto),
+        h("div", { class: "tarjeta centro" },
+          h("p", { class: "suave" }, s.ayuda + " Dilo en voz alta o en susurro: el lenguaje es parte del efecto."),
+          h("div", { class: "lectura-numero n-verde", style: "margin:12px auto" }, contados + " / " + s.n),
+          h("div", { class: "fila-botones", style: "justify-content:center" },
+            h("button", { class: "btn btn-primario btn-heroe", onclick: () => {
+              const c = contados + 1;
+              if (c >= s.n) {
+                if (iSentido + 1 < SENTIDOS.length) cincoCuatro(iSentido + 1, 0);
+                else cierre("Cinco sentidos recorridos. La cabeza tuvo que venir al presente para lograrlo.");
+              } else cincoCuatro(iSentido, c);
+            } }, "Nombrada ✓"))));
+    }
+
+    /* ---- Pendulación ---- */
+    function pendulacionSetup() {
+      const mal = h("input", { type: "text", placeholder: "presión en el pecho, nudo en el estómago…" });
+      const bien = h("input", { type: "text", placeholder: "el meñique del pie, la punta de la nariz, una mano tibia…" });
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Pendulación · preparación"),
+        h("h1", { class: "titulo", style: "font-size:1.6rem" }, "Dos zonas"),
+        h("div", { class: "tarjeta" },
+          h("p", { class: "suave" }, "La idea: enseñarle al sistema nervioso que puede visitar lo incómodo y VOLVER. Se entrena alternando la atención, no quedándose en el dolor."),
+          h("label", { class: "etiqueta" }, "¿Dónde se siente lo incómodo?"), mal,
+          h("label", { class: "etiqueta" }, "Busca una zona que se sienta neutral o agradable"), bien,
+          h("div", { class: "fila-botones" },
+            h("button", { class: "btn btn-primario", onclick: () => pendulacion(mal.value.trim() || "la zona incómoda", bien.value.trim() || "tu zona neutral", 0, true) }, "Empezar (4 ciclos)"))));
+    }
+
+    function pendulacion(mal, bien, ciclo, enNeutral) {
+      if (ciclo >= 4) { cierre("Cuatro visitas y cuatro regresos. Eso es tolerancia entrenándose."); return; }
+      const dur = enNeutral ? 20 : 10;
+      let restante = dur;
+      const reloj = h("div", { class: "temporizador" }, restante);
+      const intv = setInterval(() => {
+        restante--;
+        reloj.textContent = restante;
+        if (restante <= 0) {
+          clearInterval(intv);
+          if (enNeutral) pendulacion(mal, bien, ciclo, false);
+          else pendulacion(mal, bien, ciclo + 1, true);
+        }
+      }, 1000);
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Pendulación · ciclo " + (ciclo + 1) + " de 4"),
+        h("h1", { class: "titulo", style: "font-size:1.5rem" }, enNeutral ? "Atención en: " + bien : "Visita breve a: " + mal),
+        h("div", { class: "tarjeta centro" },
+          h("p", { class: "suave" }, enNeutral ? "Quédate aquí. Nota temperatura, contacto, quietud." : "Solo obsérvala con curiosidad, sin pelear. Ya vuelves."),
+          reloj,
+          h("div", { class: "fila-botones", style: "justify-content:center" },
+            h("button", { class: "btn btn-fantasma btn-mini", onclick: () => { clearInterval(intv); inicio(); } }, "Salir"))));
+    }
+
+    /* ---- Abrazo de mariposa ---- */
+    function mariposa() {
+      let restante = 60, lado = "izquierda";
+      const reloj = h("div", { class: "temporizador" }, "01:00");
+      const ladoEl = h("p", { class: "ancla-rotativa" }, lado);
+      const intv1 = setInterval(() => { lado = lado === "izquierda" ? "derecha" : "izquierda"; ladoEl.textContent = lado; }, 900);
+      const intv2 = setInterval(() => {
+        restante--;
+        reloj.textContent = "00:" + String(restante).padStart(2, "0");
+        if (restante <= 0) { clearInterval(intv1); clearInterval(intv2); cierre("Un minuto de autoconsuelo rítmico. A veces eso es exactamente lo que hacía falta."); }
+      }, 1000);
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Abrazo de mariposa · evidencia baja-media, riesgo cero"),
+        h("h1", { class: "titulo", style: "font-size:1.5rem" }, "Cruza los brazos sobre el pecho"),
+        h("div", { class: "tarjeta centro" },
+          h("p", { class: "suave" }, "Manos hacia hombros o clavículas. Golpetea LENTO alternando, como aleteo, siguiendo el ritmo:"),
+          ladoEl, reloj,
+          h("div", { class: "fila-botones", style: "justify-content:center" },
+            h("button", { class: "btn btn-fantasma btn-mini", onclick: () => { clearInterval(intv1); clearInterval(intv2); inicio(); } }, "Salir"))));
+    }
+
+    function cierre(mensaje) {
+      registrar();
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Anclaje completo · +1 Detección"),
+        h("h1", { class: "titulo", style: "font-size:1.5rem" }, "De vuelta en el presente"),
+        h("div", { class: "tarjeta", style: "border-color:var(--calma)" }, h("p", { class: "suave mb0" }, mensaje)),
+        h("div", { class: "fila-botones" },
+          h("button", { class: "btn", onclick: inicio }, "Otro anclaje"),
+          h("a", { class: "btn btn-primario", href: "#/checkin" }, "Registrar el momento"),
+          h("a", { class: "btn btn-fantasma", href: "#/inicio" }, "Cerrar")));
+    }
+
+    inicio();
+  }
+
+  G.vistas = G.vistas || {};
+  G.vistas.anclaje = vista;
+})();
+
+</script>
+  <script>
+/* Ventana · Autocompasión
+   El eslabón que más recaídas fabrica es la vergüenza post-episodio: sube la
+   activación de fondo y deja el terreno listo para el siguiente estallido.
+   Estos dos guiones la interrumpen. No es ser blando: es cortar la gasolina.
+   Cada práctica completa suma +2 Reparación (reparar también es contigo). */
+(function () {
+  const G = (window.Guia = window.Guia || {});
+  const { h, montar, toast } = G.dom;
+
+  function registrar() {
+    G.storage.guardar("compasiones", (G.storage.leer("compasiones", 0) || 0) + 1);
+    toast("+2 Reparación");
+  }
+
+  function vista(vista) {
+    function inicio() {
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Herramienta · contra la vergüenza-gasolina"),
+        h("h1", { class: "titulo" }, "Autocompasión"),
+        h("p", { class: "subtitulo" }, "Después de un episodio, machacarte no es disciplina: es combustible para el siguiente. El investigador se trata como trataría a un colega que la embarró y está entrenando."),
+        h("div", { class: "tarjeta-fila" },
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: () => pausa(0) },
+            h("span", { class: "icono" }, "🫀"), h("strong", null, "Pausa de autocompasión"),
+            h("span", null, "Tres frases + un gesto. Menos de un minuto. Evidencia: media (programa MSC de Neff y Germer).")),
+          h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: () => rain(0, {}) },
+            h("span", { class: "icono" }, "🌧"), h("strong", null, "RAIN"),
+            h("span", null, "Reconocer · Permitir · Investigar · Nutrir. 3-5 minutos. Evidencia: baja-media (combina piezas probadas)."))));
+    }
+
+    /* ---- Pausa de Neff (3 pasos) ---- */
+    const PASOS_PAUSA = [
+      { titulo: "Reconocer", frase: "\u201cEste es un momento difícil.\u201d", nota: "Solo eso. Sin analizar, sin juzgar. Nombrar el sufrimiento ya lo regula un poco — dilo despacio, en voz baja si puedes." },
+      { titulo: "Humanidad común", frase: "\u201cEsto es parte de ser humano. No soy el único que pelea con esto.\u201d", nota: "La vergüenza aísla (\u201csolo yo soy así\u201d). Este paso rompe el aislamiento: millones entrenan exactamente este mismo patrón." },
+      { titulo: "Amabilidad", frase: "\u201cQue pueda tratarme con la misma decencia con la que trataría a un amigo en esto.\u201d", nota: "Pon una mano en el pecho o donde te resulte natural. El gesto físico no es decoración: ayuda a que el cuerpo se lo crea." }
+    ];
+
+    function pausa(i) {
+      if (i >= PASOS_PAUSA.length) { cierre("Un minuto que corta la gasolina. Vuelve a esto cada vez que el juez interno tome el micrófono."); return; }
+      const p = PASOS_PAUSA[i];
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Pausa de autocompasión · " + (i + 1) + " de 3"),
+        h("h1", { class: "titulo", style: "font-size:1.5rem" }, p.titulo),
+        h("div", { class: "tarjeta centro" },
+          h("p", { class: "ancla-rotativa" }, p.frase),
+          h("p", { class: "suave" }, p.nota),
+          h("div", { class: "fila-botones", style: "justify-content:center" },
+            h("button", { class: "btn btn-primario", onclick: () => pausa(i + 1) }, i + 1 < PASOS_PAUSA.length ? "Dicho →" : "Terminar"))));
+    }
+
+    /* ---- RAIN (4 pasos) ---- */
+    function rain(i, datos) {
+      const pasos = [
+        { t: "Reconoce", cuerpo: () => h("div", null,
+            h("p", { class: "suave" }, "¿Qué está pasando dentro, ahora mismo? Nómbralo simple: \u201cestoy sintiendo vergüenza\u201d, \u201chay rabia contra mí\u201d."),
+            datos.emo = h("input", { type: "text", placeholder: "estoy sintiendo…" })) },
+        { t: "Permite", cuerpo: () => h("div", null,
+            h("p", { class: "suave" }, "No lo arregles todavía. Solo déjalo estar: \u201cesto está aquí, y está bien que esté\u201d. Permitir no es aprobar lo que hiciste: es dejar de pelear con lo que sientes."),
+            h("p", { class: "ancla-rotativa" }, "\u201cEsto pertenece. Puede estar.\u201d")) },
+        { t: "Investiga", cuerpo: () => h("div", null,
+            h("p", { class: "suave" }, "Al cuerpo, no a la cabeza: ¿dónde lo sientes? ¿pecho, garganta, estómago? ¿Y qué necesita esa parte — descanso, perdón, un plan?"),
+            datos.donde = h("input", { type: "text", placeholder: "lo siento en… y creo que necesita…" })) },
+        { t: "Nutre", cuerpo: () => h("div", null,
+            h("p", { class: "suave" }, "Mano donde lo sientas, y una frase de cuidado — la que le dirías a alguien que quieres:"),
+            h("p", { class: "ancla-rotativa" }, "\u201cEstoy aquí. Estamos entrenando. Esto no te define.\u201d")) }
+      ];
+      if (i >= pasos.length) { cierre("RAIN completo. Terminaste en Nutrir, no escarbando — así se hace."); return; }
+      const p = pasos[i];
+      montar(vista,
+        h("p", { class: "eyebrow" }, "RAIN · " + "RAIN"[i] + " · " + (i + 1) + " de 4"),
+        h("h1", { class: "titulo", style: "font-size:1.5rem" }, p.t),
+        h("div", { class: "tarjeta" }, p.cuerpo(),
+          h("div", { class: "fila-botones" },
+            h("button", { class: "btn btn-primario", onclick: () => rain(i + 1, datos) }, i + 1 < pasos.length ? "Siguiente →" : "Terminar"))));
+    }
+
+    function cierre(mensaje) {
+      registrar();
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Práctica completa · +2 Reparación"),
+        h("h1", { class: "titulo", style: "font-size:1.5rem" }, "El juez, sin micrófono"),
+        h("div", { class: "tarjeta", style: "border-color:var(--calma)" }, h("p", { class: "suave mb0" }, mensaje)),
+        h("div", { class: "fila-botones" },
+          h("button", { class: "btn", onclick: inicio }, "Otra práctica"),
+          h("a", { class: "btn btn-primario", href: "#/autopsia" }, "Ahora sí: la autopsia"),
+          h("a", { class: "btn btn-fantasma", href: "#/inicio" }, "Cerrar")));
+    }
+
+    inicio();
+  }
+
+  G.vistas = G.vistas || {};
+  G.vistas.compasion = vista;
+})();
+
+</script>
+  <script>
+/* Ventana · Simulador del Dojo (motor)
+   Conversaciones ramificadas por ESTADO: cada elección mueve Tensión y
+   Conexión; la reacción del otro depende de esas barras, no de un guion fijo.
+   Durante la simulación no hay puntos ni etiquetas de correcto/incorrecto:
+   solo consecuencias, como en la vida. Todo lo demás llega al final:
+   revisión del camino, análisis psicológico, razonamiento regulado,
+   exploración contrafactual y modo terapeuta. */
+(function () {
+  const G = (window.Guia = window.Guia || {});
+  const { h, montar, toast, fechaCorta } = G.dom;
+  const DIA = 24 * 60 * 60 * 1000;
+
+  /* ================= utilidades de datos ================= */
+  function prog() { return G.storage.leer("sim_prog", {}); }
+  function turnosLog() { return G.storage.leer("sim_turnos", []); }
+
+  function escenasDe(cat, sub) {
+    return G.simEscenas.filter((e) => e.cat === cat && (!sub || e.sub === sub)).sort((a, b) => a.nivel - b.nivel);
+  }
+
+  /** Progresión: dentro de una categoría, un nivel se desbloquea si es el menor
+      disponible o si algún nivel inferior de esa categoría ya fue completado. */
+  function desbloqueada(escena) {
+    const deCat = G.simEscenas.filter((e) => e.cat === escena.cat);
+    const minNivel = Math.min(...deCat.map((e) => e.nivel));
+    if (escena.nivel === minNivel) return true;
+    const p = prog();
+    return deCat.some((e) => e.nivel < escena.nivel && p[e.id] && p[e.id].completada);
+  }
+
+  function vencidas() {
+    const p = prog();
+    return G.simEscenas.filter((e) => p[e.id] && p[e.id].proxima && p[e.id].proxima <= Date.now());
+  }
+
+  /* ================= competencias y recomendación ================= */
+  function competencias() {
+    const log = turnosLog();
+    const porEmocion = {}, porHab = {};
+    for (const t of log) {
+      (porEmocion[t.emocion] = porEmocion[t.emocion] || { n: 0, reg: 0, imp: 0 });
+      porEmocion[t.emocion].n++;
+      if (t.tipo === "regulada") porEmocion[t.emocion].reg++;
+      if (t.tipo === "impulso") porEmocion[t.emocion].imp++;
+      (porHab[t.hab] = porHab[t.hab] || { reg: 0, imp: 0 });
+      if (t.tipo === "regulada") porHab[t.hab].reg++;
+      if (t.tipo === "impulso") porHab[t.hab].imp++;
+    }
+    const fortalezas = [], entrenar = [];
+    for (const [emo, d] of Object.entries(porEmocion)) {
+      if (d.n >= 3 && d.reg / d.n >= 0.7) fortalezas.push("Respondes regulado ante " + emo + " (" + Math.round((d.reg / d.n) * 100) + "%).");
+      if (d.n >= 3 && d.imp / d.n >= 0.4) entrenar.push("Ante " + emo + ", el impulso todavía gana " + Math.round((d.imp / d.n) * 100) + "% de las veces.");
+    }
+    if ((porHab.pausa?.reg || 0) + (porHab.marco?.reg || 0) >= 3) fortalezas.push("Sabes pedir tiempo y poner marco antes de hablar.");
+    if ((porHab.reparar?.reg || 0) >= 2) fortalezas.push("Tus reparaciones reconocen lo específico y esquivan el \u201cpero\u201d.");
+    if ((porHab.limite?.reg || 0) >= 2) fortalezas.push("Pones límites a tiempo, sin drama.");
+    if ((porHab.escucha?.imp || 0) >= 2) entrenar.push("Cuando te critican, la defensa te gana a la escucha.");
+    if ((porHab.defusion?.imp || 0) >= 2) entrenar.push("Tu primera interpretación se convierte en sentencia (leer la mente).");
+    if ((porHab.reparar?.imp || 0) >= 2) entrenar.push("En las disculpas se te cuela el \u201cpero\u201d o el autoflagelo.");
+    return { fortalezas, entrenar, total: log.length };
+  }
+
+  function recomendacion() {
+    const due = vencidas();
+    if (due.length) return { escena: due[0], motivo: "Fallaste esta hace días: la repetición espaciada dice que hoy toca reintentarla." };
+    const log = turnosLog();
+    const porEmocion = {};
+    for (const t of log) {
+      (porEmocion[t.emocion] = porEmocion[t.emocion] || { n: 0, imp: 0 });
+      porEmocion[t.emocion].n++;
+      if (t.tipo === "impulso") porEmocion[t.emocion].imp++;
+    }
+    let peor = null;
+    for (const [emo, d] of Object.entries(porEmocion)) {
+      if (d.n >= 2 && (!peor || d.imp / d.n > peor.r)) peor = { emo, r: d.imp / d.n };
+    }
+    if (peor && peor.r > 0.3) {
+      const e = G.simEscenas.find((x) => x.emocion.includes(peor.emo.split(" ")[0]) && desbloqueada(x));
+      if (e) return { escena: e, motivo: "Tu patrón más débil ahora mismo es \u201c" + peor.emo + "\u201d: entrenar el punto flojo, no el truco favorito." };
+    }
+    const p = prog();
+    const siguiente = G.simEscenas.filter((e) => desbloqueada(e) && !(p[e.id] && p[e.id].completada)).sort((a, b) => a.nivel - b.nivel)[0];
+    if (siguiente) return { escena: siguiente, motivo: "Siguiente peldaño de tu progresión." };
+    return { escena: G.simEscenas[0], motivo: "Repaso libre: hasta lo dominado se oxida." };
+  }
+
+  /* ================= vista principal ================= */
+  function vista(vista) {
+    const prefs = G.simPrefs || { modo: "entrenar" };
+    G.simPrefs = null;
+
+    if (prefs.escenaId) {
+      const e = G.simEscenas.find((x) => x.id === prefs.escenaId);
+      if (e) { jugar(e, prefs.modo === "examen"); return; }
+    }
+    if (prefs.modo === "examen") { empezarExamen(); return; }
+    selectorCategorias();
+
+    /* ---------- selección (modo entrenamiento) ---------- */
+    function selectorCategorias() {
+      const conContenido = G.simCategorias.filter((c) => G.simEscenas.some((e) => e.cat === c.id));
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Simulador · modo entrenamiento"),
+        h("h1", { class: "titulo" }, "¿Qué quieres practicar?"),
+        h("p", { class: "subtitulo" }, "Eliges el terreno; la conversación evoluciona según tus decisiones. Sin puntos durante la práctica: solo consecuencias — el análisis llega al final."),
+        h("div", { class: "tarjeta-fila" },
+          conContenido.map((c) => {
+            const n = G.simEscenas.filter((e) => e.cat === c.id).length;
+            return h("button", { class: "tarjeta-accion", style: "text-align:left", onclick: () => selectorEscenas(c) },
+              h("span", { class: "icono" }, c.nombre.split(" ")[0]),
+              h("strong", null, c.nombre.replace(/^\S+\s/, "")),
+              h("span", null, n + " simulación" + (n === 1 ? "" : "es") + " · " + [...new Set(escenasDe(c.id).map((e) => e.sub))].join(", ")));
+          })),
+        h("p", { class: "tenue" }, "El catálogo crece por datos: cada escena es un objeto en js/data/simulaciones.js (formato documentado)."));
+    }
+
+    function selectorEscenas(cat) {
+      const p = prog();
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Simulador · " + cat.nombre),
+        h("h1", { class: "titulo" }, "Elige la situación"),
+        h("div", null, escenasDe(cat.id).map((e) => {
+          const abierta = desbloqueada(e);
+          const estado = p[e.id];
+          return h("div", { class: "entrada" },
+            h("div", { class: "entrada-cab" },
+              h("span", { class: "badge " + (abierta ? "badge-verde" : "badge-ambar") }, abierta ? "Nivel " + e.nivel : "🔒 Nivel " + e.nivel),
+              h("strong", null, e.titulo),
+              h("span", { class: "tenue", style: "margin-left:auto" }, e.duracion),
+              estado && estado.completada && h("span", { class: "badge " + (estado.ultimo === "bien" ? "badge-verde" : estado.ultimo === "medio" ? "badge-ambar" : "badge-rojo") }, estado.ultimo)),
+            h("p", { class: "entrada-cuerpo", style: "margin-top:6px" }, e.sub + " · entrena: " + e.emocion),
+            abierta
+              ? h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario btn-mini", onclick: () => jugar(e, false) }, "Entrar"))
+              : h("p", { class: "tenue" }, "Se desbloquea completando un nivel inferior de esta categoría."));
+        })),
+        h("div", { class: "fila-botones" }, h("button", { class: "btn btn-fantasma", onclick: selectorCategorias }, "← Categorías")));
+    }
+
+    /* ---------- modo examen ---------- */
+    function empezarExamen() {
+      const due = vencidas();
+      const candidatas = due.length ? due : G.simEscenas.filter(desbloqueada);
+      const e = candidatas[Math.floor(Math.random() * candidatas.length)];
+      montar(vista,
+        h("p", { class: "eyebrow" }, "Simulador · modo examen"),
+        h("h1", { class: "titulo" }, "Situación sorpresa"),
+        h("p", { class: "subtitulo" }, "No sabrás qué emoción pone a prueba hasta el análisis final. Integración de habilidades, como en la calle."),
+        h("div", { class: "tarjeta" },
+          h("p", null, e.contexto),
+          h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario", onclick: () => jugar(e, true) }, "Empezar"))));
+    }
+
+    /* ================= motor de juego ================= */
+    function jugar(escena, examen) {
+      let T = escena.inicioT, C = escena.inicioC;
+      const camino = []; // {turno, opcion, Tprev, Cprev}
+      let contrafactual = null; // { desde, caminoOriginal, Tfin, Cfin }
+
+      function medidores() {
+        return h("div", { class: "sim-medidores" },
+          medidor("Tensión", T, "rojo"), medidor("Conexión", C, "calma"));
+      }
+      function medidor(nombre, v, color) {
+        return h("div", { class: "sim-medidor" },
+          h("span", { class: "tenue" }, nombre + " " + v + "/10"),
+          h("div", { class: "barra-progreso" }, h("div", { style: "width:" + (v * 10) + "%;background:var(--" + color + ")" })));
+      }
+
+      function variante(turno) {
+        if (T >= 7 && turno.npc.tenso) return turno.npc.tenso;
+        if (C >= 7 && turno.npc.calido) return turno.npc.calido;
+        return turno.npc.base;
+      }
+
+      function renderTurno(i) {
+        const turno = escena.turnos[i];
+        const zona = h("div");
+        turno.opciones.forEach((op, idx) => {
+          zona.append(h("button", { class: "opcion-dojo", onclick: () => elegir(i, idx) }, op.t));
+        });
+        montar(vista,
+          h("p", { class: "eyebrow" }, (examen ? "Examen" : escena.titulo) + " · turno " + (i + 1) + " de " + escena.turnos.length + (contrafactual ? " · EXPLORACIÓN CONTRAFACTUAL (no registra)" : "")),
+          i === 0 && !contrafactual ? h("div", { class: "tarjeta", style: "border-color:var(--linea)" }, h("p", { class: "suave mb0" }, escena.contexto)) : null,
+          medidores(),
+          h("div", { class: "sim-npc" }, variante(turno)),
+          h("p", { class: "suave" }, "¿Qué haces?"),
+          zona);
+      }
+
+      function elegir(i, idx) {
+        const op = escena.turnos[i].opciones[idx];
+        camino.push({ turno: i, idx, Tprev: T, Cprev: C });
+        T = Math.max(0, Math.min(10, T + op.dT));
+        C = Math.max(0, Math.min(10, C + op.dC));
+        if (!contrafactual) {
+          const log = turnosLog();
+          log.push({ ts: new Date().toISOString(), escena: escena.id, cat: escena.cat, emocion: escena.emocion, nivel: escena.nivel, tipo: op.tipo, hab: op.hab });
+          G.storage.guardar("sim_turnos", log);
+        }
+        // Consecuencia narrada (sin etiqueta de tipo)
+        montar(vista,
+          h("p", { class: "eyebrow" }, (examen ? "Examen" : escena.titulo) + " · consecuencia" + (contrafactual ? " · CONTRAFACTUAL" : "")),
+          medidores(),
+          h("div", { class: "tarjeta", style: "border-color:var(--linea)" },
+            h("p", null, op.efecto),
+            h("p", { class: "tenue mb0" },
+              (op.dT ? (op.dT > 0 ? "▲" : "▼") + " Tensión  " : "") +
+              (op.dC ? (op.dC > 0 ? "▲" : "▼") + " Conexión" : ""))),
+          h("div", { class: "fila-botones" },
+            h("button", { class: "btn btn-primario", onclick: () => {
+              if (i + 1 < escena.turnos.length) renderTurno(i + 1);
+              else terminar();
+            } }, i + 1 < escena.turnos.length ? "Continuar →" : "Ver cómo termina")));
+      }
+
+      function resultado() { const d = C - T; return d >= 3 ? "bien" : d <= -3 ? "mal" : "medio"; }
+
+      function terminar() {
+        const res = resultado();
+        if (!contrafactual) {
+          const p = prog();
+          p[escena.id] = { completada: true, ultimo: res, ts: Date.now(), proxima: res === "bien" ? null : Date.now() + (res === "medio" ? 10 : 7) * DIA };
+          G.storage.guardar("sim_prog", p);
+        }
+        analisis(res);
+      }
+
+      /* ---------- análisis final ---------- */
+      function analisis(res) {
+        const a = escena.analisis;
+        const color = res === "bien" ? "calma" : res === "medio" ? "ambar" : "rojo";
+
+        const revision = camino.map((paso) => {
+          const op = escena.turnos[paso.turno].opciones[paso.idx];
+          return h("div", { class: "entrada", style: "border-left:3px solid var(--" + (op.tipo === "regulada" ? "calma" : op.tipo === "parcial" ? "ambar" : "rojo") + ")" },
+            h("div", { class: "entrada-cab" },
+              h("span", { class: "badge " + (op.tipo === "regulada" ? "badge-verde" : op.tipo === "parcial" ? "badge-ambar" : "badge-rojo") }, "turno " + (paso.turno + 1) + " · " + op.tipo),
+              h("button", { class: "btn btn-mini", style: "margin-left:auto", onclick: () => reJugar(paso) }, "¿Y si...?")),
+            h("p", { class: "entrada-cuerpo" }, "\u201c" + op.t + "\u201d\n\n" + op.fb));
+        });
+
+        const preguntas = [
+          "¿Qué parte fue la más difícil de elegir bien?",
+          "¿Qué sentiste TÚ mientras elegías? (nómbralo con precisión)",
+          "¿Te recordó algo real? ¿Esto te suele pasar?"
+        ].map((q) => ({ q, area: h("textarea", { placeholder: q }) }));
+
+        montar(vista,
+          h("p", { class: "eyebrow" }, (contrafactual ? "Cierre contrafactual · " : "Sesión completa · ") + escena.titulo + " · nivel " + escena.nivel),
+          h("h1", { class: "titulo", style: "font-size:1.6rem" }, res === "bien" ? "La conversación construyó" : res === "medio" ? "Empate con roce" : "La conversación costó"),
+          medidores(),
+          h("div", { class: "tarjeta", style: "border-color:var(--" + color + ")" }, h("p", { class: "mb0" }, escena.cierres[res])),
+
+          contrafactual
+            ? h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario", onclick: contrafactual.volver }, "← Volver a mi camino real"))
+            : h("div", null,
+                h("h3", { style: "font-family:var(--f-titulo)" }, "Revisión del camino"),
+                h("p", { class: "tenue" }, "Recién ahora se revelan los perfiles de cada elección — y el \u201c¿Y si...?\u201d te deja explorar el camino que no tomaste (no registra ni puntúa)."),
+                ...revision,
+
+                h("h3", { style: "font-family:var(--f-titulo)" }, "Análisis psicológico"),
+                h("div", { class: "tarjeta" }, h("div", { class: "prosa", html: G.md.render(
+                  "- **Emoción en juego:** " + a.emocion + "\n" +
+                  "- **La necesidad debajo:** " + a.necesidad + "\n" +
+                  "- **La interpretación que fabricó el impulso:** " + a.interpretacion + "\n" +
+                  "- **Sesgo cognitivo presente:** " + a.sesgo + "\n" +
+                  "- **Ventana de tolerancia:** " + a.ventana + "\n" +
+                  "- **La alternativa regulada:** " + a.alternativa + "\n" +
+                  "- **Consecuencia en una relación real:** " + a.consecuencia) })),
+
+                h("h3", { style: "font-family:var(--f-titulo)" }, "Cómo piensa la versión regulada"),
+                h("div", { class: "tarjeta", style: "border-color:var(--calma)" }, h("p", { class: "mb0", style: "font-style:italic" }, escena.razonamiento)),
+
+                h("h3", { style: "font-family:var(--f-titulo)" }, "Modo terapeuta · 2 minutos"),
+                h("div", { class: "tarjeta" },
+                  h("p", { class: "tenue" }, "No es examen: es donde la simulación se conecta con TU vida. Se guarda en Mi cuaderno."),
+                  ...preguntas.flatMap((p) => [h("label", { class: "etiqueta" }, p.q), p.area]),
+                  h("div", { class: "fila-botones" },
+                    h("button", { class: "btn btn-primario", onclick: () => {
+                      const lista = G.storage.leer("reflexiones", []);
+                      lista.push({ ts: new Date().toISOString(), escena: escena.id, titulo: escena.titulo,
+                        r: preguntas.map((p) => p.area.value.trim()) });
+                      G.storage.guardar("reflexiones", lista);
+                      toast("Guardado en Mi cuaderno");
+                    } }, "Guardar reflexión"))),
+
+                h("div", { class: "fila-botones" },
+                  h("button", { class: "btn btn-primario", onclick: () => { G.simPrefs = { modo: examen ? "examen" : "entrenar" }; vistaRender(vista); } }, "Otra simulación"),
+                  h("a", { class: "btn", href: "#/dojo" }, "Al Dojo"),
+                  h("a", { class: "btn btn-fantasma", href: "#/inicio" }, "Inicio"))));
+      }
+
+      /* ---------- contrafactual: rejugar desde un turno ---------- */
+      function reJugar(paso) {
+        const snapshot = { camino: [...camino], T, C };
+        camino.length = 0;
+        camino.push(...snapshot.camino.slice(0, snapshot.camino.indexOf(paso)));
+        T = paso.Tprev; C = paso.Cprev;
+        contrafactual = {
+          volver: () => {
+            camino.length = 0; camino.push(...snapshot.camino);
+            T = snapshot.T; C = snapshot.C;
+            contrafactual = null;
+            analisis(resultado());
+          }
+        };
+        renderTurno(paso.turno);
+      }
+
+      renderTurno(0);
+    }
+  }
+
+  function vistaRender(v) { vista(v); }
+
+  G.simulador = { competencias, recomendacion, vencidas };
+  G.vistas = G.vistas || {};
+  G.vistas.simulador = vista;
+})();
+
+</script>
+  <script>
+/* Ventana · flujo de entrenamiento diario (v2: navegación libre)
+   Check-in → Reto → Dojo ×2 → Repaso → Cierre, con:
+   - Atrás en cada paso y puntos (dots) clicables: control total en un flujo corto.
+   - Barra de progreso global + "Paso X de 5 · ~N min restantes".
+   - Memoria de sesión: volver al check-in EDITA el mismo registro (no duplica);
+     un escenario ya respondido se muestra en modo revisión (no se cultivan puntos);
+     el repaso se reanuda donde quedó. */
 (function () {
   const G = (window.Guia = window.Guia || {});
   const { h, montar, toast, claveDia, claseNivel } = G.dom;
+
+  const PASOS = [
+    { id: "checkin", nombre: "Check-in", min: 1 },
+    { id: "reto",    nombre: "Reto",     min: 0.5 },
+    { id: "dojo",    nombre: "Dojo 1",   min: 1 },
+    { id: "dojo",    nombre: "Dojo 2",   min: 1 },
+    { id: "repaso",  nombre: "Repaso",   min: 1.5 }
+  ];
 
   function rachaPractica() {
     const dias = G.storage.leer("flujo_dias", {});
@@ -3531,134 +5632,203 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
   }
 
   function vista(vista) {
-    const pasos = ["checkin", "reto", "dojo", "dojo", "repaso", "cierre"];
     let indice = 0;
     const puntosAntes = total(G.maestria.calcular());
-    let escenariosSesion = null;
+    const estado = {
+      checkinId: null,
+      checkin: { nivel: 3, emocion: "", detecte: "na" },
+      dojo: [null, null],          // respuesta congelada por ranura
+      escenarios: null,            // sesión de 2, estable
+      repaso: null                 // { cola, i }
+    };
+    if (G.prefill && G.prefill.checkin) { estado.checkin.nivel = G.prefill.checkin.nivel; G.prefill = null; }
 
     function total(p) { return Object.values(p).reduce((a, b) => a + b, 0); }
 
-    function puntosDots() {
-      return h("div", { class: "flujo-dots", "aria-label": "Progreso del flujo" },
-        pasos.slice(0, -1).map((_, i) =>
-          h("span", { class: "dot" + (i < indice ? " hecho" : i === indice ? " actual" : "") }))
-      );
+    /* ---------- Cabecera: barra + dots clicables + tiempo restante ---------- */
+    function cabecera() {
+      const enCierre = indice >= PASOS.length;
+      const pct = enCierre ? 100 : Math.round((indice / PASOS.length) * 100);
+      const restante = enCierre ? 0 : PASOS.slice(indice).reduce((a, p) => a + p.min, 0);
+      const etiquetaTiempo = enCierre ? "completo"
+        : restante < 1 ? "menos de 1 min restante"
+        : "~" + (Number.isInteger(restante) ? restante : restante.toFixed(1)) + " min restantes";
+
+      return h("div", { class: "flujo-cab" },
+        h("div", { class: "barra-progreso" }, h("div", { style: "width:" + pct + "%" })),
+        h("div", { class: "fila separado", style: "margin-top:8px" },
+          h("div", { class: "flujo-dots", role: "group", "aria-label": "Pasos del flujo" },
+            PASOS.map((p, i) =>
+              h("button", {
+                class: "dot" + (i < indice ? " hecho" : i === indice ? " actual" : ""),
+                "aria-label": "Ir al paso " + (i + 1) + ": " + p.nombre,
+                title: p.nombre,
+                onclick: () => ir(i)
+              }))),
+          h("span", { class: "tenue" }, enCierre
+            ? "Entrenamiento completo"
+            : "Paso " + (indice + 1) + " de " + PASOS.length + " · " + etiquetaTiempo)));
     }
 
-    function cabecera(eyebrow, titulo) {
-      return [puntosDots(), h("p", { class: "eyebrow" }, eyebrow), h("h1", { class: "titulo", style: "font-size:1.5rem" }, titulo)];
+    function tituloPaso(eyebrow, titulo) {
+      return [cabecera(), h("p", { class: "eyebrow" }, eyebrow), h("h1", { class: "titulo", style: "font-size:1.5rem" }, titulo)];
     }
 
+    function botonAtras() {
+      if (indice === 0) return null;
+      return h("button", { class: "btn btn-fantasma", onclick: () => ir(indice - 1) }, "← Atrás");
+    }
     function botonSaltar() {
       return h("button", { class: "btn btn-fantasma", onclick: avanzar }, "Saltar");
     }
 
-    function avanzar() {
-      indice++;
+    function ir(i) {
+      indice = Math.max(0, Math.min(i, PASOS.length));
       pintar();
     }
+    function avanzar() { ir(indice + 1); }
 
     function pintar() {
-      const paso = pasos[indice];
+      if (indice >= PASOS.length) { pasoCierre(); return; }
+      const paso = PASOS[indice].id;
       if (paso === "checkin") pasoCheckin();
       else if (paso === "reto") pasoReto();
       else if (paso === "dojo") pasoDojo();
-      else if (paso === "repaso") pasoRepaso();
-      else pasoCierre();
+      else pasoRepaso();
     }
 
-    /* ---- 1 · Check-in compacto ---- */
+    /* ---------- 1 · Check-in (editable al volver: mismo registro) ---------- */
     function pasoCheckin() {
-      let nivel = (G.prefill && G.prefill.checkin && G.prefill.checkin.nivel) || 3;
-      if (G.prefill) G.prefill = null;
-
-      const lectura = h("div", { class: "lectura-numero " + claseNivel(nivel) }, String(nivel));
-      const deslizador = h("input", {
-        type: "range", class: "semaforo", min: "0", max: "10", value: String(nivel),
+      const c = estado.checkin;
+      const lectura = h("div", { class: "lectura-numero " + claseNivel(c.nivel) }, String(c.nivel));
+      const desl = h("input", { type: "range", class: "semaforo", min: "0", max: "10", value: String(c.nivel),
         "aria-label": "Nivel de 0 a 10",
-        oninput: (e) => { nivel = Number(e.target.value); lectura.textContent = String(nivel); lectura.className = "lectura-numero " + claseNivel(nivel); }
-      });
+        oninput: (e) => { c.nivel = Number(e.target.value); lectura.textContent = String(c.nivel); lectura.className = "lectura-numero " + claseNivel(c.nivel); } });
       const emocion = h("input", { type: "text", placeholder: "si hubo emoción fuerte: su nombre preciso (opcional)" });
-      const detecte = h("select", null,
+      emocion.value = c.emocion;
+      emocion.addEventListener("input", () => (c.emocion = emocion.value));
+      const detecte = h("select", { onchange: (e) => (c.detecte = e.target.value) },
         h("option", { value: "na" }, "No hubo amarillo"),
         h("option", { value: "si" }, "Amarillo detectado a tiempo"),
         h("option", { value: "tarde" }, "Detectado tarde"),
         h("option", { value: "no" }, "No lo detecté"));
+      detecte.value = c.detecte;
 
-      montar(vista, ...cabecera("Paso 1 · Check-in", "¿En qué número estás?"),
+      function guardar() {
+        const lista = G.storage.leer("checkins", []);
+        if (estado.checkinId) {
+          const previo = lista.find((x) => x.id === estado.checkinId);
+          if (previo) { previo.nivel = c.nivel; previo.emocion = c.emocion.trim(); previo.detecte = c.detecte; }
+          toast("Check-in corregido");
+        } else {
+          estado.checkinId = Date.now();
+          lista.push({ id: estado.checkinId, ts: new Date().toISOString(), dia: claveDia(), nivel: c.nivel,
+            emocion: c.emocion.trim(), detecte: c.detecte, episodio: false, herramienta: "", terreno: "", nota: "flujo diario" });
+        }
+        G.storage.guardar("checkins", lista);
+        avanzar();
+      }
+
+      montar(vista, ...tituloPaso("Paso 1 · Check-in", "¿En qué número estás?"),
+        estado.checkinId && h("p", { class: "tenue" }, "Ya guardaste este check-in; si cambias algo, se corrige el mismo registro."),
         h("div", { class: "tarjeta" },
-          h("div", { class: "fila" }, lectura, h("div", { style: "flex:1" }, deslizador)),
+          h("div", { class: "fila" }, lectura, h("div", { style: "flex:1" }, desl)),
           h("label", { class: "etiqueta" }, "Emoción (si la hubo)"), emocion,
           h("label", { class: "etiqueta" }, "¿Y el amarillo de hoy?"), detecte,
           h("div", { class: "fila-botones" },
-            h("button", { class: "btn btn-primario", onclick: () => {
-              const lista = G.storage.leer("checkins", []);
-              lista.push({ id: Date.now(), ts: new Date().toISOString(), dia: claveDia(), nivel,
-                emocion: emocion.value.trim(), detecte: detecte.value, episodio: false, herramienta: "", terreno: "", nota: "flujo diario" });
-              G.storage.guardar("checkins", lista);
-              avanzar();
-            } }, "Guardar y seguir"),
+            h("button", { class: "btn btn-primario", onclick: guardar }, estado.checkinId ? "Corregir y seguir" : "Guardar y seguir"),
             botonSaltar())));
     }
 
-    /* ---- 2 · Reto del día ---- */
+    /* ---------- 2 · Reto ---------- */
     function pasoReto() {
       const rd = G.maestria.retoDelDia();
-      montar(vista, ...cabecera("Paso 2 · Reto del día", "Tu misión de hoy"),
+      montar(vista, ...tituloPaso("Paso 2 · Reto del día", "Tu misión de hoy"),
         h("div", { class: "tarjeta", style: "border-color:var(--ambar)" },
           h("p", { style: "font-size:1.05rem" }, rd.reto.t),
           h("div", { class: "fila-botones" },
             rd.hecho
               ? h("button", { class: "btn", onclick: avanzar }, "Ya lo hice hoy ✓")
               : h("button", { class: "btn btn-primario", onclick: () => { G.maestria.marcarReto(); toast("+2 a su disciplina"); avanzar(); } }, "Hecho → seguir"),
+            botonAtras(),
             h("button", { class: "btn btn-fantasma", onclick: avanzar }, "Lo hago más tarde"))));
     }
 
-    /* ---- 3–4 · Dojo (un escenario por paso) ---- */
+    /* ---------- 3–4 · Dojo (revisión si ya respondiste) ---------- */
+    function ranuraDojo() { return PASOS.slice(0, indice + 1).filter((p) => p.id === "dojo").length - 1; }
+
     function pasoDojo() {
-      if (!escenariosSesion) escenariosSesion = G.dojoUtil.elegirSesion(2);
-      const numero = pasos.slice(0, indice + 1).filter((p) => p === "dojo").length;
-      const e = escenariosSesion[numero - 1];
+      if (!estado.escenarios) estado.escenarios = G.dojoUtil.elegirSesion(2);
+      const slot = ranuraDojo();
+      const e = estado.escenarios[slot];
+      const respuesta = estado.dojo[slot];
+
+      if (respuesta) { // modo revisión: sin re-responder, sin cultivar puntos
+        montar(vista, ...tituloPaso("Paso " + (indice + 1) + " · Dojo (revisión)", e.situacion),
+          h("div", { class: "tarjeta", style: "border-color:var(--" + (respuesta.tipo === "regulada" ? "calma" : respuesta.tipo === "parcial" ? "ambar" : "rojo") + ")" },
+            h("p", { class: "eyebrow" }, "Tu respuesta · " + (respuesta.tipo === "regulada" ? "regulada +2" : respuesta.tipo === "parcial" ? "parcial +1" : "impulso +0")),
+            h("p", null, "\u201c" + respuesta.texto + "\u201d"),
+            h("p", { class: "suave" }, respuesta.fb),
+            respuesta.tipo !== "regulada" && h("p", { class: "suave" }, h("strong", null, "La jugada del domador: "), respuesta.regulada),
+            h("p", { class: "tenue" }, "Lección: " + e.leccion)),
+          h("div", { class: "fila-botones" },
+            h("button", { class: "btn btn-primario", onclick: avanzar }, "Seguir →"), botonAtras()));
+        return;
+      }
+
       const zona = h("div");
       G.dojoUtil.barajar(e.opciones).forEach((op) => {
         zona.append(h("button", { class: "opcion-dojo", onclick: (ev) => {
           G.dojoUtil.registrar(e, op);
+          estado.dojo[slot] = { texto: op.t, tipo: op.tipo, fb: op.fb, regulada: e.opciones.find((o) => o.tipo === "regulada").t };
           zona.querySelectorAll(".opcion-dojo").forEach((b) => (b.disabled = true));
           ev.currentTarget.classList.add("elegida-" + op.tipo);
           zona.append(h("div", { class: "tarjeta", style: "margin-top:12px;border-color:var(--" + (op.tipo === "regulada" ? "calma" : op.tipo === "parcial" ? "ambar" : "rojo") + ")" },
             h("p", { class: "eyebrow" }, op.tipo === "regulada" ? "Regulada · +2" : op.tipo === "parcial" ? "Parcial · +1" : "Impulso · +0"),
             h("p", null, op.fb),
-            op.tipo !== "regulada" && h("p", { class: "suave" }, h("strong", null, "La jugada del domador: "), e.opciones.find((o) => o.tipo === "regulada").t),
+            op.tipo !== "regulada" && h("p", { class: "suave" }, h("strong", null, "La jugada del domador: "), estado.dojo[slot].regulada),
             h("div", { class: "fila-botones" }, h("button", { class: "btn btn-primario", onclick: avanzar }, "Seguir →"))));
         } }, op.t));
       });
-      montar(vista, ...cabecera("Paso " + (2 + numero) + " · Dojo", e.situacion), h("p", { class: "suave" }, "¿Qué haces?"), zona, h("div", { class: "fila-botones" }, botonSaltar()));
+      montar(vista, ...tituloPaso("Paso " + (indice + 1) + " · Dojo", e.situacion),
+        h("p", { class: "suave" }, "¿Qué haces?"), zona,
+        h("div", { class: "fila-botones" }, botonAtras(), botonSaltar()));
     }
 
-    /* ---- 5 · Repaso (hasta 5 tarjetas) ---- */
+    /* ---------- 5 · Repaso (reanudable) ---------- */
     function pasoRepaso() {
-      let cola = G.repasoMotor.pendientes();
-      if (!cola.length) cola = [...G.tarjetas].sort(() => Math.random() - 0.5);
-      cola = cola.slice(0, 5);
-      let i = 0;
-
-      function tarjeta() {
-        if (i >= cola.length) { avanzar(); return; }
-        const t = cola[i];
-        const dorso = h("div", { class: "tarjeta oculto", style: "border-color:var(--calma)" },
-          h("p", null, t.dorso),
-          h("div", { class: "fila-botones" },
-            h("button", { class: "btn btn-peligro btn-mini", onclick: () => { G.repasoMotor.calificar(t.id, "otra"); i++; tarjeta(); } }, "Otra vez"),
-            h("button", { class: "btn btn-mini", onclick: () => { G.repasoMotor.calificar(t.id, "bien"); i++; tarjeta(); } }, "Bien"),
-            h("button", { class: "btn btn-primario btn-mini", onclick: () => { G.repasoMotor.calificar(t.id, "facil"); i++; tarjeta(); } }, "Fácil")));
-        const ver = h("button", { class: "btn btn-primario", onclick: () => { dorso.classList.remove("oculto"); ver.classList.add("oculto"); } }, "Mostrar respuesta");
-        montar(vista, ...cabecera("Paso 5 · Repaso " + (i + 1) + "/" + cola.length, t.frente),
-          h("div", { class: "fila-botones" }, ver, botonSaltar()), dorso);
+      if (!estado.repaso) {
+        let cola = G.repasoMotor.pendientes();
+        if (!cola.length) cola = [...G.tarjetas].sort(() => Math.random() - 0.5);
+        estado.repaso = { cola: cola.slice(0, 5), i: 0 };
       }
-      tarjeta();
+      const r = estado.repaso;
+
+      if (r.i >= r.cola.length) {
+        montar(vista, ...tituloPaso("Paso 5 · Repaso", "Repaso del día completo"),
+          h("div", { class: "tarjeta", style: "border-color:var(--calma)" },
+            h("p", { class: "suave mb0" }, r.cola.length + " tarjetas calificadas. El algoritmo ya reprogramó cada una según tu respuesta.")),
+          h("div", { class: "fila-botones" },
+            h("button", { class: "btn btn-primario", onclick: avanzar }, "Al cierre →"), botonAtras()));
+        return;
+      }
+
+      const t = r.cola[r.i];
+      const dorso = h("div", { class: "tarjeta oculto", style: "border-color:var(--calma)" },
+        h("p", null, t.dorso),
+        h("div", { class: "fila-botones" },
+          h("button", { class: "btn btn-peligro btn-mini", onclick: () => califica("otra") }, "Otra vez"),
+          h("button", { class: "btn btn-mini", onclick: () => califica("bien") }, "Bien"),
+          h("button", { class: "btn btn-primario btn-mini", onclick: () => califica("facil") }, "Fácil")));
+      const ver = h("button", { class: "btn btn-primario", onclick: () => { dorso.classList.remove("oculto"); ver.classList.add("oculto"); } }, "Mostrar respuesta");
+
+      function califica(grado) { G.repasoMotor.calificar(t.id, grado); r.i++; pasoRepaso(); }
+
+      montar(vista, ...tituloPaso("Paso 5 · Repaso " + (r.i + 1) + "/" + r.cola.length, t.frente),
+        h("div", { class: "fila-botones" }, ver, botonAtras(), botonSaltar()), dorso);
     }
 
-    /* ---- Cierre ---- */
+    /* ---------- Cierre ---------- */
     function pasoCierre() {
       const dias = G.storage.leer("flujo_dias", {});
       dias[claveDia()] = true;
@@ -3667,7 +5837,7 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
       const racha = rachaPractica();
       const rango = G.maestria.rangoGlobal(G.maestria.calcular());
 
-      montar(vista, puntosDots(),
+      montar(vista, cabecera(),
         h("p", { class: "eyebrow" }, "Entrenamiento de hoy · completo"),
         h("h1", { class: "titulo" }, "+" + ganados + " puntos"),
         h("div", { class: "tarjeta", style: "border-color:var(--calma)" },
@@ -3678,7 +5848,8 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
         h("p", { class: "suave" }, "Esto era todo por hoy. El resto del cambio pasa afuera: una señal notada, una frase dicha, una vuelta cumplida."),
         h("div", { class: "fila-botones" },
           h("a", { class: "btn btn-primario", href: "#/inicio" }, "Listo por hoy"),
-          h("a", { class: "btn", href: "#/maestria" }, "Ver maestría")));
+          h("button", { class: "btn", onclick: () => ir(PASOS.length - 1) }, "← Revisar el repaso"),
+          h("a", { class: "btn btn-fantasma", href: "#/maestria" }, "Ver maestría")));
     }
 
     pintar();
@@ -3743,8 +5914,14 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
     setTimeout(() => btnRojo.focus(), 50);
   }
 
-  /* Ámbar: enfriamiento breve en el sitio, y de ahí a verde o a rojo. */
+  /* Ámbar: directo al STOP guiado, la artillería del amarillo. */
   function pantallaAmbar() {
+    G.prefill = { stop: { nivel: 5 } };
+    cerrar();
+    G.router.navegar("#/stop");
+  }
+
+  function pantallaAmbarVieja() {
     const escenario = G.respiracion.crearEscenario({ tecnica: "suspiro", autoIniciar: true });
     // versión corta: detener tras ~3 ciclos lo decide el usuario con los botones
     montar(nodo, marco(
@@ -3797,6 +5974,13 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
   /* ---- Navegación lateral ---- */
   const HERRAMIENTAS = [
     ["#/checkin", "Check-in", "1 minuto al día"],
+    ["#/stop", "STOP guiado", "para el amarillo"],
+    ["#/descarga", "Descarga física", "frío, ejercicio, caminar"],
+    ["#/ola", "Surf de la ola", "tu pico, graficado"],
+    ["#/vaciadero", "Vaciadero", "quemar o borrador frío"],
+    ["#/anclaje", "Anclaje", "5-4-3-2-1, pendulación"],
+    ["#/compasion", "Autocompasión", "contra la vergüenza-gasolina"],
+    ["#/conversacion", "Preparador", "tu fórmula, sin peros"],
     ["#/dojo", "Dojo", "escenarios con feedback"],
     ["#/repaso", "Repaso", "tarjetas espaciadas"],
     ["#/respiracion", "Respiración", "guiada, 3 técnicas"],
@@ -3849,6 +6033,14 @@ Esta conversación convierte tu pausa de gesto ambiguo en herramienta reconocida
   G.router.registrar("#/maestria", G.vistas.maestria);
   G.router.registrar("#/flujo", G.vistas.flujo);
   G.router.registrar("#/como-usar", G.vistas.comoUsar);
+  G.router.registrar("#/vaciadero", G.vistas.vaciadero);
+  G.router.registrar("#/ola", G.vistas.ola);
+  G.router.registrar("#/descarga", G.vistas.descarga);
+  G.router.registrar("#/stop", G.vistas.stop);
+  G.router.registrar("#/conversacion", G.vistas.conversacion);
+  G.router.registrar("#/anclaje", G.vistas.anclaje);
+  G.router.registrar("#/compasion", G.vistas.compasion);
+  G.router.registrar("#/simulador", G.vistas.simulador);
   for (const libro of G.libros) {
     G.router.registrar("#/libro/" + libro.id, G.vistas.renderLibro(libro.id));
   }
